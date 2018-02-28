@@ -1,0 +1,4 @@
+Host gigatize-dev
+Hostname 52.90.236.14
+User root
+IdentityFile=/Users/sally/.ssh/id_rsa
