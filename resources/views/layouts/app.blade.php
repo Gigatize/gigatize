@@ -13,6 +13,11 @@
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
+    <style>
+        a.active{
+            color: #f6d448;
+        }
+    </style>
 
 </head>
 <body>
@@ -27,11 +32,6 @@
                 <a class="item">Find a Gig</a>
                 <a class="item">Quick Quest</a>
 
-                <!-- Authentication Links -->
-                @guest
-                <a class="item" href="{{ route('login') }}">Login</a>
-                <a class="item" href="{{ route('register') }}">Register</a>
-                @endif
             </div>
         </div>
         <main class="py-4">
