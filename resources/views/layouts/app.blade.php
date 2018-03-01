@@ -14,7 +14,7 @@
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.min.css') }}">
     <style>
-        a.active{
+        .ui.menu a.active.item{
             color: #f6d448;
         }
     </style>
