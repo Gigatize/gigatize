@@ -6,6 +6,7 @@ use Closure;
 use Aacotroneo\Saml2\Facades\Saml2Auth;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Facades\URL;
 
 class CheckAuthenticated
 {
@@ -32,7 +33,7 @@ class CheckAuthenticated
             {
                 Session::push('logging_in', true);
                 Session::save();
-                return Saml2Auth::login();
+                return Saml2Auth::login(URL::full());
                 //return redirect()->guest('auth/login');
             }
         }
