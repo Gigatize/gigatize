@@ -5,6 +5,7 @@ namespace App\Http\Middleware;
 use Closure;
 use Aacotroneo\Saml2\Facades\Saml2Auth;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Session;
 
 class CheckAuthenticated
 {
@@ -23,8 +24,12 @@ class CheckAuthenticated
             {
                 return response('Unauthorized.', 401);
             }
+            elseif (Session::get('logging_in')){
+                Session::forget('logging_in');
+            }
             else
             {
+                Session::push('logging_in', true);
                 return Saml2Auth::login();
                 //return redirect()->guest('auth/login');
             }
