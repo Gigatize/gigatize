@@ -24,7 +24,7 @@ return $settings = array(
      * which middleware group to use for the saml routes
      * Laravel 5.2 will need a group which includes StartSession
      */
-    'routesMiddleware' => [],
+    'routesMiddleware' => ['web'],
 
     /**
      * Indicates how the parameters will be
@@ -70,7 +70,7 @@ return $settings = array(
     // e.g X-Forwarded-Proto / HTTP_X_FORWARDED_PROTO. This is useful if
     // your application is running behind a load balancer which terminates
     // SSL.
-    'proxyVars' => false,
+    'proxyVars' => True,
 
     // Service Provider Data that we are deploying
     'sp' => array(
@@ -122,7 +122,7 @@ return $settings = array(
         'singleLogoutService' => array(
             // URL Location of the IdP where the SP will send the SLO Request,
             // using HTTP-Redirect binding.
-            'url' => '',
+            'url' => 'https://accounts.google.com/o/saml2?idpid=C019zjhhr',
         ),
         // Public x509 certificate of the IdP
         'x509cert' => env('SAML2_IDP_x509', 'MIIDdDCCAlygAwIBAgIGAWHS7BejMA0GCSqGSIb3DQEBCwUAMHsxFDASBgNVBAoTC0dvb2dsZSBJ
