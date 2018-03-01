@@ -25,7 +25,7 @@ class ProjectController extends Controller
    */
   public function create()
   {
-        $skills = Skill::all();
+        $skills = Skill::all()->take(1500);
         return view('projects/create', compact('skills'));
   }
 
