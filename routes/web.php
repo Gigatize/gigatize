@@ -27,15 +27,16 @@
     \Illuminate\Support\Facades\Auth::login($laravelUser);
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
 Route::group(['middleware' => ['checkauth']], function () {
 
     Route::get('/projects/create','ProjectController@create');
 
     Route::get('/home', 'HomeController@index')->name('home');
+
+    Route::get('/', function () {
+        return view('welcome');
+    });
 });
 
 
