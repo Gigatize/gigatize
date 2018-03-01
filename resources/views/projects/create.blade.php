@@ -16,7 +16,7 @@
                 Tag Label
             </div>
             <div class="scrolling menu">
-                @foreach(Skills::all() as $skill)
+                @foreach(\App\Models\Skill::all() as $skill)
                 <div class="item" data-value="important">
                     <div class="ui red empty circular label"></div>
                     {{$skill->name}}
