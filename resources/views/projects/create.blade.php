@@ -7,8 +7,5 @@
         <option value="{{$skill->name}}">{{$skill->name}}</option>
         @endforeach
     </select>
-    <script>
-        $('.ui.dropdown').dropdown();
-    </script>
 @endsection
 
