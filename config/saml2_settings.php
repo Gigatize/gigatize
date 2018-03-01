@@ -108,7 +108,7 @@ return $settings = array(
     // Identity Provider Data that we want connect with our SP
     'idp' => array(
         // Identifier of the IdP entity  (must be a URI)
-        'entityId' => env('SAML2_IDP_ENTITYID', 'https://accounts.google.com/o/saml2?idpid=C019zjhhr'),
+        'entityId' => 'https://accounts.google.com/o/saml2?idpid=C019zjhhr',
         // SSO endpoint info of the IdP. (Authentication Request protocol)
         'singleSignOnService' => array(
             // URL Target of the IdP where the SP will send the Authentication Request Message,
@@ -119,7 +119,7 @@ return $settings = array(
         'singleLogoutService' => array(
             // URL Location of the IdP where the SP will send the SLO Request,
             // using HTTP-Redirect binding.
-            'url' => 'https://accounts.google.com/o/saml2?idpid=C019zjhhr',
+            'url' => 'https://accounts.google.com/o/saml2/idp?idpid=C019zjhhr',
         ),
         // Public x509 certificate of the IdP
         'x509cert' => env('SAML2_IDP_x509', 'MIIDdDCCAlygAwIBAgIGAWHS7BejMA0GCSqGSIb3DQEBCwUAMHsxFDASBgNVBAoTC0dvb2dsZSBJ
