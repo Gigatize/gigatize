@@ -78,7 +78,7 @@ return $settings = array(
         // Specifies constraints on the name identifier to be used to
         // represent the requested subject.
         // Take a look on lib/Saml2/Constants.php to see the NameIdFormat supported
-        'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:unspecified',
+        'NameIDFormat' => 'urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress',
 
         // Usually x509cert and privateKey of the SP are provided by files placed at
         // the certs folder. But we can also provide them with the following parameters
@@ -122,7 +122,7 @@ return $settings = array(
         'singleLogoutService' => array(
             // URL Location of the IdP where the SP will send the SLO Request,
             // using HTTP-Redirect binding.
-            'url' => $idp_host . '/SingleLogoutService.php',
+            'url' => '',
         ),
         // Public x509 certificate of the IdP
         'x509cert' => env('SAML2_IDP_x509', 'MIIDdDCCAlygAwIBAgIGAWHS7BejMA0GCSqGSIb3DQEBCwUAMHsxFDASBgNVBAoTC0dvb2dsZSBJ
@@ -222,9 +222,9 @@ e8wjHeOaDJm1vYrgOLhmeaa8ztMP8KdhQ4RKX3YFsv5Y'),
     // Organization information template, the info in en_US lang is recomended, add more if required
     'organization' => array(
         'en-US' => array(
-            'name' => 'Name',
-            'displayname' => 'Display Name',
-            'url' => 'http://url'
+            'name' => 'Gigatize',
+            'displayname' => 'Gigatize',
+            'url' => 'https://gigatize.io'
         ),
     ),
 
