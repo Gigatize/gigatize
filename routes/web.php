@@ -30,8 +30,9 @@ Event::listen('Aacotroneo\Saml2\Events\Saml2LoginEvent', function (\Aacotroneo\S
     ];
 
     dd($userData);
-    $laravelUser = //find user by ID or attribute
-        //if it does not exist create it and go on or show an error message
-        Auth::login($laravelUser);
+    $laravelUser = 1;
+    //find user by ID or attribute
+    //if it does not exist create it and go on or show an error message
+    Auth::login($laravelUser);
 });
 
