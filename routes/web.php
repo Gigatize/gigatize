@@ -11,12 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/projects/create','ProjectController@create');
-
 \Illuminate\Support\Facades\Event::listen('Aacotroneo\Saml2\Events\Saml2LoginEvent', function (\Aacotroneo\Saml2\Events\Saml2LoginEvent $event) {
     $messageId = $event->getSaml2Auth()->getLastMessageId();
     // your own code preventing reuse of a $messageId to stop replay attacks
@@ -33,6 +27,14 @@ Route::get('/projects/create','ProjectController@create');
     \Illuminate\Support\Facades\Auth::login($laravelUser);
 });
 
+Route::group(['middleware' => ['checkauth']], function () {
+    Route::get('/', function () {
+        return view('welcome');
+    });
 
-Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/projects/create','ProjectController@create');
+
+    Route::get('/home', 'HomeController@index')->name('home');
+});
+
 
