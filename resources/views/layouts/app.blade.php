@@ -21,7 +21,7 @@
             <a class="item" style="font-size: 2em;"><b>gig</b><span style="font-style: italic;">atize</span></a>
             <div class="right menu">
 
-                <a class="item">Home</a>
+                <a class="item @if($request->is('/')) active @endif">Home</a>
                 <a class="item">Company Impact</a>
                 <a class="item">Find Talent</a>
                 <a class="item">Find a Gig</a>
