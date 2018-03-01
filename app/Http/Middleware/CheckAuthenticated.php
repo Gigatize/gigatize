@@ -26,10 +26,12 @@ class CheckAuthenticated
             }
             elseif (Session::get('logging_in')){
                 Session::forget('logging_in');
+                Session::save();
             }
             else
             {
                 Session::push('logging_in', true);
+                Session::save();
                 return Saml2Auth::login();
                 //return redirect()->guest('auth/login');
             }
