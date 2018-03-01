@@ -16,6 +16,7 @@
     <style>
         .ui.menu a.active.item{
             color: #f6d448;
+            background: none;
         }
     </style>
 
