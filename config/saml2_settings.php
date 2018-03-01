@@ -207,12 +207,12 @@ e8wjHeOaDJm1vYrgOLhmeaa8ztMP8KdhQ4RKX3YFsv5Y'),
     // Contact information template, it is recommended to suply a technical and support contacts
     'contactPerson' => array(
         'technical' => array(
-            'givenName' => 'name',
-            'emailAddress' => 'no@reply.com'
+            'givenName' => 'Josh Richmond',
+            'emailAddress' => 'josh@gigatize.io'
         ),
         'support' => array(
-            'givenName' => 'Support',
-            'emailAddress' => 'no@reply.com'
+            'givenName' => 'Josh Richmond',
+            'emailAddress' => 'josh@gigatize.io'
         ),
     ),
 
