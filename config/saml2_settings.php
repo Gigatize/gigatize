@@ -1,8 +1,5 @@
 <?php
 
-//This is variable is an example - Just make sure that the urls in the 'idp' config are ok.
-$idp_host = env('SAML2_IDP_HOST', 'https://accounts.google.com/o/saml2/idp?idpid=C019zjhhr');
-
 return $settings = array(
 
     /**
