@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    \Aacotroneo\Saml2\Facades\Saml2Auth::login();
 });
 
 Auth::routes();
