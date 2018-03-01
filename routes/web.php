@@ -11,6 +11,8 @@
 |
 */
 
+
+
 Route::group(['middleware' => ['checkauth']], function () {
 
     Route::get('/projects/create','ProjectController@create');
