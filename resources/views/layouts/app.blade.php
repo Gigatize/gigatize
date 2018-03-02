@@ -35,9 +35,9 @@
                 <div class="ui dropdown item">
                     <i class="user icon"></i> {{Auth::user()->first_name . ' ' . Auth::user()->last_name}} <i class="dropdown icon"></i>
                     <div class="menu">
-                        <a class="item">English</a>
-                        <a class="item">Russian</a>
-                        <a class="item">Spanish</a>
+                        <a class="item"><i class="address card outline icon"></i> Profile</a>
+                        <a class="item"><i class="cog icon"></i> Settings</a>
+                        <a class="item"><i class="sign out alternate icon"></i> Logout</a>
                     </div>
                 </div>
 
