@@ -11,7 +11,7 @@
 |
 */
 
-
+Auth::routes();
 
 Route::group(['middleware' => ['checkauth']], function () {
 

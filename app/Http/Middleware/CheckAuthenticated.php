@@ -33,6 +33,7 @@ class CheckAuthenticated
             {
                 Session::push('logging_in', true);
                 Session::save();
+
                 return Saml2Auth::login(URL::full());
                 //return redirect()->guest('auth/login');
             }
