@@ -3,6 +3,7 @@
 namespace App\Listeners;
 
 use Aacotroneo\Saml2\Events\Saml2LoginEvent;
+use App\Models\User;
 use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Support\Facades\Auth;
@@ -36,8 +37,8 @@ class LogUserIn
             'assertion' => $user->getRawSamlAssertion()
         ];
 
-        dd($userData);
-        $laravelUser = 1;
+        //dd($userData);
+        $laravelUser = User::firstOrCreate(['email' => $user->getUserId()],['email' => $user->getUserId(), 'first_name' => $user->getAttributes()['FirstName'],'last_name' => $user->getAttributes()['LastName']]);
         //if it does not exist create it and go on or show an error message
         Auth::login($laravelUser);
     }
