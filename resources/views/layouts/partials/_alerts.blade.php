@@ -27,14 +27,15 @@
 @endif
 
 @if(Session::has('errors'))
-<div class="ui error message">
-    <i class="close icon"></i>
-    <div class="header">
-        There were some errors with your submission
+    <div class="ui error message">
+        <i class="close icon"></i>
+        <div class="header">
+            There were some errors with your submission
+        </div>
+        <ul class="list">
+            @foreach(Session::get('errors') as $error)
+                <li>{{$error}}</li>
+            @endforeach
+        </ul>
     </div>
-    <ul class="list">
-        @foreach(Session::get('errors') as $error)
-        <li>{{$error}}</li>
-    </ul>
-</div>
 @endif
