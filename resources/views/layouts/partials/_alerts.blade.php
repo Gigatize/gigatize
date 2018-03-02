@@ -1,4 +1,4 @@
-<div class="ui grid container" style="text-align: center;">
+<div class="ui grid container">
     @if(isset($success))
         <div class="ui success message">
             <i class="close icon"></i>
