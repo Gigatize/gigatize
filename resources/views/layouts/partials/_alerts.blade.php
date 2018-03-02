@@ -1,30 +1,11 @@
-@if(Session::has('success'))
-    <div class="ui success message">
-        <i class="close icon"></i>
-        {{Session::get('success')}}
-    </div>
-@endif
-
-@if(Session::has('info'))
-<div class="ui info message">
-    <i class="close icon"></i>
-    {{Session::get('info')}}
-</div>
-@endif
-
-@if(Session::has('warning'))
-    <div class="ui info warning">
-        <i class="close icon"></i>
-        {{Session::get('warning')}}
-    </div>
-@endif
-
-@if(Session::has('error'))
-    <div class="ui info error">
-        <i class="close icon"></i>
-        {{Session::get('error')}}
-    </div>
-@endif
+@foreach (['error', 'warning', 'info', 'success'] as $key)
+    @if(Session::has($key))
+        <div class="ui {{ $key }} message">
+            <i class="close icon"></i>
+            {{ Session::get($key) }}
+        </div>
+    @endif
+@endforeach
 
 @if(Session::has('errors'))
     <div class="ui error message">
