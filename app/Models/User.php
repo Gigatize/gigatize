@@ -9,7 +9,7 @@ class User extends Model
 
     protected $table = 'users';
     public $timestamps = true;
-    protected $fillable = array('sso', 'name', 'email', 'role', 'picture', 'remember_token');
+    protected $fillable = array('email', 'first_name', 'last_name', 'role', 'picture', 'remember_token');
 
     public function OwnedProjects()
     {
