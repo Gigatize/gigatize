@@ -26,9 +26,6 @@ class HomeController extends Controller
      */
     public function index()
     {
-        if(Auth::guest()){
-            return redirect()->guest('saml2/login');
-        }
         return view('home');
     }
 }

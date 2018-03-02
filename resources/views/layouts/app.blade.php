@@ -24,6 +24,7 @@
 <body>
     <div id="app">
         @include('layouts.partials._header')
+        @include('layouts.partials._alerts')
         <main class="py-4">
             @yield('content')
         </main>
