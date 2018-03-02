@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title','Find Talent')
+
 @section('content')
     <select class="ui fluid search dropdown" multiple="">
         <option value="">State</option>

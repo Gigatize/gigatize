@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>{{ config('app.name', 'Gigatize') }}</title>
+    <title>Gigatize | @yield('title')</title>
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
@@ -23,7 +23,7 @@
 </head>
 <body>
     <div id="app">
-        @include('partials/_header')
+        @include('layouts.partials._header')
         <main class="py-4">
             @yield('content')
         </main>
