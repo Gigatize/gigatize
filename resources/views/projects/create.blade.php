@@ -9,3 +9,9 @@
     </select>
 @endsection
 
+@section('footer_scripts')
+    <script>
+        $('.ui.dropdown').dropdown();
+    </script>
+@endsection
+
