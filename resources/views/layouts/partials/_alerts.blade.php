@@ -1,5 +1,5 @@
 <div class="ui centered grid container">
-    <div class="sixteen wide column">
+    <div class="sixteen wide column" style="text-align: center">
     @if(isset($success))
         <div class="ui success message">
             <i class="close icon"></i>
@@ -8,7 +8,7 @@
     @endif
     </div>
 
-    <div class="twelve wide column">
+    <div class="sixteen wide column" style="text-align: center">
     @if(isset($info))
         <div class="ui info message">
             <i class="close icon"></i>
@@ -17,7 +17,7 @@
     @endif
     </div>
 
-    <div class=twelve wide column">
+    <div class="sixteen wide column" style="text-align: center">
     @if(isset($warning))
         <div class="ui info warning">
             <i class="close icon"></i>
@@ -26,7 +26,7 @@
     @endif
     </div>
 
-    <div class="twelve wide column">
+    <div class="sixteen wide column" style="text-align: center">
     @if(isset($error))
         <div class="ui info error">
             <i class="close icon"></i>
