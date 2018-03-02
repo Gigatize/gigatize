@@ -1,4 +1,4 @@
-<div class="ui centered grid container">
+<div class="ui centered grid container" style="margin-top: 10px;">
     <div class="sixteen wide column" style="text-align: center">
     @if(isset($success))
         <div class="ui success message">
