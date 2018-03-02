@@ -4,6 +4,8 @@
 
 @section('content')
     <div class="ui grid container">
-        <div class="column"></div>
+        <div class="column">
+            {{\Illuminate\Support\Facades\Session::all()}}
+        </div>
     </div>
 @endsection
