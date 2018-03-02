@@ -20,7 +20,8 @@ Route::group(['middleware' => ['checkauth']], function () {
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/', function () {
-        return view('welcome')->with('success','Welcome!');
+        session()->flash('success', 'Success!');
+        return view('welcome');
     });
 });
 
