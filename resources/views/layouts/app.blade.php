@@ -33,7 +33,7 @@
                 <a class="item">Find a Gig</a>
                 <a class="item">Quick Quest</a>
                 <div class="ui dropdown item">
-                    {{Auth::user()->first_name . ' ' . Auth::user()->first_name}} <i class="dropdown icon"></i>
+                    {{Auth::user()->first_name . ' ' . Auth::user()->last_name}} <i class="dropdown icon"></i>
                     <div class="menu">
                         <a class="item">English</a>
                         <a class="item">Russian</a>
