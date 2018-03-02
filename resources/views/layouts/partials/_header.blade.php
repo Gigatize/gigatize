@@ -5,7 +5,7 @@
 
             <a href="{{url('/')}}" class="item {{Request::is('/') ? 'active' :  ''}}">Home</a>
             <a class="item">Company Impact</a>
-            <a href="{{url('/projects/create')}}" class="item {{Request::is('/projects/create') ? 'active' :  ''}}">Find Talent</a>
+            <a href="{{url('/projects/create')}}" class="item {{Request::is('projects/create') ? 'active' :  ''}}">Find Talent</a>
             <a class="item">Find a Gig</a>
             <a class="item">Quick Quest</a>
             <div class="ui dropdown item">
