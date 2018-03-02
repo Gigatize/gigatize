@@ -1,42 +1,28 @@
-@if($success)
+@if(isset($success))
     <div class="ui success message">
         <i class="close icon"></i>
         {{$success}}
     </div>
 @endif
 
-@if($info)
+@if(isset($info))
     <div class="ui info message">
         <i class="close icon"></i>
         {{$info}}
     </div>
 @endif
 
-@if($warning)
+@if(isset($warning))
     <div class="ui info warning">
         <i class="close icon"></i>
         {{$warning}}
     </div>
 @endif
 
-@if($error)
+@if(isset($error))
     <div class="ui info error">
         <i class="close icon"></i>
-        {{$errors}}
-    </div>
-@endif
-
-@if(Session::has('errors'))
-    <div class="ui error message">
-        <i class="close icon"></i>
-        <div class="header">
-            There were some errors with your submission
-        </div>
-        <ul class="list">
-            @foreach(Session::get('errors') as $error)
-                <li>{{$error}}</li>
-            @endforeach
-        </ul>
+        {{$error}}
     </div>
 @endif
 
