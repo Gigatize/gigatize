@@ -1,31 +1,39 @@
-<div class="ui grid container">
+<div class="ui centered grid container">
+    <div class="ten wide column">
     @if(isset($success))
         <div class="ui success message">
             <i class="close icon"></i>
             {{$success}}
         </div>
     @endif
+    </div>
 
+    <div class="ten wide column">
     @if(isset($info))
         <div class="ui info message">
             <i class="close icon"></i>
             {{$info}}
         </div>
     @endif
+    </div>
 
+    <div class="ten wide column">
     @if(isset($warning))
         <div class="ui info warning">
             <i class="close icon"></i>
             {{$warning}}
         </div>
     @endif
+    </div>
 
+    <div class="ten wide column">
     @if(isset($error))
         <div class="ui info error">
             <i class="close icon"></i>
             {{$error}}
         </div>
     @endif
+    </div>
 
     @if(Session::has('success'))
         <div class="ui success message">
