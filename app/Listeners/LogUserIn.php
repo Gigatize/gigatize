@@ -37,8 +37,8 @@ class LogUserIn
             'assertion' => $user->getRawSamlAssertion()
         ];
 
-        dd($userData);
-        $laravelUser = User::firstOrCreate(['email' => $user->getUserId()],['email' => $user->getUserId(), 'first_name' => $user->getAttributes()['FirstName'],'last_name' => $user->getAttributes()['LastName']]);
+        //dd($userData);
+        $laravelUser = User::firstOrCreate(['email' => $user->getUserId()],['email' => $user->getUserId(), 'first_name' => $user->getAttributes()['FirstName'][0],'last_name' => $user->getAttributes()['LastName'][0]]);
         //if it does not exist create it and go on or show an error message
         Auth::login($laravelUser);
     }
