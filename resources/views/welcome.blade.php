@@ -5,7 +5,7 @@
 @section('content')
     <div class="ui grid container">
         <div class="column">
-            {{\Illuminate\Support\Facades\Session::all()}}
+            {{implode(', ',\Illuminate\Support\Facades\Session::all())}}
         </div>
     </div>
 @endsection
