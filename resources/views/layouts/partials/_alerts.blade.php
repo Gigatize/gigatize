@@ -1,5 +1,5 @@
 <div class="ui centered grid container">
-    <div class="twelve wide column">
+    <div class="sixteen wide column">
     @if(isset($success))
         <div class="ui success message">
             <i class="close icon"></i>
