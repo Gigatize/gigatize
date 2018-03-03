@@ -15,13 +15,26 @@ Auth::routes();
 
 Route::group(['middleware' => ['checkauth']], function () {
 
-    Route::get('/projects/create','ProjectController@create');
-
-    Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/', function () {
         return view('welcome')->with('success','Welcome!');
     });
+
+
+    /***************************************************************/
+    /*                      Profile Routes                         */
+    /***************************************************************/
+
+    Route::get('image-crop', 'ImageController@imageCrop');
+    Route::post('image-crop', 'ImageController@imageCropPost');
+
+    /***************************************************************/
+    /*                      Project Routes                         */
+    /***************************************************************/
+
+    Route::get('/projects/create','ProjectController@create');
+
+
 });
 
 
