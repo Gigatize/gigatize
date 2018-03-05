@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Skill;
 use Illuminate\Http\Request;
+use Bugsnag\BugsnagLaravel\Facades\Bugsnag;
+use RuntimeException;
 
 class ProjectController extends Controller 
 {
@@ -26,6 +28,7 @@ class ProjectController extends Controller
   public function create()
   {
         $skills = Skill::all()->take(1500);
+        Bugsnag::notifyException(new RuntimeException("Test error"));
         return view('projects/create', compact('skills'));
   }
 
