@@ -79,7 +79,7 @@ return [
     */
 
     'failed' => [
-        'database' => 'redis',
+        'database' => env('DB_CONNECTION', 'redis'),
         'table' => 'failed_jobs',
     ],
 
