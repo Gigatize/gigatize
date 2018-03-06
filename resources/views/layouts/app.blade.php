@@ -19,6 +19,7 @@
             background: none;
         }
     </style>
+    @yield('header_styles')
 
 </head>
 <body>
