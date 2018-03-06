@@ -16,10 +16,10 @@ Auth::routes();
 Route::group(['middleware' => ['checkauth']], function () {
 
     Route::get('send_test_email', function(){
-        Mail::raw('Sending emails with Mailgun and Laravel is easy!', function($message)
+        Mail::raw('Hey there Cutie! Just testing sending emails via our app. Wanted to say hi, and that I love you!', function($message)
         {
-            $message->subject('Mailgun and Laravel are awesome!');
-            $message->to('josh@gigatize.io');
+            $message->subject('Sent via Gigatize.io');
+            $message->to('tobi@gigatize.io');
         });
     });
 
