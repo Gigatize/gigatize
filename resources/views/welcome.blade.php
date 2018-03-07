@@ -5,7 +5,7 @@
 @section('header_styles')
   <style type="text/css">
     #header{
-      background-image: url: ("{{ asset('images/work-background.jpg') }}");
+      background-image: url("{{ asset('images/work-background.jpg') }}");
     }
   </style>
 @endsection
