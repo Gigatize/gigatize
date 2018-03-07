@@ -26,9 +26,11 @@
     <div class="ten wide column">
         
     </div>
-    <div id="callToAction" class="six wide column middle aligned">
+    <div id="callToAction" class="six wide column">
+      <div class="middle aligned">
         <h1>LET'S <br> <span class="yellow-text">TRANSFORM</span> <br>THE WAY<br>WE WORK</h1>
         <h4 class="grey-text">Find help when you need it, <br>help others when you can.</h4>
+      </div>
     </div>
   </div>
 @endsection
