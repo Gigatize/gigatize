@@ -8,6 +8,10 @@
       background-image: url("{{ asset('images/desk-background.jpg') }}");
       min-height: 500px;
     }
+    #callToAction{
+      background: #FFF;
+      opacity: .4;
+    }
   </style>
 @endsection
 
@@ -16,7 +20,7 @@
     <div class="ten wide column">
         
     </div>
-    <div class="six wide column">
+    <div id="callToAction" class="six wide column">
         
     </div>
   </div>
