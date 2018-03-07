@@ -1,5 +1,5 @@
-<header>
-    <div class="ui top attached borderless menu" style="height: 75px; box-shadow: 0px -4px 13px 2px rgba(0,0,0,0.34);">
+<header class="top attached">
+    <div class="ui borderless menu" style="height: 75px; box-shadow: 0px -4px 13px 2px rgba(0,0,0,0.34);">
         <a class="item" style="font-size: 2em;"><b>gig</b><span style="font-style: italic;">atize</span></a>
         <div class="right menu">
 
