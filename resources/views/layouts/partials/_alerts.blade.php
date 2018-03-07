@@ -1,3 +1,4 @@
+@if(isset($success) or isset($info) or isset($warning) or isset($error) or Session::has('success') or Session::has('info') or Session::has('warning') or Session::has('error') or Session::has('errors'))
 <div class="ui centered grid container" style="margin-top: 10px;">
     <div class="sixteen wide column" style="text-align: center">
     @if(isset($success))
@@ -77,3 +78,4 @@
         </div>
     @endif
 </div>
+@endif
