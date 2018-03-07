@@ -9,7 +9,7 @@
       min-height: 500px;
     }
     #callToAction{
-      background: #FFF;
+      background: #000;
       opacity: .4;
     }
   </style>
