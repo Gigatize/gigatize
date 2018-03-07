@@ -25,7 +25,7 @@ Route::group(['middleware' => ['checkauth']], function () {
 
 
     Route::get('/', function () {
-        return view('welcome')->with('success','Welcome!');
+        return view('welcome');
     });
 
 
