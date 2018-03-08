@@ -40,7 +40,7 @@
         
     </div>
     <div id="callToAction" class="six wide column">
-      <div class="middle aligned content" style="margin-left: 10% margin-top: 5%">
+      <div class="middle aligned content" style="margin-left: 10%; margin-top: 5%">
         <h1>LET'S <br> <span class="yellow-text">TRANSFORM</span> <br>THE WAY<br>WE WORK</h1>
         <h4 class="grey-text middle aligned">Find help when you need it, <br>help others when you can.</h4>
         <br>
