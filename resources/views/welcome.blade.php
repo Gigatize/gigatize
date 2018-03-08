@@ -27,6 +27,7 @@
     h1{
       font-size: 70px;
       color: #FFF;
+      line-height: 1em;
     }
     h4{
       font-size: 22px;
