@@ -60,7 +60,7 @@
     </div>
   </div>
   <div class="ui container">
-    <div class="ui four statistics">
+    <div class="ui four statistics" style="margin-top: 20%">
       <div class="ui huge statistic">
         <div class="value">
         2,204
