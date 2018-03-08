@@ -22,7 +22,7 @@
     }
     .ui.basic.button.no-radius{
       border-radius: 0;
-      border: 3px solid;
+      border: 3px solid #fbbd08;
       color: #000;
     }
     h1{
