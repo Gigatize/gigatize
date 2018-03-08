@@ -11,6 +11,7 @@
     #callToAction{
       background: #FFF;
       opacity: .6;
+      z-index: -1;
     }
     .yellow-text{
       color: #FCD307;
