@@ -22,7 +22,7 @@
     }
     .ui.basic.button.no-radius{
       border-radius: 0;
-      border-width: 2px;
+      border: 3px solid;
     }
     h1{
       font-size: 64px;
