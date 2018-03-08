@@ -32,7 +32,7 @@
       opacity: 1;
     }
     .tile{
-      height: 200px;
+      height: 250px;
     }
     .ui.basic.button.no-radius{
       border-radius: 0;
