@@ -20,8 +20,9 @@
       color: #717070;
       opacity: 1;
     }
-    .no-radius{
+    ui.basic.button.no-radius{
       border-radius: 0;
+      border-width: 2px;
     }
     h1{
       font-size: 64px;
