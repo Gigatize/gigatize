@@ -59,4 +59,48 @@
       </div>
     </div>
   </div>
+  <div class="ui four statistics">
+    <div class="ui huge statistic">
+      <div class="value">
+      2,204
+      </div>
+      <div class="label">
+      Views
+      </div>
+    </div>
+    <div class="ui huge statistic">
+      <div class="value">
+      2,204
+      </div>
+      <div class="label">
+      Views
+      </div>
+    </div>
+    <div class="ui huge statistic">
+      <div class="value">
+      2,204
+      </div>
+      <div class="label">
+      Views
+      </div>
+    </div>
+    <div class="ui huge statistic">
+      <div class="value">
+      2,204
+      </div>
+      <div class="label">
+      Views
+      </div>
+    </div>
+  </div>
+  <div class="ui grid container">
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+  </div>
 @endsection
