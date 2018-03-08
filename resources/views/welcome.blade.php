@@ -103,7 +103,7 @@
   </div>
   <div class="ui grid centered container">
     <div class="three wide column yellow tile">
-      <div class="ui grid bottom aligned">
+      <div class="ui grid fluid bottom aligned">
         <button class="ui grey basic button fluid">Read More</button>
       </div>
     </div>
