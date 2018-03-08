@@ -115,10 +115,10 @@
     </div>
   </div>
   <div class="ui grid centered container">
-    <div class="ui align middle">
-      <h3 class="white-text">Strategy</h3>
-    </div>
     <div class="three wide column yellow tile">
+      <div class="ui align middle">
+        <h3 class="white-text">Strategy</h3>
+      </div>
       <button class="ui grey basic button bottom aligned fluid no-radius">Read More</button>
     </div>
     <div class="three wide column tile"></div>
