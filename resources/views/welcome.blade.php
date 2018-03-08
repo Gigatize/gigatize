@@ -6,7 +6,7 @@
   <style type="text/css">
     #header{
       background-image: url("{{ asset('images/desk-background.jpg') }}");
-      min-height: 650px;
+      min-height: 950px;
     }
     #callToAction{
       background-color: rgba(255, 255, 255, 0.4);
