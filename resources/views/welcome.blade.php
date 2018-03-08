@@ -14,9 +14,11 @@
     }
     .yellow-text{
       color: #FCD307;
+      opacity: 1;
     }
     .grey-text{
       color: #717070;
+      opacity: 1;
     }
     h1{
       font-size: 64px;
