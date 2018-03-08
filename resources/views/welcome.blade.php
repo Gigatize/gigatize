@@ -5,8 +5,17 @@
 @section('header_styles')
   <style type="text/css">
     #header{
+         /* The image used */
       background-image: url("{{ asset('images/desk-background.jpg') }}");
-      min-height: 950px;
+
+      /* Set a specific height */
+      height: 500px; 
+
+      /* Create the parallax scrolling effect */
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
     }
     #callToAction{
       background-color: rgba(255, 255, 255, 0.4);
@@ -52,7 +61,7 @@
         
     </div>
     <div id="callToAction" class="six wide column fluid parallax">
-      <div class="middle aligned content" style="margin-left: 10%; margin-top: 10%">
+      <div class="middle aligned content" style="margin-left: 10%; margin-top: 15%">
         <h1>LET'S <br> <span class="yellow-text">TRANSFORM</span> <br>THE WAY<br>WE WORK</h1>
         <h4 class="grey-text middle aligned">Find help when you need it, <br>help others when you can.</h4>
         <br>
