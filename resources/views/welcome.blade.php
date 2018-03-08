@@ -102,7 +102,9 @@
     </div>
   </div>
   <div class="ui grid centered container">
-    <div class="three wide column yellow tile"></div>
+    <div class="three wide column yellow tile">
+      <button class="ui grey basic button bottom attached" style="width: 100%">Grey</button>
+    </div>
     <div class="three wide column tile"></div>
     <div class="three wide column yellow tile"></div>
     <div class="three wide column tile"></div>
