@@ -45,8 +45,8 @@
         <h1>LET'S <br> <span class="yellow-text">TRANSFORM</span> <br>THE WAY<br>WE WORK</h1>
         <h4 class="grey-text middle aligned">Find help when you need it, <br>help others when you can.</h4>
         <br>
-        <button class="huge ui yellow basic button no-radius" style="color: #000!important">FIND A GIG</button>
-        <button class="huge ui yellow basic button no-radius" style="color: #000!important">POST A GIG</button>
+        <button class="big ui yellow basic button no-radius" style="color: #000!important">FIND A GIG</button>
+        <button class="big ui yellow basic button no-radius" style="color: #000!important">POST A GIG</button>
       </div>
     </div>
   </div>
