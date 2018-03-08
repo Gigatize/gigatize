@@ -46,7 +46,7 @@
     }
     .ui.basic.button.no-radius.grey{
       border-radius: 0;
-      border: 3px solid #767676;
+      border: 2px solid #767676;
       color: #000;
     }
     h1{
