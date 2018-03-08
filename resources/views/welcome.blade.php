@@ -9,7 +9,7 @@
       min-height: 650px;
     }
     #callToAction{
-      background-color: rgba(255, 255, 255, 0.6);
+      background-color: rgba(255, 255, 255, 0.4);
     }
     .yellow-text{
       color: #FCD307;
@@ -26,6 +26,7 @@
     }
     h1{
       font-size: 70px;
+      color: #FFF;
     }
     h4{
       font-size: 22px;
@@ -39,7 +40,7 @@
         
     </div>
     <div id="callToAction" class="six wide column">
-      <div class="middle aligned content" style="margin-left: 10%; margin-top: 5%">
+      <div class="middle aligned content" style="margin-left: 10%; margin-top: 10%">
         <h1>LET'S <br> <span class="yellow-text">TRANSFORM</span> <br>THE WAY<br>WE WORK</h1>
         <h4 class="grey-text middle aligned">Find help when you need it, <br>help others when you can.</h4>
         <br>
