@@ -24,6 +24,9 @@
       color: #FCD307;
       opacity: 1;
     }
+    .yellow{
+      background-color: #FCD307;
+    }
     .grey-text{
       color: #717070;
       opacity: 1;
@@ -60,7 +63,7 @@
     </div>
   </div>
   <div class="ui container">
-    <div class="ui four statistics" style="margin-top: 10%">
+    <div class="ui four statistics" style="margin-top: 5%">
       <div class="ui huge statistic">
         <div class="value">
         121
@@ -96,7 +99,7 @@
     </div>
   </div>
   <div class="ui grid container">
-    <div class="four wide column"></div>
+    <div class="four wide column yellow"></div>
     <div class="four wide column"></div>
     <div class="four wide column"></div>
     <div class="four wide column"></div>
