@@ -9,9 +9,7 @@
       min-height: 650px;
     }
     #callToAction{
-      background: #FFF;
-      opacity: .6;
-      z-index: -1;
+      background-color: rgba(255, 255, 255, 0.6);
     }
     .yellow-text{
       color: #FCD307;
