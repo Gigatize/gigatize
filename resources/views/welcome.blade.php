@@ -25,10 +25,10 @@
       color: #000;
     }
     h1{
-      font-size: 64px;
+      font-size: 70px;
     }
     h4{
-      font-size: 24px;
+      font-size: 22px;
     }
   </style>
 @endsection
