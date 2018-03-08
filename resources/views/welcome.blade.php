@@ -59,37 +59,39 @@
       </div>
     </div>
   </div>
-  <div class="ui four statistics">
-    <div class="ui huge statistic">
-      <div class="value">
-      2,204
+  <div class="ui container">
+    <div class="ui four statistics">
+      <div class="ui huge statistic">
+        <div class="value">
+        2,204
+        </div>
+        <div class="label">
+        Views
+        </div>
       </div>
-      <div class="label">
-      Views
+      <div class="ui huge statistic">
+        <div class="value">
+        2,204
+        </div>
+        <div class="label">
+        Views
+        </div>
       </div>
-    </div>
-    <div class="ui huge statistic">
-      <div class="value">
-      2,204
+      <div class="ui huge statistic">
+        <div class="value">
+        2,204
+        </div>
+        <div class="label">
+        Views
+        </div>
       </div>
-      <div class="label">
-      Views
-      </div>
-    </div>
-    <div class="ui huge statistic">
-      <div class="value">
-      2,204
-      </div>
-      <div class="label">
-      Views
-      </div>
-    </div>
-    <div class="ui huge statistic">
-      <div class="value">
-      2,204
-      </div>
-      <div class="label">
-      Views
+      <div class="ui huge statistic">
+        <div class="value">
+        2,204
+        </div>
+        <div class="label">
+        Views
+        </div>
       </div>
     </div>
   </div>
