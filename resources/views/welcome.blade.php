@@ -126,8 +126,6 @@
     <div class="three wide column yellow tile">
       <button class="ui grey basic button bottom aligned fluid">Read More</button>
     </div>
-    <div class="three wide column tile">
-      <button class="ui grey basic button bottom aligned fluid">Read More</button>
-    </div>
+    <div class="three wide column tile"></div>
   </div>
 @endsection
