@@ -63,34 +63,34 @@
     <div class="ui four statistics" style="margin-top: 10%">
       <div class="ui huge statistic">
         <div class="value">
-        2,204
+        121
         </div>
         <div class="label">
-        Views
+        TOTAL GIGS COMPLETED
         </div>
       </div>
       <div class="ui huge statistic">
         <div class="value">
-        2,204
+        156
         </div>
         <div class="label">
-        Views
+        QUICK QUESTS ANSWERED
         </div>
       </div>
       <div class="ui huge statistic">
         <div class="value">
-        2,204
+        24
         </div>
         <div class="label">
-        Views
+        NEW IDEAS GENERATED
         </div>
       </div>
       <div class="ui huge statistic">
         <div class="value">
-        2,204
+        53
         </div>
         <div class="label">
-        Views
+        AWARDS GRANTED
         </div>
       </div>
     </div>
