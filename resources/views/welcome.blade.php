@@ -39,9 +39,14 @@
       bottom: 0; 
       left: 0;
     }
-    .ui.basic.button.no-radius{
+    .ui.basic.button.no-radius.yellow{
       border-radius: 0;
       border: 3px solid #FCD307;
+      color: #000;
+    }
+    .ui.basic.button.no-radius.grey{
+      border-radius: 0;
+      border: 3px solid #767676;
       color: #000;
     }
     h1{
