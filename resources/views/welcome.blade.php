@@ -9,7 +9,7 @@
       background-image: url("{{ asset('images/desk-background.jpg') }}");
 
       /* Set a specific height */
-      height: 500px; 
+      height: 800px; 
 
       /* Create the parallax scrolling effect */
       background-attachment: fixed;
