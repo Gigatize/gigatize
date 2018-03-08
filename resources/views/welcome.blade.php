@@ -31,6 +31,9 @@
       color: #717070;
       opacity: 1;
     }
+    .white-text{
+      color: #FFF;
+    }
     .tile{
       height: 200px;
     }
@@ -112,6 +115,9 @@
     </div>
   </div>
   <div class="ui grid centered container">
+    <div class="ui align middle">
+      <h3 class="white-text">Strategy</h3>
+    </div>
     <div class="three wide column yellow tile">
       <button class="ui grey basic button bottom aligned fluid no-radius">Read More</button>
     </div>
