@@ -31,6 +31,9 @@
       color: #717070;
       opacity: 1;
     }
+    .tile{
+      height: 200px;
+    }
     .ui.basic.button.no-radius{
       border-radius: 0;
       border: 3px solid #FCD307;
@@ -63,7 +66,7 @@
     </div>
   </div>
   <div class="ui container">
-    <div class="ui four statistics" style="margin-top: 5%">
+    <div class="ui four statistics" style="margin-top: 5%; margin-bottom: 5%">
       <div class="ui huge statistic">
         <div class="value">
         121
@@ -99,7 +102,7 @@
     </div>
   </div>
   <div class="ui grid container">
-    <div class="four wide column yellow"></div>
+    <div class="four wide column yellow tile"></div>
     <div class="four wide column"></div>
     <div class="four wide column"></div>
     <div class="four wide column"></div>
