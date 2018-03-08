@@ -32,7 +32,7 @@
       opacity: 1;
     }
     .tile{
-      height: 250px;
+      height: 200px;
     }
     .tile button{
       position: absolute; 
