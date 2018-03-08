@@ -33,17 +33,6 @@
       border: 3px solid #FCD307;
       color: #000;
     }
-     .ui.parallax {
-      height: 10em;
-    }
-    
-    /* possiblly semantic styles */
-    .ui.parallax {
-      background-attachment: fixed;
-    }
-    .ui.fluid.parallax{
-      width: 100%;  
-    }
     h1{
       font-size: 70px;
       color: #FFF;
@@ -60,7 +49,7 @@
     <div class="ten wide column">
         
     </div>
-    <div id="callToAction" class="six wide column fluid parallax">
+    <div id="callToAction" class="six wide column">
       <div class="middle aligned content" style="margin-left: 10%; margin-top: 15%">
         <h1>LET'S <br> <span class="yellow-text">TRANSFORM</span> <br>THE WAY<br>WE WORK</h1>
         <h4 class="grey-text middle aligned">Find help when you need it, <br>help others when you can.</h4>
