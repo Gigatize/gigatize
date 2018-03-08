@@ -9,7 +9,7 @@
       background-image: url("{{ asset('images/desk-background.jpg') }}");
 
       /* Set a specific height */
-      height: 950px; 
+      height: 800px; 
 
       /* Create the parallax scrolling effect */
       background-attachment: fixed;
@@ -60,7 +60,7 @@
     </div>
   </div>
   <div class="ui container">
-    <div class="ui four statistics" style="margin-top: 20%">
+    <div class="ui four statistics" style="margin-top: 10%">
       <div class="ui huge statistic">
         <div class="value">
         2,204
