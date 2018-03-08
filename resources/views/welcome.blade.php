@@ -101,16 +101,16 @@
       </div>
     </div>
   </div>
-  <div class="ui grid container">
-    <div class="five wide column yellow tile"></div>
-    <div class="five wide column tile"></div>
-    <div class="five wide column yellow tile"></div>
-    <div class="five wide column tile"></div>
-    <div class="five wide column yellow tile"></div>
-    <div class="five wide column tile"></div>
-    <div class="five wide column yellow tile"></div>
-    <div class="five wide column tile"></div>
-    <div class="five wide column yellow tile"></div>
-    <div class="five wide column tile"></div>
+  <div class="ui grid centered container">
+    <div class="three wide column yellow tile"></div>
+    <div class="three wide column tile"></div>
+    <div class="three wide column yellow tile"></div>
+    <div class="three wide column tile"></div>
+    <div class="three wide column yellow tile"></div>
+    <div class="three wide column tile"></div>
+    <div class="three wide column yellow tile"></div>
+    <div class="three wide column tile"></div>
+    <div class="three wide column yellow tile"></div>
+    <div class="three wide column tile"></div>
   </div>
 @endsection
