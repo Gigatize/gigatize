@@ -28,12 +28,12 @@
         <header class="top attached">
             <div class="ui borderless menu" style="min-height: 75px; box-shadow: 0px -4px 13px 2px rgba(0,0,0,0.34);">
                 <!-- Mobile only menu button -->
-                <a class="item mobile only tablet only">
+                <a class="item large-hide small-hide">
                     <i class="sidebar icon"></i>Menu
                 </a>
                 <!-- Widescreen Menu -->
                 <a class="item" style="font-size: 2em;"><b>gig</b><span style="font-style: italic;">atize</span></a>
-                <div class="right menu mobile hidden tablet hidden">
+                <div class="right menu mobile-hide tablet-hide">
                     <a href="{{url('/')}}" class="item {{Request::is('/') ? 'active' :  ''}}">Home</a>
                     <a class="item">Company Impact</a>
                     <a href="{{url('/projects/create')}}" class="item {{Request::is('projects/create') ? 'active' :  ''}}">Find Talent</a>
