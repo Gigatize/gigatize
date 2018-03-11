@@ -1,8 +1,13 @@
+<!-- Top Menu -->
 <header class="top attached">
-    <div class="ui stackable borderless menu" style="min-height: 75px; box-shadow: 0px -4px 13px 2px rgba(0,0,0,0.34);">
+    <div class="ui borderless menu" style="min-height: 75px; box-shadow: 0px -4px 13px 2px rgba(0,0,0,0.34);">
+        <!-- Mobile only menu button -->
+        <a class="item mobile tablet">
+            <i class="sidebar icon"></i>Menu
+        </a>
+        <!-- Widescreen Menu -->
         <a class="item" style="font-size: 2em;"><b>gig</b><span style="font-style: italic;">atize</span></a>
-        <div class="right menu">
-
+        <div class="right menu mobile tablet hidden">
             <a href="{{url('/')}}" class="item {{Request::is('/') ? 'active' :  ''}}">Home</a>
             <a class="item">Company Impact</a>
             <a href="{{url('/projects/create')}}" class="item {{Request::is('projects/create') ? 'active' :  ''}}">Find Talent</a>
@@ -16,7 +21,7 @@
                     <a class="item"><i class="sign out alternate icon"></i> Logout</a>
                 </div>
             </div>
-
         </div>
     </div>
 </header>
+<!-- Sidebar Menu -->
