@@ -18,7 +18,7 @@
 @endsection
 
 @section('content')
-    <div id="index-banner" class="parallax-container no-pad-bot">
+    <div id="index-banner" class="parallax-container">
         <div class="row no-pad-bot max-height">
             <div class="col m12 l7">
             </div>
@@ -106,7 +106,7 @@
     </div>
 
 
-    <div class="parallax-container valign-wrapper no-pad-bot" style="height: 550px;">
+    <div class="parallax-container valign-wrapper" style="height: 550px;">
             <div class="container overlay">
                 <div class="row center" style="padding: 100px 0;">
                     <h1 class="header col s12 yellow-text">STEP 1:</h1>
@@ -118,7 +118,7 @@
         <div class="parallax"><img src="{{asset('images/background2.png')}}" alt="Unsplashed background img 2"></div>
     </div>
 
-    <div class="container hide-on-med-and-down no-pad-bot">
+    <div class="container hide-on-med-and-down">
         <div class="row center">
             <div class="ui equal width grid">
                 <div class="column">
