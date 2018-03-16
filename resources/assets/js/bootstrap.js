@@ -11,7 +11,7 @@ window.Popper = require('popper.js').default;
 try {
     window.$ = window.jQuery = require('jquery');
 
-    require('semantic-ui-css');
+    require('materialize-css');
 } catch (e) {}
 
 
