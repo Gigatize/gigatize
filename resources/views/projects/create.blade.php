@@ -150,7 +150,7 @@
             margin: 15px 10px;
         }
 
-        #msform .action-button-previous:hover, #msform .action-button-previous:focus {
+        #msform .action-button.previous:hover, #msform .action-button.previous:focus {
             box-shadow: 0 0 0 2px white, 0 0 0 3px #7f7f7f;
         }
 
