@@ -14,33 +14,20 @@
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}">
-    <style>
-        nav{
-            min-height: 80px;
-        }
-        nav div.nav-wrapper{
-            background-color: #fff;
-            color: #000;
-            min-height: 80px;
-            padding: 5px 20px;
-        }
-        div.nav-wrapper ul li a{
-            color: #000;
-            background: none;
-        }
-        div.nav-wrapper ul li a.active{
-            color: #f6d448;
-            background: none;
-        }
-    </style>
+
     @yield('header_styles')
 
 </head>
 <body>
-    @include('layouts.partials._header')
-    @include('layouts.partials._alerts')
+    <div class="wrapper" style="position: relative; height: 100%">
+        @include('layouts.partials._header')
+        @include('layouts.partials._alerts')
+        <div id="content" style="padding-bottom: 70px;">
+            @yield('content')
+        </div>
+        @includeWhen(!Request::is('projects/create'), 'layouts.partials._footer')
 
-    @yield('content')
+    </div>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>

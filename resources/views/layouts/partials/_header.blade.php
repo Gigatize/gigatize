@@ -1,4 +1,23 @@
 <!-- Top Menu -->
+<style>
+    nav{
+        min-height: 80px;
+    }
+    nav div.nav-wrapper{
+        background-color: #fff;
+        color: #000;
+        min-height: 80px;
+        padding: 5px 20px;
+    }
+    div.nav-wrapper ul li a{
+        color: #000;
+        background: none;
+    }
+    div.nav-wrapper ul li a.active{
+        color: #f6d448;
+        background: none;
+    }
+</style>
 <nav>
     <div class="nav-wrapper z-depth-2">
         <a href="{{url('/')}}" class="brand-logo" style="vertical-align: middle;"><img src="{{asset('images/logo.png')}}"></a>

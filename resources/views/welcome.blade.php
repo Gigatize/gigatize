@@ -193,14 +193,6 @@
             </div>
         </div>
     </div>
-
-    <footer class="page-footer grey lighten-3">
-        <div class="footer-copyright">
-            <div class="container">
-               <a class="black-text text-lighten-3" href="{{url('https://gigatize.io')}}">&copy; {{date("Y")}} Gigiatize.io</a>
-            </div>
-        </div>
-    </footer>
 @endsection
 
 @section('footer_scripts')
