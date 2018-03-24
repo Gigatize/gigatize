@@ -29,7 +29,8 @@
         }
 
         #msform label {
-            font-size: 1rem;
+            text-align: left;
+            text-transform: capitalize;
         }
 
         /*form styles*/
@@ -58,18 +59,18 @@
         #msform fieldset:not(:first-of-type) {
             display: none;
         }
-
         /*inputs*/
-        #msform input {
+        #msform input, #msform .ui.dropdown {
             padding: 15px;
             border: 1px solid #ccc;
-            border-radius: 0px;
+            border-radius: 5px;
             margin-bottom: 10px;
             width: 100%;
             box-sizing: border-box;
-            font-family: inspira-sans;
             color: #2C3E50;
             font-size: 13px;
+            height: 45px;
+            min-height: 45px;
         }
 
         #msform textarea {
@@ -123,14 +124,15 @@
 
         /*buttons*/
         #msform .action-button {
-            width: 150px;
+            width: 200px;
             background: #f6c243;
-            font-weight: bold;
+            font-family: 'Cambay', sans-serif;
+            font-size: 14px;
             color: white;
             border: 0 none;
             border-radius: 5px;
             cursor: pointer;
-            padding: 15px 20px;
+            padding: 10px 20px;
             margin: 15px 10px;
         }
 
@@ -139,14 +141,15 @@
         }
 
         #msform .action-button.previous {
-            width: 150px;
+            width: 200px;
             background: #7f7f7f;
-            font-weight: bold;
+            font-family: 'Cambay', sans-serif;
+            font-size: 14px;
             color: white;
             border: 0 none;
             border-radius: 5px;
             cursor: pointer;
-            padding: 15px 20px;
+            padding: 10px 20px;
             margin: 15px 10px;
         }
 
@@ -238,23 +241,13 @@
             background-color: #97D700;
         }
 
-        #msform input#skills_tag {
-            border: none;
-        }
-
-        #msform div.tagsinput span.tag {
-            background-color: #97D700;
-            color: white;
-        }
     </style>
-    <link type="text/css" rel="stylesheet" href="{!! asset('css/awesomplete.css') !!}"/>
-    <link type="text/css" rel="stylesheet" href="{!! asset('css/jquery.tagsinput.css') !!}"/>
 @endsection
 
 @section('content')
     <!-- multistep form -->
     <div class="container">
-        <form id="msform">
+        <form id="msform" class="ui form">
             <!-- progressbar -->
             <div id="form-wrapper" style="border: solid 1px #c7c7c7">
                 <ul id="progressbar" style="padding-top: 30px; z-index: 2">
@@ -266,29 +259,87 @@
                 <fieldset>
                     <h2 class="fs-title">DESCRIPTION</h2>
                     <h3 class="fs-subtitle">TELL US ABOUT YOUR GIG</h3>
-                    <input type="text" name="email" placeholder="Email" />
-                    <input type="password" name="pass" placeholder="Password" />
-                    <input type="password" name="cpass" placeholder="Confirm Password" />
-                    <input type="button" name="next" class="next action-button" value="Next" />
+                    <div class="fields">
+                        <div class="eight wide field">
+                            <label>GIG NAME</label>
+                            <input type="text" name="card[number]" maxlength="16" placeholder="Gig Name">
+                        </div>
+                        <div class="eight wide field">
+                            <label>SELECT A CATEGORY</label>
+                            <div class="field">
+                                <div class="ui fluid selection select dropdown">
+                                    <input type="hidden" name="receipt">
+                                    <i class="dropdown icon"></i>
+                                    <div class="default text">Categories</div>
+                                    <div class="menu">
+                                        <div class="item" data-value="jenny" data-text="Jenny">
+                                            <img class="ui mini avatar image" src="/images/avatar/small/jenny.jpg">
+                                            Jenny Hess
+                                        </div>
+                                        <div class="item" data-value="elliot" data-text="Elliot">
+                                            <img class="ui mini avatar image" src="/images/avatar/small/elliot.jpg">
+                                            Elliot Fu
+                                        </div>
+                                        <div class="item" data-value="stevie" data-text="Stevie">
+                                            <img class="ui mini avatar image" src="/images/avatar/small/stevie.jpg">
+                                            Stevie Feliciano
+                                        </div>
+                                        <div class="item" data-value="christian" data-text="Christian">
+                                            <img class="ui mini avatar image" src="/images/avatar/small/christian.jpg">
+                                            Christian
+                                        </div>
+                                        <div class="item" data-value="matt" data-text="Matt">
+                                            <img class="ui mini avatar image" src="/images/avatar/small/matt.jpg">
+                                            Matt
+                                        </div>
+                                        <div class="item" data-value="justen" data-text="Justen">
+                                            <img class="ui mini avatar image" src="/images/avatar/small/justen.jpg">
+                                            Justen Kitsune
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sixteen wide field">
+                        <label>DESCRIPTION</label>
+                        <textarea rows="2" class="materialize-textarea"></textarea>
+                    </div>
+                    <div class="field">
+                        <label>ACCEPTANCE CRITERIA</label>
+                        <div class="header two fields">
+                            <div id="criteria_wrapper" class="thirteen wide field">
+                                <input type="text" id="criteria_input" placeholder="Criteria...">
+                            </div>
+                            <div class="three wide field">
+                                <div class="ui button green" tabindex="0" onclick="newElement()" style="width: 125px;">Add</div>
+                            </div>
+                        </div>
+
+                        <div id="criteria_list" class="ui middle aligned divided list" >
+                        </div>
+                    </div>
+
+                    <input type="button" name="next" class="next action-button" value="CONTINUE" />
                 </fieldset>
                 <fieldset>
-                    <h2 class="fs-title">Social Profiles</h2>
-                    <h3 class="fs-subtitle">Your presence on the social network</h3>
+                    <h2 class="fs-title">LOGISTICS</h2>
+                    <h3 class="fs-subtitle">LET'S SORT OUT THE DETAILS</h3>
                     <input type="text" name="twitter" placeholder="Twitter" />
                     <input type="text" name="facebook" placeholder="Facebook" />
                     <input type="text" name="gplus" placeholder="Google Plus" />
-                    <input type="button" name="previous" class="previous action-button" value="Previous" />
-                    <input type="button" name="next" class="next action-button" value="Next" />
+                    <input type="button" name="previous" class="previous action-button" value="PREVIOUS" />
+                    <input type="button" name="next" class="next action-button" value="CONTINUE" />
                 </fieldset>
                 <fieldset>
-                    <h2 class="fs-title">Personal Details</h2>
-                    <h3 class="fs-subtitle">We will never sell it</h3>
+                    <h2 class="fs-title">FINALIZE</h2>
+                    <h3 class="fs-subtitle">GET READY TO POST YOUR GIG</h3>
                     <input type="text" name="fname" placeholder="First Name" />
                     <input type="text" name="lname" placeholder="Last Name" />
                     <input type="text" name="phone" placeholder="Phone" />
                     <textarea name="address" placeholder="Address"></textarea>
-                    <input type="button" name="previous" class="previous action-button" value="Previous" />
-                    <input type="submit" name="submit" class="submit action-button" value="Submit" />
+                    <input type="button" name="previous" class="previous action-button" value="PREVIOUS" />
+                    <input type="submit" name="submit" class="submit action-button" value="SUBMIT" />
                 </fieldset>
             </div>
         </form>
@@ -296,11 +347,9 @@
     <!-- /.MultiStep Form -->
 @endsection
 @section('footer_scripts')
-    <script src="{!! asset('js/jquery.tagsinput.js') !!}"></script>
-    <script src="{!! asset('js/awesomplete.js') !!}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            $('select').material_select();
+            $('.ui.select').select();
             //jQuery time
             var current_fs, next_fs, previous_fs; //fieldsets
             var left, opacity, scale; //fieldset properties which we will animate
@@ -372,33 +421,35 @@
                 });
 
             });
-            $(document).ready(function () {
-                var max_fields = 10; //maximum input boxes allowed
-                var wrapper = $("#acceptance_criteria_inputs"); //Fields wrapper
-                var add_button = $(".add_field_button"); //Add button ID
-                var x = 1; //initlal text box count
-                $(add_button).click(function (e) { //on add input button click
-                    e.preventDefault();
-                    if (x < max_fields) { //max input box allowed
-                        x++; //text box increment
-                        $(wrapper).append('<div class="row"><div class="twelve wide column"><div class="input-field">{{Form::text("acceptance_criteria[]",null,["placeholder"=>"ex. Logo and Icons are delivered in .svg format"]) }}</div><div class="input-field"><div class="four wide column"><a href="#" class="remove_field"><i class="ui icon close"></i></a></div></div></div>'); //add input box
-                    }
-                });
-                $(wrapper).on("click", ".remove_field", function (e) { //user click on remove text
-                    e.preventDefault();
-                    $(this).parent('div').parent("div").remove();
-                    x--;
-                })
-            });
-            $('.datepicker').pickadate({
-                default: 'now',
-                selectMonths: true, // Creates a dropdown to control month
-                selectYears: 15, // Creates a dropdown of 15 years to control year,
-                today: 'Today',
-                clear: 'Clear',
-                close: 'Ok',
-                closeOnSelect: false // Close upon selecting a date,
-            });
+
+        });
+
+        //acceptance criteria
+        // Create a new list item when clicking on the "Add" button
+
+        function newElement() {
+            if( typeof newElement.counter == 'undefined' ) {
+                newElement.counter = 0;
+            }
+            newElement.counter++;
+            var list = $('#criteria_list');
+            var inputList = $('#criteria_wrapper');
+            var inputValue = $('#criteria_input').val();
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                var item = '<div class="item"><div class="right floated content"><div class="ui button red remove" data-item="'+newElement.counter+'">Remove</div></div><div class="content" style="padding-top: 15px;">' + inputValue +'</div> </div>';
+                list.append(item);
+                var input = '<input type="hidden" name="acceptance_criteria[]" value="'+inputValue+'" data-item="'+newElement.counter+'">';
+                inputList.append(input);
+                $('#criteria_input').val('');
+            }
+        }
+
+        $(document).on("click",".remove", function(){
+            $(this).closest("div.item").remove();
+            item = $(this).attr('data-item');
+            $('input[name="acceptance_criteria[]"][data-item="'+item+'"]').remove();
         });
     </script>
 @endsection
