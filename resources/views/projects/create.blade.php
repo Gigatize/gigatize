@@ -242,6 +242,10 @@
             background-color: #97D700;
         }
 
+        .ui.button{
+            border-radius: 5px;
+        }
+
     </style>
 @endsection
 
