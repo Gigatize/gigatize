@@ -77,6 +77,7 @@
             padding: 15px;
             margin-bottom: 10px;
             font-family: inspira-sans;
+            border-radius: 5px;
             color: #2C3E50;
             font-size: 13px;
             width: 95%;
