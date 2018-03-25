@@ -10,6 +10,7 @@
       }
       .parallax-container{
           height: 750px;
+          width: 100%;
       }
       .max-height{
           height: 100%;
