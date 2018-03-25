@@ -34,7 +34,7 @@
 
         /*form styles*/
         #msform {
-            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%), linear-gradient(to right bottom, rgba(228, 209, 148, .8) 0%, rgba(246, 194, 67, 1) 100%);
+            background-image: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 1) 100%), linear-gradient(to right bottom, rgba(251, 222, 128, .7) 0%, rgba(250, 205, 57, 1) 100%);
             background-clip: content-box, padding-box;
             border: 0 none;
             border-radius: 0px;
