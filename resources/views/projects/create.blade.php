@@ -267,13 +267,13 @@
                     <div class="fields">
                         <div class="eight wide field">
                             <label>GIG NAME</label>
-                            <input type="text" name="card[number]" placeholder="Gig Name">
+                            <input type="text" name="title" placeholder="Gig Name">
                         </div>
                         <div class="eight wide field">
                             <label>SELECT A CATEGORY</label>
                             <div class="field">
                                 <div class="ui fluid selection select dropdown">
-                                    <input type="hidden" name="receipt">
+                                    <input type="hidden" name="category">
                                     <i class="dropdown icon"></i>
                                     <div class="default text">Categories</div>
                                     <div class="menu">
@@ -308,7 +308,7 @@
                     </div>
                     <div class="sixteen wide field">
                         <label>DESCRIPTION</label>
-                        <textarea rows="2" class="materialize-textarea"></textarea>
+                        <textarea name="description" rows="2" class="materialize-textarea"></textarea>
                     </div>
                     <div class="field">
                         <label>ACCEPTANCE CRITERIA</label>
@@ -335,12 +335,12 @@
                     <div class="fields">
                         <div class="eight wide field">
                             <label>START DATE</label>
-                            <input type="text" class="datepicker" placeholder="&#xf310;"
+                            <input name="start_date" type="text" class="datepicker" placeholder="&#xf310;"
                                    style="font-family:Cambay, Icons"/>
                         </div>
                         <div class="eight wide field">
                             <label>END DATE</label>
-                            <input type="text" class="datepicker" placeholder="&#xf310;"
+                            <input name="end_date" type="text" class="datepicker" placeholder="&#xf310;"
                                    style="font-family:Cambay, Icons"/>
                         </div>
                     </div>
@@ -372,7 +372,7 @@
                     </div>
                     <div class="sixteen wide field">
                         <label>THIS GIG WILL PROVIDE THE FOLLOWING BENEFITS:</label>
-                        <textarea rows="2" data-length="500" class="materialize-textarea"></textarea>
+                        <textarea name="impact" rows="2" data-length="500" class="materialize-textarea"></textarea>
                     </div>
                     <div class="fields">
                         <div class="eight wide field">
@@ -458,7 +458,7 @@
                         </div>
                         <div class="eight wide field">
                             <label>ESTIMATED HOURS</label>
-                            <input type="number" placeholder="Max: 20 hrs" max="20">
+                            <input name="estimated_hours" type="number" placeholder="Max: 20 hrs" max="20">
                         </div>
                     </div>
                     <div class="sixteen wide field">
@@ -481,16 +481,16 @@
                     <h3 class="fs-subtitle">GET READY TO POST YOUR GIG</h3>
                     <div class="sixteen wide field">
                         <label>LINK TO PROJECT RESOURCES</label>
-                        <input type="text" name="card[number]" placeholder="Http://">
+                        <input name="resources_link" type="text" name="card[number]" placeholder="Http://">
                     </div>
                     <div class="sixteen wide field">
                         <label>ADDITIONAL INFORMATION</label>
-                        <textarea rows="2" data-length="500" class="materialize-textarea"></textarea>
+                        <textarea name="additional_info" rows="2" data-length="500" class="materialize-textarea"></textarea>
                     </div>
                     <div class="inline field" style="text-align: left;">
                         <div class="switch">
                             <label>
-                                <input type="checkbox">
+                                <input name="flexible_start" type="checkbox">
                                 <span class="lever"></span>
                                 FLEXIBLE START DATE?
                             </label>
@@ -499,7 +499,7 @@
                     <div class="inline field" style="text-align: left;">
                         <div class="switch">
                             <label>
-                                <input type="checkbox">
+                                <input name="on_site" type="checkbox">
                                 <span class="lever"></span>
                                 RESOURCE MUST BE ON SITE?
                             </label>
@@ -508,7 +508,7 @@
                     <div class="inline field" style="text-align: left;">
                         <div class="switch">
                             <label>
-                                <input type="checkbox">
+                                <input name="renew" type="checkbox">
                                 <span class="lever"></span>
                                 POTENTIAL TO RENEW GIG?
                             </label>
