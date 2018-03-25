@@ -1,2 +1,29 @@
 @import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);/* Add some uikit variables if desired */
 
+@font-face {
+    font-family: 'Nobile';
+    src: url("../fonts/nobile/Nobile-Regular.ttf");
+}
+
+@font-face {
+    font-family: 'Nobile';
+    src: url("../fonts/nobile/Nobile-Bold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Nobile';
+    src: url("../fonts/nobile/nobile-BoldItalic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Nobile';
+    src: url("../fonts/nobile/nobile-Italic.ttf");
+    font-style: italic;
+}
+
+body {
+    font-family: 'Nobile','Cambay', sans-serif!important;
+}

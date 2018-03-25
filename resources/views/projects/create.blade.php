@@ -16,7 +16,6 @@
         }
 
         body {
-            font-family: 'Cambay', sans-serif;
             background-image: url("{{asset('images/create-project.jpg')}}");
             -webkit-background-size: cover;
             -moz-background-size: cover;
@@ -236,11 +235,11 @@
         }
 
         .switch label input[type=checkbox]:checked + .lever {
-            background-color: #97D700;
+            background-color: #99c453;
         }
 
         .switch label input[type=checkbox]:checked + .lever:after {
-            background-color: #97D700;
+            background-color: #f1f1f1;
         }
 
         .ui.button {
@@ -268,7 +267,7 @@
                     <div class="fields">
                         <div class="eight wide field">
                             <label>GIG NAME</label>
-                            <input type="text" name="card[number]" maxlength="16" placeholder="Gig Name">
+                            <input type="text" name="card[number]" placeholder="Gig Name">
                         </div>
                         <div class="eight wide field">
                             <label>SELECT A CATEGORY</label>
@@ -514,10 +513,41 @@
                 <fieldset>
                     <h2 class="fs-title">FINALIZE</h2>
                     <h3 class="fs-subtitle">GET READY TO POST YOUR GIG</h3>
-                    <input type="text" name="fname" placeholder="First Name"/>
-                    <input type="text" name="lname" placeholder="Last Name"/>
-                    <input type="text" name="phone" placeholder="Phone"/>
-                    <textarea name="address" placeholder="Address"></textarea>
+                    <div class="sixteen wide field">
+                        <label>LINK TO PROJECT RESOURCES</label>
+                        <input type="text" name="card[number]" placeholder="Http://">
+                    </div>
+                    <div class="sixteen wide field">
+                        <label>ADDITIONAL INFORMATION</label>
+                        <textarea rows="2" data-length="500" class="materialize-textarea"></textarea>
+                    </div>
+                    <div class="inline field" style="text-align: left;">
+                        <div class="switch">
+                            <label>
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                FLEXIBLE START DATE?
+                            </label>
+                        </div>
+                    </div>
+                    <div class="inline field" style="text-align: left;">
+                        <div class="switch">
+                            <label>
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                RESOURCE MUST BE ON SITE?
+                            </label>
+                        </div>
+                    </div>
+                    <div class="inline field" style="text-align: left;">
+                        <div class="switch">
+                            <label>
+                                <input type="checkbox">
+                                <span class="lever"></span>
+                                POTENTIAL TO RENEW GIG?
+                            </label>
+                        </div>
+                    </div>
                     <input type="button" name="previous" class="previous action-button" value="PREVIOUS"/>
                     <input type="submit" name="submit" class="submit action-button" value="SUBMIT"/>
                 </fieldset>
@@ -530,6 +560,7 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('.ui.select').select();
+            $('.ui.checkbox').checkbox();
             $('.datepicker').pickadate();
             //jQuery time
             var current_fs, next_fs, previous_fs; //fieldsets
