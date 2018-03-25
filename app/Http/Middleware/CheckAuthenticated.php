@@ -34,7 +34,7 @@ class CheckAuthenticated
                 }
             }
         }else{
-            Auth::loginUsingId(1);
+            //Auth::loginUsingId(1);
         }
 
         return $next($request);
