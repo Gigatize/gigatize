@@ -24,6 +24,34 @@
     font-style: italic;
 }
 
+@font-face {
+    font-family: 'Open-Sans';
+    src: url("../fonts/open-sans/OpenSans-Light.ttf");
+}
+
+@font-face {
+    font-family: 'Open-Sans';
+    src: url("../fonts/open-sans/OpenSans-SemiBold.ttf");
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Open-Sans';
+    src: url("../fonts/open-sans/OpenSans-SemiBoldItalic.ttf");
+    font-style: italic;
+    font-weight: bold;
+}
+
+@font-face {
+    font-family: 'Open-Sans';
+    src: url("../fonts/open-sans/OpenSans-LightItalic.ttf");
+    font-style: italic;
+}
+
 body {
-    font-family: 'Nobile','Cambay', sans-serif!important;
+    font-family: 'Open-Sans','Nobile','Cambay',sans-serif!important;
+}
+
+h1, h2, h3, h4, h5, h6{
+    font-family: 'Nobile','Cambay',sans-serif!important;
 }
