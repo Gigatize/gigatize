@@ -13,5 +13,6 @@ let mix = require('laravel-mix');
 
 mix.js('resources/assets/js/app.js', 'public/js')
     .sass('resources/assets/sass/app.scss', 'public/css')
-    .sass('resources/assets/sass/materialize.scss', 'public/css')
+    .sass('resources/assets/sass/materialize/materialize.scss', 'public/css')
+    .sass('resources/assets/sass/semantic/semantic-ui.scss', 'public/css')
     .copy('node_modules/materialize-css/dist/js/materialize.min.js','public/js/materialize.min.js');

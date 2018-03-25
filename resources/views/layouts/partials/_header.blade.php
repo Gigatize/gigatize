@@ -20,7 +20,7 @@
 </style>
 <nav>
     <div class="nav-wrapper z-depth-2">
-        <a href="{{url('/')}}" class="brand-logo" style="vertical-align: middle;"><img src="{{asset('images/logo.png')}}"></a>
+        <a href="{{url('/')}}" class="brand-logo" style="vertical-align: middle;"><img src="{{asset('images/logo.svg')}}" width="240px" height="70px"></a>
         <a href="#" data-activates="mobile-demo" class="button-collapse" style="color: #000"><i class="bars icon"></i></a>
         <ul class="right hide-on-med-and-down">
             <li>

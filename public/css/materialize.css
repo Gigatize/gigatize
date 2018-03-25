@@ -751,11 +751,11 @@
 }
 
 .light-blue {
-  background-color: #03a9f4 !important;
+  background-color: #87bcde !important;
 }
 
 .light-blue-text {
-  color: #03a9f4 !important;
+  color: #87bcde !important;
 }
 
 .light-blue.lighten-5 {
@@ -1423,11 +1423,11 @@
 }
 
 .yellow {
-  background-color: #fbbd08 !important;
+  background-color: #facd39 !important;
 }
 
 .yellow-text {
-  color: #fbbd08 !important;
+  color: #facd39 !important;
 }
 
 .yellow.lighten-5 {
@@ -1951,11 +1951,11 @@
 }
 
 .blue-grey {
-  background-color: #607d8b !important;
+  background-color: #454955 !important;
 }
 
 .blue-grey-text {
-  color: #607d8b !important;
+  color: #454955 !important;
 }
 
 .blue-grey.lighten-5 {
@@ -2031,11 +2031,11 @@
 }
 
 .grey {
-  background-color: #9e9e9e !important;
+  background-color: #6c6865 !important;
 }
 
 .grey-text {
-  color: #9e9e9e !important;
+  color: #6c6865 !important;
 }
 
 .grey.lighten-5 {
@@ -2124,6 +2124,22 @@
 
 .white-text {
   color: #FFFFFF !important;
+}
+
+.black-olive {
+  background-color: #403 G3B !important;
+}
+
+.black-olive-text {
+  color: #403 G3B !important;
+}
+
+.snow {
+  background-color: #FAF8F9 !important;
+}
+
+.snow-text {
+  color: #FAF8F9 !important;
 }
 
 .transparent {
@@ -6247,7 +6263,7 @@ button:focus {
 
 label {
   font-size: 0.8rem;
-  color: #9e9e9e;
+  color: #6c6865;
 }
 
 /* Text Inputs + Textarea
@@ -6256,19 +6272,19 @@ label {
 /* Style Placeholders */
 
 ::-webkit-input-placeholder {
-  color: #d1d1d1;
+  color: #9f9b98;
 }
 
 :-ms-input-placeholder {
-  color: #d1d1d1;
+  color: #9f9b98;
 }
 
 ::-ms-input-placeholder {
-  color: #d1d1d1;
+  color: #9f9b98;
 }
 
 ::placeholder {
-  color: #d1d1d1;
+  color: #9f9b98;
 }
 
 /* Text inputs */
@@ -6288,7 +6304,7 @@ input[type=search]:not(.browser-default),
 textarea.materialize-textarea {
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid #6c6865;
   border-radius: 0;
   outline: none;
   height: 3rem;
@@ -6655,7 +6671,7 @@ textarea.materialize-textarea + label:after,
 }
 
 .input-field label {
-  color: #9e9e9e;
+  color: #6c6865;
   position: absolute;
   top: 0;
   left: 0;
@@ -7324,7 +7340,7 @@ select {
   cursor: pointer;
   background-color: transparent;
   border: none;
-  border-bottom: 1px solid #9e9e9e;
+  border-bottom: 1px solid #6c6865;
   outline: none;
   height: 3rem;
   line-height: 3rem;
@@ -8515,7 +8531,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .slider .slides {
-  background-color: #9e9e9e;
+  background-color: #6c6865;
   margin: 0;
   height: 400px;
 }

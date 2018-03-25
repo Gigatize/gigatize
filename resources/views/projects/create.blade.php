@@ -62,12 +62,12 @@
         /*inputs*/
         #msform input, #msform .ui.dropdown {
             padding: 15px;
-            border: 1px solid #ccc;
+            border: 1px solid #6C6865;
             border-radius: 5px;
             margin-bottom: 10px;
             width: 100%;
             box-sizing: border-box;
-            color: #2C3E50;
+            color: #454955;
             font-size: 13px;
             height: 45px;
             min-height: 45px;
@@ -78,7 +78,7 @@
             margin-bottom: 10px;
             font-family: inspira-sans;
             border-radius: 5px;
-            color: #2C3E50;
+            color: #454955;
             font-size: 13px;
             width: 95%;
         }
@@ -87,7 +87,7 @@
             -moz-box-shadow: none !important;
             -webkit-box-shadow: none !important;
             box-shadow: none !important;
-            border: 1px solid #10069F;
+            border: 1px solid #87BCDE;
             outline-width: 0;
             transition: All 0.5s ease-in;
             -webkit-transition: All 0.5s ease-in;
@@ -96,7 +96,7 @@
         }
 
         #msform textarea:focus {
-            border-bottom: 1px solid #10069F;
+            border-bottom: 1px solid #87BCDE;
         }
 
         input:not([type]):focus:not([readonly]) + label,
@@ -112,12 +112,12 @@
         input[type=number]:not(.browser-default):focus:not([readonly]) + label,
         input[type=search]:not(.browser-default):focus:not([readonly]) + label,
         textarea.materialize-textarea:focus:not([readonly]) + label {
-            color: #10069F;
+            color: #87BCDE;
         }
 
         .dropdown-content li > a, .dropdown-content li > span {
             font-size: 16px;
-            color: #10069F;
+            color: #87BCDE;
             display: block;
             line-height: 22px;
             padding: 14px 16px;
@@ -126,7 +126,7 @@
         /*buttons*/
         #msform .action-button {
             width: 200px;
-            background: #f6c243;
+            background: #FACD39;
             font-family: 'Cambay', sans-serif;
             font-size: 14px;
             color: white;
@@ -138,12 +138,12 @@
         }
 
         #msform .action-button:hover, #msform .action-button:focus {
-            box-shadow: 0 0 0 2px white, 0 0 0 3px #f6c243;
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #FACD39;
         }
 
         #msform .action-button.previous {
             width: 200px;
-            background: #7f7f7f;
+            background: #6C6865;
             font-family: 'Cambay', sans-serif;
             font-size: 14px;
             color: white;
@@ -155,7 +155,7 @@
         }
 
         #msform .action-button.previous:hover, #msform .action-button.previous:focus {
-            box-shadow: 0 0 0 2px white, 0 0 0 3px #7f7f7f;
+            box-shadow: 0 0 0 2px white, 0 0 0 3px #6C6865;
         }
 
         /*headings*/
@@ -171,7 +171,7 @@
         .fs-subtitle {
             font-weight: normal;
             font-size: 13px;
-            color: #666;
+            color: #6C6865;
             margin-bottom: 20px;
         }
 
@@ -185,7 +185,7 @@
 
         #progressbar li {
             list-style-type: none;
-            color: #7f7f7f;
+            color: #6C6865;
             text-transform: uppercase;
             font-size: 14px;
             width: 33.33%;
@@ -204,7 +204,7 @@
             display: block;
             font-size: 18px;
             color: white;
-            background: #7f7f7f;
+            background: #6C6865;
             border-radius: 25px;
             margin: 0 auto 10px auto;
             z-index: 1;
@@ -215,7 +215,7 @@
             content: '';
             width: 80%;
             height: 2px;
-            background: #c2c2c2;
+            background: #6C6865;
             position: absolute;
             left: -40%;
             top: 18px;
@@ -230,7 +230,7 @@
         /*marking active/completed steps green*/
         /*The number of the step and the connector before it = green*/
         #progressbar li.active:before, #progressbar li.active:after {
-            background: #f6c243;
+            background: #FACD39;
             color: white;
         }
 
