@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Skill;
+use App\Category;
+use App\Location;
+use App\Skill;
 use Illuminate\Http\Request;
 
 class ProjectController extends Controller 
@@ -25,8 +27,10 @@ class ProjectController extends Controller
    */
   public function create()
   {
-        $skills = Skill::all()->take(1500);
-        return view('projects/create', compact('skills'));
+        $skills = Skill::all()->take(1000);
+        $locations = Location::all();
+        $categories = Category::all();
+        return view('projects/create', compact('skills','locations','categories'));
   }
 
   /**

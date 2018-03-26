@@ -29,12 +29,12 @@ class CheckAuthenticated
                 }
                 else
                 {
-                    //return Saml2Auth::login(URL::full());
+                    return Saml2Auth::login(URL::full());
                     //return redirect()->guest('auth/login');
                 }
             }
         }else{
-            //Auth::loginUsingId(1);
+            Auth::loginUsingId(1);
         }
 
         return $next($request);

@@ -277,30 +277,12 @@
                                     <i class="dropdown icon"></i>
                                     <div class="default text">Categories</div>
                                     <div class="menu">
-                                        <div class="item" data-value="jenny" data-text="Jenny">
-                                            <img class="ui mini avatar image" src="/images/avatar/small/jenny.jpg">
-                                            Jenny Hess
+                                        @foreach($categories as $category)
+                                        <div class="item" data-value="{{$category->id}}" data-text="{{$category->name}}">
+                                            <img class="ui mini avatar image" src="{{$category->icon_path}}">
+                                            {{$category->name}}
                                         </div>
-                                        <div class="item" data-value="elliot" data-text="Elliot">
-                                            <img class="ui mini avatar image" src="/images/avatar/small/elliot.jpg">
-                                            Elliot Fu
-                                        </div>
-                                        <div class="item" data-value="stevie" data-text="Stevie">
-                                            <img class="ui mini avatar image" src="/images/avatar/small/stevie.jpg">
-                                            Stevie Feliciano
-                                        </div>
-                                        <div class="item" data-value="christian" data-text="Christian">
-                                            <img class="ui mini avatar image" src="/images/avatar/small/christian.jpg">
-                                            Christian
-                                        </div>
-                                        <div class="item" data-value="matt" data-text="Matt">
-                                            <img class="ui mini avatar image" src="/images/avatar/small/matt.jpg">
-                                            Matt
-                                        </div>
-                                        <div class="item" data-value="justen" data-text="Justen">
-                                            <img class="ui mini avatar image" src="/images/avatar/small/justen.jpg">
-                                            Justen Kitsune
-                                        </div>
+                                        @endforeach
                                     </div>
                                 </div>
                             </div>
@@ -352,8 +334,9 @@
                                 <i class="dropdown icon"></i>
                                 <div class="default text">Location</div>
                                 <div class="menu">
-                                    <div class="item" data-value="1">Male</div>
-                                    <div class="item" data-value="0">Female</div>
+                                    @foreach($locations as $location)
+                                    <div class="item" data-value="{{$location->id}}">{{$location->name}}</div>
+                                    @endforeach
                                 </div>
                             </div>
                         </div>
@@ -463,13 +446,14 @@
                     </div>
                     <div class="sixteen wide field">
                         <label>SKILLS REQUIRED</label>
-                        <div class="ui search selection dropdown select">
+                        <div class="ui search multiple selection dropdown select">
                             <input type="hidden" name="skills">
                             <i class="dropdown icon"></i>
                             <div class="default text">skills</div>
                             <div class="menu">
-                                <div class="item" data-value="1">Male</div>
-                                <div class="item" data-value="0">Female</div>
+                                @foreach($skills as $skill)
+                                    <div class="item" data-value="{{$skill->id}}">{{$skill->name}}</div>
+                                @endforeach
                             </div>
                         </div>
                     </div>
