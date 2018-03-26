@@ -357,6 +357,19 @@
                         <label>THIS GIG WILL PROVIDE THE FOLLOWING BENEFITS:</label>
                         <textarea name="impact" rows="2" data-length="500" class="materialize-textarea"></textarea>
                     </div>
+                    <div class="sixteen wide field">
+                        <label>SKILLS REQUIRED</label>
+                        <div class="ui search multiple selection dropdown select">
+                            <input type="hidden" name="skills">
+                            <i class="dropdown icon"></i>
+                            <div class="default text">skills</div>
+                            <div class="menu">
+                                @foreach($skills as $skill)
+                                    <div class="item" data-value="{{$skill->id}}">{{$skill->name}}</div>
+                                @endforeach
+                            </div>
+                        </div>
+                    </div>
                     <div class="fields">
                         <div class="eight wide field">
                             <label>HOW MANY PEOPLE ARE ALLOWED TO SIGN UP?</label>
@@ -442,19 +455,6 @@
                         <div class="eight wide field">
                             <label>ESTIMATED HOURS</label>
                             <input name="estimated_hours" type="number" placeholder="Max: 20 hrs" max="20">
-                        </div>
-                    </div>
-                    <div class="sixteen wide field">
-                        <label>SKILLS REQUIRED</label>
-                        <div class="ui search multiple selection dropdown select">
-                            <input type="hidden" name="skills">
-                            <i class="dropdown icon"></i>
-                            <div class="default text">skills</div>
-                            <div class="menu">
-                                @foreach($skills as $skill)
-                                    <div class="item" data-value="{{$skill->id}}">{{$skill->name}}</div>
-                                @endforeach
-                            </div>
                         </div>
                     </div>
                     <input type="button" name="previous" class="previous action-button" value="PREVIOUS"/>
