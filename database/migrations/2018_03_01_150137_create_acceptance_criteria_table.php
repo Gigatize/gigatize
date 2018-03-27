@@ -10,7 +10,7 @@ class CreateAcceptanceCriteriaTable extends Migration {
 		Schema::create('acceptance_criteria', function(Blueprint $table) {
 			$table->increments('id');
 			$table->integer('project_id')->unsigned();
-			$table->string('criteria', 500)->nullable();
+			$table->string('criteria', 500);
 			$table->timestamps();
 		});
 	}

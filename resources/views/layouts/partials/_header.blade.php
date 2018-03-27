@@ -33,7 +33,7 @@
                 <a class="item">Quick Quest</a>
             </li>
             <li>
-                <a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="user icon"></i> {{Auth::user()->name}}<i class="caret down icon"></i></a>
+                <a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="user icon"></i> {{Auth::user()->first_name. " " . Auth::user()->last_name}}<i class="caret down icon"></i></a>
             </li>
         </ul>
         <ul class="side-nav" id="mobile-demo">

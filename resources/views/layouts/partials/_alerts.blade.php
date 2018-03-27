@@ -1,40 +1,40 @@
 @if(isset($success) or isset($info) or isset($warning) or isset($error) or Session::has('success') or Session::has('info') or Session::has('warning') or Session::has('error') or Session::has('errors'))
 <div class="ui centered grid container" style="margin-top: 10px;">
-    <div class="sixteen wide column" style="text-align: center">
     @if(isset($success))
+    <div class="sixteen wide column" style="text-align: center">
         <div class="ui success message">
             <i class="close icon"></i>
             {{$success}}
         </div>
-    @endif
     </div>
+    @endif
 
-    <div class="sixteen wide column" style="text-align: center">
     @if(isset($info))
+    <div class="sixteen wide column" style="text-align: center">
         <div class="ui info message">
             <i class="close icon"></i>
             {{$info}}
         </div>
-    @endif
     </div>
+    @endif
 
-    <div class="sixteen wide column" style="text-align: center">
     @if(isset($warning))
+    <div class="sixteen wide column" style="text-align: center">
         <div class="ui info warning">
             <i class="close icon"></i>
             {{$warning}}
         </div>
-    @endif
     </div>
+    @endif
 
-    <div class="sixteen wide column" style="text-align: center">
     @if(isset($error))
+    <div class="sixteen wide column" style="text-align: center">
         <div class="ui info error">
             <i class="close icon"></i>
             {{$error}}
         </div>
-    @endif
     </div>
+    @endif
 
     @if(Session::has('success'))
         <div class="ui success message">
@@ -64,18 +64,20 @@
         </div>
     @endif
 
-    @if(Session::has('errors'))
-        <div class="ui error message">
+    @if ($errors->any())
+    <div class="sixteen wide column" style="text-align: center">
+        <div class="ui fluid error message" >
             <i class="close icon"></i>
             <div class="header">
                 There were some errors with your submission
             </div>
-            <ul class="list">
-                @foreach(Session::get('errors') as $error)
-                    <li>{{$error}}</li>
+            <div class="ui list" style="text-align: center">
+                @foreach ($errors->all() as $error)
+                    <div class="item">{{ $error }}</div>
                 @endforeach
-            </ul>
+            </div>
         </div>
+    </div>
     @endif
 </div>
 @endif

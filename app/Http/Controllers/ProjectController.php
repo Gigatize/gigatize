@@ -4,8 +4,12 @@ namespace App\Http\Controllers;
 
 use App\Category;
 use App\Location;
+use App\Project;
 use App\Skill;
+use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Input;
 
 class ProjectController extends Controller 
 {
@@ -40,7 +44,59 @@ class ProjectController extends Controller
    */
   public function store(Request $request)
   {
-    
+      //validate request input
+      $validator = $request->validate(Project::$rules);
+
+      //dd(Input::all());
+      //create new project
+      $project = new Project();
+
+      //assign input to project data
+      $project->title = Input::get('title');
+      $project->user_id = Auth::id();
+      $project->category_id = Input::get('category_id');
+      $project->description = Input::get('description');
+      $project->start_date = Carbon::parse(Input::get('start_date'));
+      $project->deadline = Carbon::parse(Input::get('deadline'));
+      $project->location_id = Input::get('location_id');
+      $project->timezone = Input::get('timezone');
+      $project->impact = Input::get('impact');
+      $project->user_count = Input::get('user_count');
+      $project->estimated_hours = Input::get('estimated_hours');
+      $project->resources_link = Input::get('resources_link');
+      $project->additional_info = Input::get('additional_info');
+      if(Input::get('flexible_start')) {
+          $project->flexible_start = true;
+      }else{
+          $project->flexible_start = false;
+      }
+      if(Input::get('on_site')) {
+          $project->on_site = true;
+      }else{
+          $project->on_site = false;
+      }
+      if(Input::get('renew')) {
+          $project->renew = true;
+      }else{
+          $project->renew = false;
+      }
+      //save project
+      $project->save();
+
+      //create associated acceptance criteria
+      foreach (Input::get('acceptance_criteria') as $criteria){
+          $project->AcceptanceCriteria()->create([
+              'criteria' => $criteria
+          ]);
+      }
+      //create associated skills
+      foreach (explode(",",Input::get('skills')) as $skill){
+          $project->Skills()->create([
+              'name' => $skill
+          ]);
+      }
+
+      return redirect('/')->with('success','You have successfully posted your project');
   }
 
   /**

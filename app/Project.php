@@ -9,31 +9,57 @@ class Project extends Model
 
     protected $table = 'projects';
     public $timestamps = true;
-    protected $fillable = array('name', 'company_id', 'user_id', 'category_id', 'potential_impact', 'additional_information', 'resources_requested', 'estimated_hours', 'on_site', 'renew', 'flexible_start', 'location', 'start_date', 'deadline', 'box_link', 'complete');
+    protected $fillable = array('title', 'user_id', 'category_id', 'description', 'start_date', 'deadline', 'location_id', 'timezone', 'impact', 'user_count', 'estimated_hours', 'resources_link', 'additional_info', 'flexible_start', 'on_site', 'renew','complete');
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'start_date',
+        'deadline'
+    ];
+
+    static $rules = [
+        'project_id' => 'sometimes|required',
+        'title' => 'required',
+        'category_id' => 'required',
+        'description' => 'required',
+        'acceptance_criteria' => 'required',
+        'start_date' => 'required',
+        'deadline' => 'required',
+        'location_id' => 'required',
+        'skills' => 'required',
+        'user_count' => 'required|numeric|max:3',
+        'estimated_hours' => 'required|numeric|max:20',
+        'resources_link' => 'sometimes|url',
+    ];
 
     public function Owner()
     {
-        return $this->belongsTo('User', 'user_id');
+        return $this->belongsTo('App\User', 'user_id');
     }
 
     public function Category()
     {
-        return $this->belongsTo('Category', 'category_id');
+        return $this->belongsTo('App\Category');
     }
 
-    public function ProjectUsers()
+    public function Location()
     {
-        return $this->hasMany('User');
+        return $this->belongsTo('App\Location');
+    }
+
+    public function Users()
+    {
+        return $this->hasMany('App\User');
     }
 
     public function AcceptanceCriteria()
     {
-        return $this->hasMany('App\AcceptanceCriteria', 'project_id');
+        return $this->hasMany('App\AcceptanceCriteria');
     }
 
     public function Skills()
     {
-        return $this->hasMany('App\Models\Skill', 'project_id');
+        return $this->belongsToMany('App\Skill');
     }
 
 }

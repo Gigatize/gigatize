@@ -60,7 +60,20 @@
         }
 
         /*inputs*/
-        #msform input, #msform .ui.dropdown {
+        #msform input:not(.search):not(.action-button) {
+            padding: 15px;
+            border: 1px solid #6C6865;
+            border-radius: 5px;
+            margin-bottom: 10px;
+            width: 100%;
+            box-sizing: border-box;
+            color: #454955;
+            font-size: 13px;
+            height: 45px;
+            min-height: 45px;
+        }
+
+        #msform .ui.dropdown:not(.multiple) {
             padding: 15px;
             border: 1px solid #6C6865;
             border-radius: 5px;
@@ -252,7 +265,7 @@
 @section('content')
     <!-- multistep form -->
     <div class="container">
-        <form id="msform" class="ui form">
+        <form id="msform" class="ui form" method="post" action="{{url('/projects/store')}}">
             <!-- progressbar -->
             <div id="form-wrapper" style="border: solid 1px #c7c7c7">
                 <ul id="progressbar" style="padding-top: 30px; z-index: 2">
@@ -273,7 +286,7 @@
                             <label>SELECT A CATEGORY</label>
                             <div class="field">
                                 <div class="ui fluid selection select dropdown">
-                                    <input type="hidden" name="category">
+                                    <input type="hidden" name="category_id">
                                     <i class="dropdown icon"></i>
                                     <div class="default text">Categories</div>
                                     <div class="menu">
@@ -321,8 +334,8 @@
                                    style="font-family:Cambay, Icons"/>
                         </div>
                         <div class="eight wide field">
-                            <label>END DATE</label>
-                            <input name="end_date" type="text" class="datepicker" placeholder="&#xf310;"
+                            <label>DEADLINE</label>
+                            <input name="deadline" type="text" class="datepicker" placeholder="&#xf310;"
                                    style="font-family:Cambay, Icons"/>
                         </div>
                     </div>
@@ -330,7 +343,7 @@
                         <div class="eight wide field">
                             <label>PROJECT LOCATION</label>
                             <div class="ui search selection dropdown select">
-                                <input type="hidden" name="location">
+                                <input type="hidden" name="location_id">
                                 <i class="dropdown icon"></i>
                                 <div class="default text">Location</div>
                                 <div class="menu">
@@ -342,15 +355,49 @@
                         </div>
                         <div class="eight wide field">
                             <label>TIMEZONE PREFERENCES</label>
-                            <div class="ui search selection dropdown select">
-                                <input type="hidden" name="timezone">
-                                <i class="dropdown icon"></i>
-                                <div class="default text">Timezone</div>
-                                <div class="menu">
-                                    <div class="item" data-value="1">Male</div>
-                                    <div class="item" data-value="0">Female</div>
-                                </div>
-                            </div>
+                            <select name="timezone" class="ui search selection dropdown select">
+                                <option value="" selected="selected">Select your timezone</option>
+                                <option value="(GMT -5:00) Eastern Time (US & Canada), Bogota, Lima">(GMT -5:00) Eastern Time (US & Canada), Bogota, Lima</option>
+                                <option value="(GMT -6:00) Central Time (US & Canada), Mexico City">(GMT -6:00) Central Time (US & Canada), Mexico City</option>
+                                <option value="(GMT -7:00) Mountain Time (US & Canada)">(GMT -7:00) Mountain Time (US & Canada)</option>
+                                <option value="(GMT -8:00) Pacific Time (US & Canada)">(GMT -8:00) Pacific Time (US & Canada)</option>
+                                <option value="(GMT -9:00) Alaska">(GMT -9:00) Alaska</option>
+                                <option value="(GMT -12:00) Eniwetok, Kwajalein">(GMT -12:00) Eniwetok, Kwajalein</option>
+                                <option value="(GMT -11:00) Midway Island, Samoa">(GMT -11:00) Midway Island, Samoa</option>
+                                <option value="(GMT -10:00) Hawaii">(GMT -10:00) Hawaii</option>
+                                <option value="(GMT -9:30) Taiohae">(GMT -9:30) Taiohae</option>
+                                <option value="(GMT -4:30) Caracas">(GMT -4:30) Caracas</option>
+                                <option value="(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz">(GMT -4:00) Atlantic Time (Canada), Caracas, La Paz</option>
+                                <option value="(GMT -3:30) Newfoundland">(GMT -3:30) Newfoundland</option>
+                                <option value="(GMT -3:00) Brazil, Buenos Aires, Georgetown">(GMT -3:00) Brazil, Buenos Aires, Georgetown</option>
+                                <option value="(GMT -2:00) Mid-Atlantic">(GMT -2:00) Mid-Atlantic</option>
+                                <option value="(GMT -1:00) Azores, Cape Verde Islands">(GMT -1:00) Azores, Cape Verde Islands</option>
+                                <option value="(GMT +0:00) Western Europe Time, London, Lisbon, Casablanca">(GMT +0:00) Western Europe Time, London, Lisbon, Casablanca</option>
+                                <option value="(GMT +1:00) Brussels, Copenhagen, Madrid, Paris">(GMT +1:00) Brussels, Copenhagen, Madrid, Paris</option>
+                                <option value="(GMT +2:00) Kaliningrad, South Africa">(GMT +2:00) Kaliningrad, South Africa</option>
+                                <option value="(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg">(GMT +3:00) Baghdad, Riyadh, Moscow, St. Petersburg</option>
+                                <option value="(GMT +3:30) Tehran">(GMT +3:30) Tehran</option>
+                                <option value="(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi">(GMT +4:00) Abu Dhabi, Muscat, Baku, Tbilisi</option>
+                                <option value="(GMT +4:30) Kabul">(GMT +4:30) Kabul</option>
+                                <option value="(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent">(GMT +5:00) Ekaterinburg, Islamabad, Karachi, Tashkent</option>
+                                <option value="(GMT +5:30) Bombay, Calcutta, Madras, New Delhi">(GMT +5:30) Bombay, Calcutta, Madras, New Delhi</option>
+                                <option value="(GMT +5:45) Kathmandu, Pokhara">(GMT +5:45) Kathmandu, Pokhara</option>
+                                <option value="(GMT +6:00) Almaty, Dhaka, Colombo">(GMT +6:00) Almaty, Dhaka, Colombo</option>
+                                <option value="(GMT +6:30) Yangon, Mandalay">(GMT +6:30) Yangon, Mandalay</option>
+                                <option value="(GMT +7:00) Bangkok, Hanoi, Jakarta">(GMT +7:00) Bangkok, Hanoi, Jakarta</option>
+                                <option value="(GMT +8:00) Beijing, Perth, Singapore, Hong Kong">(GMT +8:00) Beijing, Perth, Singapore, Hong Kong</option>
+                                <option value="(GMT +8:45) Eucla">(GMT +8:45) Eucla</option>
+                                <option value="(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk">(GMT +9:00) Tokyo, Seoul, Osaka, Sapporo, Yakutsk</option>
+                                <option value="(GMT +9:30) Adelaide, Darwin">(GMT +9:30) Adelaide, Darwin</option>
+                                <option value="(GMT +10:00) Eastern Australia, Guam, Vladivostok">(GMT +10:00) Eastern Australia, Guam, Vladivostok</option>
+                                <option value="(GMT +10:30) Lord Howe Island">(GMT +10:30) Lord Howe Island</option>
+                                <option value="(GMT +11:00) Magadan, Solomon Islands, New Caledonia">(GMT +11:00) Magadan, Solomon Islands, New Caledonia</option>
+                                <option value="(GMT +11:30) Norfolk Island">(GMT +11:30) Norfolk Island</option>
+                                <option value="(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka">(GMT +12:00) Auckland, Wellington, Fiji, Kamchatka</option>
+                                <option value="(GMT +12:45) Chatham Islands">(GMT +12:45) Chatham Islands</option>
+                                <option value="(GMT +13:00) Apia, Nukualofa">(GMT +13:00) Apia, Nukualofa</option>
+                                <option value="(GMT +14:00) Line Islands, Tokelau">(GMT +14:00) Line Islands, Tokelau</option>
+                            </select>
                         </div>
                     </div>
                     <div class="sixteen wide field">
@@ -498,6 +545,7 @@
                             </label>
                         </div>
                     </div>
+                    {{ csrf_field() }}
                     <input type="button" name="previous" class="previous action-button" value="PREVIOUS"/>
                     <input type="submit" name="submit" class="submit action-button" value="SUBMIT"/>
                 </fieldset>
@@ -509,7 +557,7 @@
 @section('footer_scripts')
     <script type="text/javascript">
         $(document).ready(function () {
-            $('.ui.select').select();
+            $('.ui.select').select({ fullTextSearch: true, forceSelection: false });
             $('.ui.checkbox').checkbox();
             $('.datepicker').pickadate();
             //jQuery time

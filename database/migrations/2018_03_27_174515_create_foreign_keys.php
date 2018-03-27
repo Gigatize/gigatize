@@ -9,19 +9,19 @@ class CreateForeignKeys extends Migration {
 	public function up()
 	{
 		Schema::table('projects', function(Blueprint $table) {
-			$table->foreign('company_id')->references('id')->on('companies')
-						->onDelete('cascade')
-						->onUpdate('cascade');
-		});
-		Schema::table('projects', function(Blueprint $table) {
 			$table->foreign('user_id')->references('id')->on('users')
 						->onDelete('cascade')
 						->onUpdate('cascade');
 		});
 		Schema::table('projects', function(Blueprint $table) {
 			$table->foreign('category_id')->references('id')->on('categories')
-						->onDelete('set null')
-						->onUpdate('set null');
+						->onDelete('cascade')
+						->onUpdate('cascade');
+		});
+		Schema::table('projects', function(Blueprint $table) {
+			$table->foreign('location_id')->references('id')->on('locations')
+						->onDelete('cascade')
+						->onUpdate('cascade');
 		});
 		Schema::table('project_user', function(Blueprint $table) {
 			$table->foreign('project_id')->references('id')->on('projects')
@@ -63,13 +63,13 @@ class CreateForeignKeys extends Migration {
 	public function down()
 	{
 		Schema::table('projects', function(Blueprint $table) {
-			$table->dropForeign('projects_company_id_foreign');
-		});
-		Schema::table('projects', function(Blueprint $table) {
 			$table->dropForeign('projects_user_id_foreign');
 		});
 		Schema::table('projects', function(Blueprint $table) {
 			$table->dropForeign('projects_category_id_foreign');
+		});
+		Schema::table('projects', function(Blueprint $table) {
+			$table->dropForeign('projects_location_id_foreign');
 		});
 		Schema::table('project_user', function(Blueprint $table) {
 			$table->dropForeign('project_user_project_id_foreign');
