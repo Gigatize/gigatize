@@ -59,7 +59,7 @@
                         <div id="navfix2">
                             <div class="input-field">
                                 <input class="searchbarfix" id="search" type="search" required style="margin: 0;">
-                                <label class="label-icon search-label" for="search" style="top: -12%; left:80%;"><i class="fas fa-search"></i></label>
+                                <label class="label-icon search-label" for="search" style="top: -15%; left:80%;"><i class="fas fa-search"></i></label>
                             </div>
                         </div>
                     </div>
