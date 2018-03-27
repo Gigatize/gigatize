@@ -43,6 +43,45 @@
             $('.message .close').on('click', function() {
                 $(this).closest('.message').transition('fade');
             });
+
+            var trig = 1;
+
+            //animate searchbar width increase to  +150%
+            $('#search').click(function(e) {
+                //handle other nav elements visibility here to avoid push down
+                if (trig == 1){
+                    $('#navfix2').animate({
+                        width: '+=150',
+                        marginRight: 0
+                    }, 400);
+
+                    $('.search-label').animate({
+                        left: '0',
+                    }, 400);
+
+                    trig ++;
+                }
+
+            });
+
+            // if user leaves the form the width will go back to original state
+
+            $("#search").focusout(function() {
+
+                $('#navfix2').animate({
+                    width: '-=150'
+                }, 400);
+
+                trig = trig - 1;
+
+                $('.search-label').animate({
+                    left: '80%',
+                }, 400);
+
+                $('#search').val("");
+
+            });
+
         });
     </script>
     @yield('footer_scripts')
