@@ -15,6 +15,17 @@
       .max-height{
           height: 100%;
       }
+      button.ui.button.tile-button{
+          width:95%;
+          border: 2px solid #6C6865;
+          position: absolute;
+          bottom: 0;
+          line-height: .5em;
+          margin: 2.5%;
+      }
+      button.ui.button.tile-button span {
+          color: #6C6865;
+      }
   </style>
 @endsection
 
@@ -125,7 +136,7 @@
                 <div class="column">
                     <div class="item yellow center" style="height: 100%; position: relative;">
                         <h4 class="white-text flow-text" style=" padding-top: 45%"><b>STRATEGY</b></h4>
-                        <button class="ui big grey basic button fluid" style="border: 2px solid grey; position: absolute; bottom: 0;"><span class="black-text" style="text-transform: capitalize">Read More</span></button>
+                        <button class="ui big grey basic button fluid tile-button"><span style="text-transform: capitalize">Read More</span></button>
                     </div>
                 </div>
                 <div class="column tile">
@@ -138,7 +149,7 @@
                 <div class="column">
                     <div class="item yellow center" style="height: 100%; position: relative;">
                         <h4 class="white-text flow-text" style=" padding-top: 40%"><b>TECHNICAL EXPERTISE</b></h4>
-                        <button class="ui big grey basic button fluid" style="border: 2px solid grey; position: absolute; bottom: 0;"><span class="black-text" style="text-transform: capitalize">Read More</span></button>
+                        <button class="ui big grey basic button fluid tile-button"><span style="text-transform: capitalize">Read More</span></button>
                     </div>
                 </div>
                 <div class="column tile">
@@ -151,7 +162,7 @@
                 <div class="column">
                     <div class="item yellow center" style="height: 100%; position: relative;">
                         <h4 class="white-text flow-text" style=" padding-top: 45%"><b>DESIGN</b></h4>
-                        <button class="ui big grey basic button fluid" style="border: 2px solid grey; position: absolute; bottom: 0;"><span class="black-text" style="text-transform: capitalize">Read More</span></button>
+                        <button class="ui big grey basic button fluid tile-button"><span style="text-transform: capitalize">Read More</span></button>
                     </div>
                 </div>
             </div>
@@ -168,7 +179,7 @@
                 <div class="column">
                     <div class="item yellow center" style="height: 100%; position: relative;">
                         <h4 class="white-text flow-text" style=" padding-top: 40%"><b>DIGITAL MARKETING</b></h4>
-                        <button class="ui big grey basic button fluid" style="border: 2px solid grey; position: absolute; bottom: 0;"><span class="black-text" style="text-transform: capitalize">Read More</span></button>
+                        <button class="ui big grey basic button fluid tile-button"><span  style="text-transform: capitalize">Read More</span></button>
                     </div>
                 </div>
                 <div class="column tile">
@@ -181,7 +192,7 @@
                 <div class="column">
                     <div class="item yellow center" style="height: 100%; position: relative;">
                         <h4 class="white-text flow-text" style=" padding-top: 45%"><b>ENGINEERING</b></h4>
-                        <button class="ui big grey basic button fluid" style="border: 2px solid grey; position: absolute; bottom: 0;"><span class="black-text" style="text-transform: capitalize">Read More</span></button>
+                        <button class="ui big grey basic button fluid tile-button"><span style="text-transform: capitalize;">Read More</span></button>
                     </div>
                 </div>
                 <div class="column tile">

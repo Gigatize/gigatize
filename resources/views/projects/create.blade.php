@@ -273,6 +273,7 @@
                     <li>Logistics</li>
                     <li>Finalize</li>
                 </ul>
+                <div class="ui error message"></div>
                 <!-- fieldsets -->
                 <fieldset>
                     <h2 class="fs-title">DESCRIPTION</h2>
@@ -309,7 +310,8 @@
                         <label>ACCEPTANCE CRITERIA</label>
                         <div class="header two fields">
                             <div id="criteria_wrapper" class="thirteen wide field">
-                                <input type="text" id="criteria_input" placeholder="Enter Criteria...">
+                                <input data-validate="acceptance_criteria" type="text" id="criteria_input" placeholder="Enter Criteria...">
+                                <input id="placeholder" type="hidden" name="acceptance_criteria[]" value="">
                             </div>
                             <div class="three wide field">
                                 <div class="ui button green" tabindex="0" onclick="newElement()" style="width: 100px;">
@@ -611,6 +613,51 @@
 
             });
 
+            $('.ui.form').form({
+                    fields: {
+                        name: {
+                            identifier: 'title',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : 'Please enter a Gig Title'
+                                }
+                            ]
+                        },
+                        category_id: {
+                            identifier: 'category_id',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : 'Please select a category'
+                                }
+                            ]
+                        },
+                        description: {
+                            identifier: 'description',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : 'Please give your gig a description'
+                                }
+                            ]
+                        },
+                        skills: {
+                            identifier: 'skills',
+                            rules: [
+                                {
+                                    type   : 'minCount[1]',
+                                    prompt : 'Please select at least one skill'
+                                }
+                            ]
+                        }
+                    },
+                    onFailure: function() {
+                        // prevent form submission (doesn't work)
+                        return false;
+                    }
+
+                });
         });
 
         //acceptance criteria
@@ -629,6 +676,9 @@
             } else {
                 var item = '<div class="item"><div class="right floated content"><div class="ui button red remove" data-item="' + newElement.counter + '">Remove</div></div><div class="content" style="padding-top: 15px;">' + inputValue + '</div> </div>';
                 list.append(item);
+                if(newElement.counter == 1){
+                    $('#placeholder').remove();
+                }
                 var input = '<input type="hidden" name="acceptance_criteria[]" value="' + inputValue + '" data-item="' + newElement.counter + '">';
                 inputList.append(input);
                 $('#criteria_input').val('');
