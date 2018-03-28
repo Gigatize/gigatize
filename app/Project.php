@@ -29,7 +29,7 @@ class Project extends Model
         'skills' => 'required',
         'user_count' => 'required|numeric|max:3',
         'estimated_hours' => 'required|numeric|max:20',
-        'resources_link' => 'sometimes|url',
+        'resources_link' => 'nullable|url',
     ];
 
     public function Owner()

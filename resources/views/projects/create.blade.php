@@ -310,8 +310,7 @@
                         <label>ACCEPTANCE CRITERIA</label>
                         <div class="header two fields">
                             <div id="criteria_wrapper" class="thirteen wide field">
-                                <input data-validate="acceptance_criteria" type="text" id="criteria_input" placeholder="Enter Criteria...">
-                                <input id="placeholder" type="hidden" name="acceptance_criteria[]" value="">
+                                <input name="criteria_input" type="text" id="criteria_input" placeholder="Enter Criteria...">
                             </div>
                             <div class="three wide field">
                                 <div class="ui button green" tabindex="0" onclick="newElement()" style="width: 100px;">
@@ -408,9 +407,14 @@
                     </div>
                     <div class="sixteen wide field">
                         <label>SKILLS REQUIRED</label>
-                        <div class="ui search multiple selection dropdown select">
-                            <input type="hidden" name="skills">
+                        <div id="skills" class="ui search multiple selection dropdown select">
+                            <input type="hidden" name="skills" value="{{str_replace(" ",",",old('skills'))}}">
                             <i class="dropdown icon"></i>
+                            @if(old('skills'))
+                                @foreach(explode(",",old('skills')) as $skill)
+                                    <a class="ui label transition visible" data-value="{{$skill}}" style="display: inline-block !important;">{{\App\Skill::find($skill)->name}}<i class="delete icon"></i></a>
+                                @endforeach
+                            @endif
                             <div class="default text">skills</div>
                             <div class="menu">
                                 @foreach($skills as $skill)
@@ -422,7 +426,7 @@
                     <div class="fields">
                         <div class="eight wide field">
                             <label>HOW MANY PEOPLE ARE ALLOWED TO SIGN UP?</label>
-                            <input type="hidden" name="user_count" value="">
+                            <input id="user_count" type="hidden" name="user_count">
                             <svg class="users"  version="1.1" data-users="1" xmlns="http://www.w3.org/2000/svg"
                                  viewBox="0 0 62 62" height="100" width="100" xml:space="preserve" style="enable-background:new 0 0 55 55; float: left; padding: 0 5px;">
                                 <defs>
@@ -523,7 +527,7 @@
                     <div class="inline field" style="text-align: left;">
                         <div class="switch">
                             <label>
-                                <input name="flexible_start" type="checkbox">
+                                <input name="flexible_start" type="checkbox" @if(old('flexible_start') == 'on') checked @endif>
                                 <span class="lever"></span>
                                 FLEXIBLE START DATE?
                             </label>
@@ -532,7 +536,7 @@
                     <div class="inline field" style="text-align: left;">
                         <div class="switch">
                             <label>
-                                <input name="on_site" type="checkbox">
+                                <input name="on_site" type="checkbox" @if(old('on_site') == 'on') checked @endif>
                                 <span class="lever"></span>
                                 RESOURCE MUST BE ON SITE?
                             </label>
@@ -541,7 +545,7 @@
                     <div class="inline field" style="text-align: left;">
                         <div class="switch">
                             <label>
-                                <input name="renew" type="checkbox">
+                                <input name="renew" type="checkbox" @if(old('renew') == 'on') checked @endif>
                                 <span class="lever"></span>
                                 POTENTIAL TO RENEW GIG?
                             </label>
@@ -558,7 +562,66 @@
 @endsection
 @section('footer_scripts')
     <script type="text/javascript">
+        //acceptance criteria
+        // Create a new list item when clicking on the "Add" button
+
+        function newElement() {
+            if (typeof newElement.counter == 'undefined') {
+                newElement.counter = 0;
+            }
+            newElement.counter++;
+            var list = $('#criteria_list');
+            var inputList = $('#criteria_wrapper');
+            var inputValue = $('#criteria_input').val();
+            if (inputValue === '') {
+                alert("You must write something!");
+            } else {
+                var item = '<div class="item"><div class="right floated content"><div class="ui button red remove" data-item="' + newElement.counter + '">Remove</div></div><div class="content" style="padding-top: 15px;">' + inputValue + '</div> </div>';
+                list.append(item);
+                if(newElement.counter == 1){
+                    $('#placeholder').remove();
+                }
+                var input = '<input type="hidden" name="acceptance_criteria[]" value="' + inputValue + '" data-item="' + newElement.counter + '">';
+                inputList.append(input);
+                $('#criteria_input').val('');
+            }
+        }
+
+        $(document).on("click", ".remove", function () {
+            $(this).closest("div.item").remove();
+            item = $(this).attr('data-item');
+            $('input[name="acceptance_criteria[]"][data-item="' + item + '"]').remove();
+        });
+
+        $(document).on("click", ".users", function () {
+            $('.users').find('.cls-2').css({fill: '#b3b3b3'});
+            var count = $(this).attr('data-users');
+            $(this).prevAll('.users').find('.cls-2').css({fill: '#FACD39'});
+            $(this).find('.cls-2').css({fill: '#FACD39'});
+            $('input[name="user_count"]').val(count);
+
+        });
+
         $(document).ready(function () {
+            @if(old('user_count'))
+                var user_count = {{old('user_count')-1}};
+                $('.users:eq('+user_count+')').find('.cls-2').css({fill: '#FACD39'});
+                $('.users:eq('+user_count+')').prevAll('.users').find('.cls-2').css({fill: '#FACD39'});
+            @endif
+
+            @if(old('acceptance_criteria'))
+                @foreach(old('acceptance_criteria') as $index=>$criteria)
+                    var list = $('#criteria_list');
+                    var inputList = $('#criteria_wrapper');
+                    var item = '<div class="item"><div class="right floated content"><div class="ui button red remove" data-item="{{$index+1}}">Remove</div></div><div class="content" style="padding-top: 15px;">{{$criteria}}</div> </div>';
+                    list.append(item);
+                    var input = '<input type="hidden" name="acceptance_criteria[]" value="{{$criteria}}" data-item="{{$index+1}}">';
+                    inputList.append(input);
+                @endforeach
+            @endif
+
+            console.log('{{old('renew')}}');
+
             $('.ui.select').select({ fullTextSearch: true, forceSelection: false });
             $('.ui.checkbox').checkbox();
             $('.datepicker').pickadate();
@@ -613,6 +676,16 @@
 
             });
 
+            $.fn.form.settings.rules.acceptanceCriteria = function(value) {
+                if(document.getElementsByName("acceptance_criteria[]").length<=0) {
+                    // then field2 does not exist
+                    return false;
+                }else{
+                    return true;
+                }
+
+            };
+
             $('.ui.form').form({
                     fields: {
                         name: {
@@ -642,6 +715,51 @@
                                 }
                             ]
                         },
+                        criteria_input: {
+                            identifier: 'criteria_input',
+                            rules: [
+                                {
+                                    type   : 'acceptanceCriteria',
+                                    prompt : 'Acceptance Criteria'
+                                }
+                            ]
+                        },
+                        start_date: {
+                            identifier: 'start_date',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : 'Please select a start date for your project'
+                                }
+                            ]
+                        },
+                        deadline: {
+                            identifier: 'deadline',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : 'Please select a deadline for your project'
+                                }
+                            ]
+                        },
+                        location_id: {
+                            identifier: 'location_id',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : 'Please select a location'
+                                }
+                            ]
+                        },
+                        impact: {
+                            identifier: 'impact',
+                            rules: [
+                                {
+                                    type   : 'empty',
+                                    prompt : 'Please tell us about the impact of this project'
+                                }
+                            ]
+                        },
                         skills: {
                             identifier: 'skills',
                             rules: [
@@ -650,55 +768,66 @@
                                     prompt : 'Please select at least one skill'
                                 }
                             ]
-                        }
+                        },
+                        user_count: {
+                            identifier: 'user_count',
+                            rules: [
+                                {
+                                    type   : 'integer[1..3]',
+                                    prompt : 'Please select how many users your project needs'
+                                }
+                            ]
+                        },
+                        estimated_hours: {
+                            identifier: 'estimated_hours',
+                            rules: [
+                                {
+                                    type   : 'integer[1..20]',
+                                    prompt : 'The max number of hours you can request is 20'
+                                },
+                                {
+                                    type   : 'empty',
+                                    prompt : 'Please specify how many hours you need from users'
+                                }
+                            ]
+                        },
+                        resources_link: {
+                            identifier: 'resources_link',
+                            optional: true,
+                            rules: [
+                                {
+                                    type   : 'url',
+                                    prompt : 'Please ensure the link to project resources is a url'
+                                }
+                            ]
+                        },
                     },
                     onFailure: function() {
                         // prevent form submission (doesn't work)
                         return false;
+
                     }
 
                 });
+
+            $('.ui.form').form('set values', {
+                title     : '{{ old('title') }}',
+                category_id: '{{ old('category_id') }}',
+                description: '{{ old('description') }}',
+                start_date: '{{ old('start_date') }}',
+                deadline: '{{ old('deadline') }}',
+                location_id: '{{ old('location_id') }}',
+                timezone: '{{ old('timezone') }}',
+                impact: '{{ old('impact') }}',
+                user_count: '{{ old('user_count') }}',
+                estimated_hours: '{{ old('estimated_hours') }}',
+                resources_link: '{{ old('resources_link') }}',
+                additional_info: '{{ old('additional_info') }}'
+            });
+
+            $('#skills.ui.dropdown').dropdown('restore defaults');
         });
 
-        //acceptance criteria
-        // Create a new list item when clicking on the "Add" button
-
-        function newElement() {
-            if (typeof newElement.counter == 'undefined') {
-                newElement.counter = 0;
-            }
-            newElement.counter++;
-            var list = $('#criteria_list');
-            var inputList = $('#criteria_wrapper');
-            var inputValue = $('#criteria_input').val();
-            if (inputValue === '') {
-                alert("You must write something!");
-            } else {
-                var item = '<div class="item"><div class="right floated content"><div class="ui button red remove" data-item="' + newElement.counter + '">Remove</div></div><div class="content" style="padding-top: 15px;">' + inputValue + '</div> </div>';
-                list.append(item);
-                if(newElement.counter == 1){
-                    $('#placeholder').remove();
-                }
-                var input = '<input type="hidden" name="acceptance_criteria[]" value="' + inputValue + '" data-item="' + newElement.counter + '">';
-                inputList.append(input);
-                $('#criteria_input').val('');
-            }
-        }
-
-        $(document).on("click", ".remove", function () {
-            $(this).closest("div.item").remove();
-            item = $(this).attr('data-item');
-            $('input[name="acceptance_criteria[]"][data-item="' + item + '"]').remove();
-        });
-
-        $(document).on("click", ".users", function () {
-            $('.users').find('.cls-2').css({fill: '#b3b3b3'});
-            var count = $(this).attr('data-users');
-            $(this).prevAll('.users').find('.cls-2').css({fill: '#FACD39'});
-            $(this).find('.cls-2').css({fill: '#FACD39'});
-            $('input[name="user_count"]').val(count);
-
-        });
     </script>
 @endsection
 
