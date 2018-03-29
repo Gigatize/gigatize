@@ -25,8 +25,6 @@
         <div id="content" style="padding-bottom: 70px;">
             @yield('content')
         </div>
-        @includeWhen(!Request::is('projects/create'), 'layouts.partials._footer')
-
     </div>
 
     <!-- Scripts -->

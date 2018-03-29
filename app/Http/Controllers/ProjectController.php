@@ -21,7 +21,8 @@ class ProjectController extends Controller
    */
   public function index()
   {
-    
+      $projects = Project::all();
+      return view('projects/index',compact('projects'));
   }
 
   /**
@@ -91,7 +92,7 @@ class ProjectController extends Controller
       }
       //create associated skills
       foreach (explode(",",Input::get('skills')) as $skill){
-          $project->Skills()->create([
+          $project->Skills()->attach([
               'name' => $skill
           ]);
       }

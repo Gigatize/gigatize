@@ -69,7 +69,7 @@
                 <a href="{{url('/projects/create')}}" class="item {{Request::is('projects/create') ? 'active' :  ''}}">Find Talent</a>
             </li>
             <li>
-                <a class="item">Find a Gig</a>
+                <a href="{{url('/projects')}}" class="item {{Request::is('projects') ? 'active' :  ''}}">Find a Gig</a>
             </li>
             <li>
                 <a class="item">Quick Quest</a>
