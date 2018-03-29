@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-    <div class="ui borderless menu" style="margin: 25px 50px;">
+    <div class="ui borderless menu" style="margin: 25px 50px 0 50px;">
         <a class="item"><i class="fas fa-filter" style="padding-right: 5px;"></i> Filters:</a>
         <div class="right menu">
             <div class="ui dropdown item">
@@ -44,7 +44,19 @@
                     <a class="item">Spanish</a>
                 </div>
             </div>
+            <div class="ui category search item">
+                <div class="ui transparent icon input">
+                    <input class="prompt" type="text" placeholder="Search..." style="margin-bottom: 0">
+                    <i class="search link icon"></i>
+                </div>
+                <div class="results"></div>
+            </div>
         </div>
+    </div>
+    <div class="ui secondary menu" style="margin:0 50px; max-height: 25px">
+        <a class="ui label" style="max-height: 25px">
+            Some Filter <i class="close icon"></i>
+        </a>
     </div>
     <div class="ui grid" style="margin: 25px 50px;">
         @foreach($projects as $project)
