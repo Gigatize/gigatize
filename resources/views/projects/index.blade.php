@@ -1,9 +1,6 @@
 @extends('layouts.app')
 
 @section('header_styles')
-    <script>
-        FontAwesomeConfig = { autoReplaceSvg: 'nest' }
-    </script>
     <style type="text/css">
         .pagination li.active{
             color: #facd39;
@@ -115,10 +112,10 @@
                 </div>
                 <div class="content">
                     <span class="right floated">
-                        <span class="comment-count">5</span> <i class="far fa-comment"></i>
-                        <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) fas red-text @else far @endif fa-heart favorite" data-project="{{$project->id}}"></i>
+                        <span class="comment-count">5</span> <i class="fas fa-comment"></i>
+                        <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) red-text @endif fas fa-heart favorite" data-project="{{$project->id}}"></i>
                     </span>
-                    <i class="fas fa-tag"></i> Skills:
+                    Skills:
                     @foreach($project->Skills as $skill)
                         <a class="ui label" style="margin-bottom: 5px;">
                             {{$skill->name}}
@@ -137,26 +134,14 @@
 
 @section('footer_scripts')
     <script type="text/javascript">
-        $(document).ready(function () {
-            // Select the node that will be observed for mutations
-            var targetNode = document.getElementById('.favorite svg');
-
-//          Options for the observer (which mutations to observe)
-            var config = { attributes: true};
-
-            // Create an observer instance linked to the callback function
-            var observer = new MutationObserver(callback);
-
-//          Start observing the target node for configured mutations
-            observer.observe(targetNode, config);
-        });
         $(document).on("click",".favorite",function () {
             var project_id = $(this).attr('data-project');
-            var prefix = $(this).children('svg.fa-heart').attr('data-prefix');
-            if(prefix == 'far') {
+            //set to true if has class red-text
+            var favorite = $(this).hasClass("red-text");
+            if(!favorite) {
                 $.post("{{url('/favorite')}}/" + project_id, {'_token': '{{csrf_token()}}'}, function (data) {
                     if (data.success) {
-                        $(".favorite[data-project=" + project_id + "] svg[data-prefix='far']").attr('data-prefix', 'fas').addClass('red-text');
+                        $(".favorite[data-project=" + project_id + "]").addClass('red-text');
                         var currentCount = parseInt($(".favorite-count[data-project=" + project_id + "]").html());
                         $(".favorite-count[data-project=" + project_id + "]").html(currentCount + 1);
                     }
@@ -164,7 +149,7 @@
             }else{
                 $.post( "{{url('/unfavorite')}}/"+project_id, { '_token': '{{csrf_token()}}' }, function( data ) {
                     if(data.success){
-                        $(".favorite[data-project=" + project_id + "] svg[data-prefix='fas']").attr('data-prefix','far').removeClass('red-text');
+                        $(".favorite[data-project=" + project_id + "]").removeClass('red-text');
                         var currentCount =  parseInt($(".favorite-count[data-project="+project_id+"]").html());
                         $(".favorite-count[data-project="+project_id+"]").html(currentCount-1);
                     }

@@ -11,10 +11,10 @@
     <title>Gigatize | @yield('title')</title>
 
     <!-- Styles -->
-    @yield('header_styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/app.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/semantic-ui.css') }}">
     <link rel="stylesheet" type="text/css" href="{{ asset('css/materialize.css') }}">
+    @yield('header_styles')
 
 </head>
 <body>
