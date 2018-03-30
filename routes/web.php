@@ -48,6 +48,14 @@ Route::group(['middleware' => ['checkauth']], function () {
     Route::get('/projects/create','ProjectController@create');
     Route::post('/projects/store','ProjectController@store');
 
+    /*
+    |---------------------------------------------------------------|
+    |Favorite Routes
+    |---------------------------------------------------------------|
+    */
+    Route::post('/favorite/{project}', 'ProjectController@favoriteProject');
+    Route::post('/unfavorite/{project}', 'ProjectController@unFavoriteProject');
+
 
 });
 

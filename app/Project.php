@@ -3,6 +3,7 @@
 namespace App;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\Auth;
 
 class Project extends Model 
 {
@@ -60,6 +61,28 @@ class Project extends Model
     public function Skills()
     {
         return $this->belongsToMany('App\Skill');
+    }
+
+    public function Favorites()
+    {
+        return $this->belongsToMany('App\User', 'favorites', 'project_id', 'user_id')->withTimeStamps();
+    }
+
+
+    /*
+    |---------------------------------------------------------------|
+    |Favorite Methods
+    |---------------------------------------------------------------|
+    */
+    public function favorited()
+    {
+        return (bool) Favorite::where('user_id', Auth::id())
+            ->where('project_id', $this->id)
+            ->first();
+    }
+
+    public function favoriteCount(){
+        return $this->Favorites()->count();
     }
 
 }

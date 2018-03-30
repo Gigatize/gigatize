@@ -14,7 +14,15 @@ class User extends Authenticatable
 
     public function OwnedProjects()
     {
-        return $this->hasMany('Project', 'user_id');
+        return $this->hasMany('App\Project', 'user_id');
+    }
+
+    /**
+     * Get all of favorite posts for the user.
+     */
+    public function Favorites()
+    {
+        return $this->belongsToMany('App\Project', 'favorites', 'user_id', 'project_id')->withTimeStamps();
     }
 
 }

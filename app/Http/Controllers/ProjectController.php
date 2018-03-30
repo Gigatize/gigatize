@@ -143,6 +143,32 @@ class ProjectController extends Controller
   {
     
   }
+
+    /**
+     * Favorite a particular project
+     *
+     * @param  Project $project
+     * @return Response
+     */
+    public function favoriteProject(Project $project)
+    {
+        Auth::user()->Favorites()->attach($project->id);
+
+        return response()->json(['success'=>true],200);
+    }
+
+    /**
+     * Unfavorite a particular project
+     *
+     * @param  Project $project
+     * @return Response
+     */
+    public function unFavoriteProject(Project $project)
+    {
+        Auth::user()->Favorites()->detach($project->id);
+
+        return response()->json(['success'=>true],200);
+    }
   
 }
 

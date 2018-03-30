@@ -112,8 +112,8 @@
                 </div>
                 <div class="content">
                     <span class="right floated">
-                      5 <i class="far fa-comment"></i>
-                      12 <i class="far fa-heart"></i>
+                        <span class="comment-count">5</span> <i class="far fa-comment"></i>
+                        <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) fas red-text @else far @endif fa-heart favorite" data-project="{{$project->id}}"></i>
                     </span>
                     <i class="fas fa-tag"></i> Skills:
                     @foreach($project->Skills as $skill)
@@ -130,4 +130,30 @@
             {{ $projects->links() }}
         </div>
     </div>
+@endsection
+
+@section('footer_scripts')
+    <script type="text/javascript">
+        $(document).on("click",".favorite[data-prefix='far']",function () {
+            var project_id = $(this).attr('data-project');
+            $.post( "{{url('/favorite')}}/"+project_id, { '_token': '{{csrf_token()}}' }, function( data ) {
+                if(data.success){
+                    $(".favorite[data-prefix='far'][data-project="+project_id+"]").addClass('fas').addClass('red-text').removeClass('far');
+                    var currentCount =  parseInt($(".favorite-count[data-project="+project_id+"]").html());
+                    $(".favorite-count[data-project="+project_id+"]").html(currentCount+1);
+                }
+            });
+        });
+
+        $(document).on("click",".favorite[data-prefix='fas']",function () {
+            var project_id = $(this).attr('data-project');
+            $.post( "{{url('/unfavorite')}}/"+project_id, { '_token': '{{csrf_token()}}' }, function( data ) {
+                if(data.success){
+                    $(".favorite[data-prefix='fas'][data-project="+project_id+"]").removeClass('fas').removeClass('red-text').addClass('far');
+                    var currentCount =  parseInt($(".favorite-count[data-project="+project_id+"]").html());
+                    $(".favorite-count[data-project="+project_id+"]").html(currentCount-1);
+                }
+            });
+        });
+    </script>
 @endsection
