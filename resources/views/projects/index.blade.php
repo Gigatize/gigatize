@@ -117,7 +117,7 @@
                     </span>
                     <i class="fas fa-tag"></i> Skills:
                     @foreach($project->Skills as $skill)
-                        <a class="ui label">
+                        <a class="ui label" style="margin-bottom: 5px;">
                             {{$skill->name}}
                         </a>
                     @endforeach
