@@ -92,15 +92,14 @@
             Another Filter <i class="close icon"></i>
         </a>
     </div>
-    <div class="ui three column grid" style="margin: 25px 50px;">
+    <div class="ui three stackable cards" style="margin: 25px 50px;">
         @foreach($projects as $project)
-        <div class="column">
-            <div class="ui card" style="width: 100%">
+            <div class="ui raised card">
                 <div class="content">
                     <div class="right floated meta">{{$project->estimated_hours}} <i class="fas fa-star"></i></div>
                     <img class="ui avatar image" src="{{asset('images/tile.png')}}"> {{$project->Owner->first_name . " " . $project->Owner->last_name}}
                     <div class="row" style="margin-bottom: 0; margin-top: 5px;">
-                        <div class="right floated meta">{{$project->start_date->toFormattedDateString()}} <i class="fas fa-calendar-alt"></i></div>
+                        <div class="right floated meta">{{$project->start_date->format('M d')}} <i class="fas fa-calendar-alt"></i></div>
                     </div>
                 </div>
                 <div class="content">
@@ -116,19 +115,19 @@
                       5 <i class="far fa-comment"></i>
                       12 <i class="far fa-heart"></i>
                     </span>
-                    <i class="fas fa-tag"></i> Skills: @foreach($project->Skills as $skill)
+                    <i class="fas fa-tag"></i> Skills:
+                    @foreach($project->Skills as $skill)
                         <a class="ui label">
                             {{$skill->name}}
                         </a>
-                                @endforeach
+                    @endforeach
                 </div>
             </div>
-        </div>
         @endforeach
-        <div class="sixteen wide column">
-            <span class="right floated">
+    </div>
+    <div class="ui grid container">
+        <div class="sixteen wide column center">
             {{ $projects->links() }}
-            </span>
         </div>
     </div>
 @endsection

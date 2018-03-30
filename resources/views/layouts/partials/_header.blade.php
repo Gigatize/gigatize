@@ -94,16 +94,12 @@
         </ul>
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">three</a></li>
+            <li><a class="item"><i class="edit icon"></i>Edit Profile</a></li>
+            <li><a class="item"><i class="settings icon"></i>Account Settings</a></li>
         </ul>
         <ul id="dropdown2" class="dropdown-content">
-            <li><a href="#!">one</a></li>
-            <li><a href="#!">two</a></li>
-            <li class="divider"></li>
-            <li><a href="#!">three</a></li>
+            <li><a class="item"><i class="edit icon"></i>Edit Profile</a></li>
+            <li><a class="item"><i class="settings icon"></i>Account Settings</a></li>
         </ul>
     </div>
 </nav>
