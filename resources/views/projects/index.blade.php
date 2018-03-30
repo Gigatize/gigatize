@@ -92,9 +92,9 @@
             Another Filter <i class="close icon"></i>
         </a>
     </div>
-    <div class="ui grid" style="margin: 25px 50px;">
+    <div class="ui three column grid" style="margin: 25px 50px;">
         @foreach($projects as $project)
-        <div class="four wide column">
+        <div class="column">
             <div class="ui card" style="width: 100%">
                 <div class="content">
                     <div class="right floated meta">{{$project->estimated_hours}} <i class="fas fa-star"></i></div>
