@@ -1,9 +1,40 @@
 @extends('layouts.app')
 
+@section('header_styles')
+    <style type="text/css">
+        .pagination li.active{
+            color: #facd39;
+            background-color: #fff;
+        }
+        .pagination li.active span{
+            color: #facd39;
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 0 10px;
+            line-height: 30px;
+        }
+        .pagination li span{
+            color: #444;
+            display: inline-block;
+            font-size: 1.2rem;
+            padding: 0 10px;
+            line-height: 30px;
+        }
+    </style>
+@endsection
+
 @section('content')
     <div class="ui borderless menu" style="margin: 25px 50px 0 50px;">
         <a class="item"><i class="fas fa-filter" style="padding-right: 5px;"></i> Filters:</a>
         <div class="right menu">
+            <div class="ui dropdown item">
+                Category <i class="dropdown icon"></i>
+                <div class="menu">
+                    <a class="item">English</a>
+                    <a class="item">Russian</a>
+                    <a class="item">Spanish</a>
+                </div>
+            </div>
             <div class="ui dropdown item">
                 Points <i class="dropdown icon"></i>
                 <div class="menu">
@@ -57,6 +88,9 @@
         <a class="ui label" style="max-height: 25px">
             Some Filter <i class="close icon"></i>
         </a>
+        <a class="ui label" style="max-height: 25px">
+            Another Filter <i class="close icon"></i>
+        </a>
     </div>
     <div class="ui grid" style="margin: 25px 50px;">
         @foreach($projects as $project)
@@ -71,12 +105,16 @@
                 </div>
                 <div class="content">
                     <h3>{{$project->title}}</h3>
-                    <p>{{$project->description}}</p>
+                    @if(strlen($project->description)>250)
+                        <p>{{substr($project->description,0,250)}}...</p>
+                    @else
+                        <p>{{$project->description}}</p>
+                    @endif
                 </div>
                 <div class="content">
                     <span class="right floated">
-                      <i class="far fa-comment"></i>
-                      <i class="far fa-heart"></i>
+                      5 <i class="far fa-comment"></i>
+                      12 <i class="far fa-heart"></i>
                     </span>
                     <i class="fas fa-tag"></i> Skills: @foreach($project->Skills as $skill)
                         <a class="ui label">
@@ -87,5 +125,10 @@
             </div>
         </div>
         @endforeach
+        <div class="sixteen wide column">
+            <span class="right floated">
+            {{ $projects->links() }}
+            </span>
+        </div>
     </div>
 @endsection
