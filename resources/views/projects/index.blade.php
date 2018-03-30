@@ -137,6 +137,19 @@
 
 @section('footer_scripts')
     <script type="text/javascript">
+        $(document).ready(function () {
+            // Select the node that will be observed for mutations
+            var targetNode = document.getElementById('.favorite svg');
+
+//          Options for the observer (which mutations to observe)
+            var config = { attributes: true};
+
+            // Create an observer instance linked to the callback function
+            var observer = new MutationObserver(callback);
+
+//          Start observing the target node for configured mutations
+            observer.observe(targetNode, config);
+        });
         $(document).on("click",".favorite",function () {
             var project_id = $(this).attr('data-project');
             var prefix = $(this).children('svg.fa-heart').attr('data-prefix');
