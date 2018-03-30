@@ -35,6 +35,7 @@
     <script>
         $(document).ready(function() {
             $(".dropdown-button").dropdown({belowOrigin: true});
+            $(".ui.dropdown").select();
 
             $(".button-collapse").sideNav();
 

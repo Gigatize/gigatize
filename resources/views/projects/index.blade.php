@@ -97,10 +97,10 @@
         <div class="four wide column">
             <div class="ui card" style="width: 100%">
                 <div class="content">
-                    <div class="right floated meta">14h <i class="fas fa-clock"></i></div>
-                    <img class="ui avatar image" src="{{asset('images/tile.png')}}"> Elliot
+                    <div class="right floated meta">{{$project->estimated_hours}} <i class="fas fa-star"></i></div>
+                    <img class="ui avatar image" src="{{asset('images/tile.png')}}"> {{$project->Owner->first_name . " " . $project->Owner->last_name}}
                     <div class="row" style="margin-bottom: 0; margin-top: 5px;">
-                        <div class="right floated meta">14h <i class="fas fa-calendar-alt"></i></div>
+                        <div class="right floated meta">{{$project->start_date->toFormattedDateString()}} <i class="fas fa-calendar-alt"></i></div>
                     </div>
                 </div>
                 <div class="content">
