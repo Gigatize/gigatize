@@ -1,6 +1,9 @@
 @extends('layouts.app')
 
 @section('header_styles')
+    <script>
+        FontAwesomeConfig = { autoReplaceSvg: 'nest' }
+    </script>
     <style type="text/css">
         .pagination li.active{
             color: #facd39;
@@ -134,29 +137,27 @@
 
 @section('footer_scripts')
     <script type="text/javascript">
-        $(document).ready(function () {
-            FontAwesomeConfig = { autoReplaceSvg: 'nest' }
-        });
-        $(document).on("click",".favorite[data-prefix='far']",function () {
+        $(document).on("click",".favorite",function () {
             var project_id = $(this).attr('data-project');
-            $.post( "{{url('/favorite')}}/"+project_id, { '_token': '{{csrf_token()}}' }, function( data ) {
-                if(data.success){
-                    $(".favorite[data-prefix='far'][data-project="+project_id+"]").attr('data-prefix','fas').addClass('red-text');
-                    var currentCount =  parseInt($(".favorite-count[data-project="+project_id+"]").html());
-                    $(".favorite-count[data-project="+project_id+"]").html(currentCount+1);
-                }
-            });
+            var prefix = $(this).children('svg.fa-heart').attr('data-prefix');
+            if(prefix == 'far') {
+                $.post("{{url('/favorite')}}/" + project_id, {'_token': '{{csrf_token()}}'}, function (data) {
+                    if (data.success) {
+                        $(".favorite[data-project=" + project_id + "] svg[data-prefix='far']").attr('data-prefix', 'fas').addClass('red-text');
+                        var currentCount = parseInt($(".favorite-count[data-project=" + project_id + "]").html());
+                        $(".favorite-count[data-project=" + project_id + "]").html(currentCount + 1);
+                    }
+                });
+            }else{
+                $.post( "{{url('/unfavorite')}}/"+project_id, { '_token': '{{csrf_token()}}' }, function( data ) {
+                    if(data.success){
+                        $(".favorite[data-project=" + project_id + "] svg[data-prefix='fas']").attr('data-prefix','far').removeClass('red-text');
+                        var currentCount =  parseInt($(".favorite-count[data-project="+project_id+"]").html());
+                        $(".favorite-count[data-project="+project_id+"]").html(currentCount-1);
+                    }
+                });
+            }
         });
 
-        $(document).on("click",".favorite[data-prefix='fas']",function () {
-            var project_id = $(this).attr('data-project');
-            $.post( "{{url('/unfavorite')}}/"+project_id, { '_token': '{{csrf_token()}}' }, function( data ) {
-                if(data.success){
-                    $(".favorite[data-prefix='fas'][data-project="+project_id+"]").attr('data-prefix','far').removeClass('red-text');
-                    var currentCount =  parseInt($(".favorite-count[data-project="+project_id+"]").html());
-                    $(".favorite-count[data-project="+project_id+"]").html(currentCount-1);
-                }
-            });
-        });
     </script>
 @endsection
