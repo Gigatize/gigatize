@@ -14,16 +14,21 @@
             <p>{{$project->description}}</p>
         @endif
     </div>
-    <div class="content">
+    <div class="content" style="position: relative">
                     <span class="right floated">
                         <span class="comment-count">5</span> <i class="fas fa-comment"></i>
                         <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) red-text @endif fas fa-heart favorite" data-project="{{$project->id}}"></i>
                     </span>
         Skills:
-        @foreach($project->Skills as $skill)
+        @foreach($project->Skills()->limit(2)->get() as $skill)
             <a class="ui label" style="margin-bottom: 5px;">
                 {{$skill->name}}
             </a>
         @endforeach
+        @if($project->Skills()->count())
+            <a class="ui label more-skills" data-html="{{implode(" <br> ",$project->Skills()->skip(2)->take(PHP_INT_MAX)->pluck('name')->toArray())}}" data-position="bottom center" data-inverted="" style="margin-bottom: 5px;">
+                <i class="fas fa-ellipsis-h"></i>
+            </a>
+        @endif
     </div>
 </div>

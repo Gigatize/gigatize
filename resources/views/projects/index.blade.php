@@ -185,8 +185,12 @@
     <script type="text/javascript">
         $(document).ready(function () {
             $('.ui.checkbox').checkbox();
-
             $('.datepicker').pickadate();
+            $('.more-skills').popup({
+                hoverable  : true,
+                position   : 'bottom center',
+                variation: 'inverted'
+            });
 
             var slider = document.getElementById('test-slider');
             noUiSlider.create(slider, {
