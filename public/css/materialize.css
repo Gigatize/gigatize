@@ -6998,11 +6998,11 @@ form p:last-child {
   pointer-events: none;
 }
 
-[type="checkbox"] {
+[type="checkbox"]:not('.ui') {
   /* checkbox aspect */
 }
 
-[type="checkbox"] + label {
+[type="checkbox"]:not('.ui') + label {
   position: relative;
   padding-left: 35px;
   cursor: pointer;
@@ -7016,8 +7016,8 @@ form p:last-child {
           user-select: none;
 }
 
-[type="checkbox"] + label:before,
-[type="checkbox"]:not(.filled-in) + label:after {
+[type="checkbox"]:not('.ui') + label:before,
+[type="checkbox"]:not('.ui'):not(.filled-in) + label:after {
   content: '';
   position: absolute;
   top: 0;
@@ -7032,18 +7032,18 @@ form p:last-child {
   transition: .2s;
 }
 
-[type="checkbox"]:not(.filled-in) + label:after {
+[type="checkbox"]:not('.ui'):not(.filled-in) + label:after {
   border: 0;
   -webkit-transform: scale(0);
           transform: scale(0);
 }
 
-[type="checkbox"]:not(:checked):disabled + label:before {
+[type="checkbox"]:not('.ui'):not(:checked):disabled + label:before {
   border: none;
   background-color: rgba(0, 0, 0, 0.42);
 }
 
-[type="checkbox"].tabbed:focus + label:after {
+[type="checkbox"]:not('.ui').tabbed:focus + label:after {
   -webkit-transform: scale(1);
           transform: scale(1);
   border: 0;
@@ -7053,7 +7053,7 @@ form p:last-child {
   background-color: rgba(0, 0, 0, 0.1);
 }
 
-[type="checkbox"]:checked + label:before {
+[type="checkbox"]:checked + label:before:not('.ui') {
   top: -4px;
   left: -5px;
   width: 12px;

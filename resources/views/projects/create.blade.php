@@ -524,31 +524,37 @@
                         <label>ADDITIONAL INFORMATION</label>
                         <textarea name="additional_info" rows="2" data-length="500" class="materialize-textarea"></textarea>
                     </div>
-                    <div class="inline field" style="text-align: left;">
-                        <div class="switch">
-                            <label>
-                                <input name="flexible_start" type="checkbox" @if(old('flexible_start') == 'on') checked @endif>
-                                <span class="lever"></span>
-                                FLEXIBLE START DATE?
-                            </label>
+                    <div class="sixteen wide field">
+                        <div class="inline field" style="text-align: left;">
+                            <div class="switch">
+                                <label>
+                                    <input name="flexible_start" type="checkbox" @if(old('flexible_start') == 'on') checked @endif>
+                                    <span class="lever"></span>
+                                    FLEXIBLE START DATE?
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <div class="inline field" style="text-align: left;">
-                        <div class="switch">
-                            <label>
-                                <input name="on_site" type="checkbox" @if(old('on_site') == 'on') checked @endif>
-                                <span class="lever"></span>
-                                RESOURCE MUST BE ON SITE?
-                            </label>
+                    <div class="sixteen wide field">
+                        <div class="inline field" style="text-align: left;">
+                            <div class="switch">
+                                <label>
+                                    <input name="on_site" type="checkbox" @if(old('on_site') == 'on') checked @endif>
+                                    <span class="lever"></span>
+                                    RESOURCE MUST BE ON SITE?
+                                </label>
+                            </div>
                         </div>
                     </div>
-                    <div class="inline field" style="text-align: left;">
-                        <div class="switch">
-                            <label>
-                                <input name="renew" type="checkbox" @if(old('renew') == 'on') checked @endif>
-                                <span class="lever"></span>
-                                POTENTIAL TO RENEW GIG?
-                            </label>
+                    <div class="sixteen wide field">
+                        <div class="inline field" style="text-align: left;">
+                            <div class="switch">
+                                <label>
+                                    <input name="renew" type="checkbox" @if(old('renew') == 'on') checked @endif>
+                                    <span class="lever"></span>
+                                    POTENTIAL TO RENEW GIG?
+                                </label>
+                            </div>
                         </div>
                     </div>
                     {{ csrf_field() }}
@@ -619,8 +625,6 @@
                     inputList.append(input);
                 @endforeach
             @endif
-
-            console.log('{{old('renew')}}');
 
             $('.ui.select').select({ fullTextSearch: true, forceSelection: false });
             $('.ui.checkbox').checkbox();

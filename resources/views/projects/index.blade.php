@@ -1,6 +1,7 @@
 @extends('layouts.app')
 
 @section('header_styles')
+    <link rel="stylesheet" type="text/css" href="{{ asset('css/nouislider.css') }}">
     <style type="text/css">
         .pagination li.active{
             color: #facd39;
@@ -20,6 +21,9 @@
             padding: 0 10px;
             line-height: 30px;
         }
+        .noUi-value.noUi-value-horizontal.noUi-value-large{
+            margin-top: 10px;
+        }
     </style>
 @endsection
 
@@ -29,38 +33,110 @@
         <div class="right menu">
             <div class="ui dropdown item">
                 Category <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item">English</a>
-                    <a class="item">Russian</a>
-                    <a class="item">Spanish</a>
+                <div id="category-form" class="menu">
+                    <div class="ui basic segment">
+                        <form class="ui form">
+                            @foreach(\App\Category::all() as $category)
+                            <div class="field">
+                                <div class="ui checkbox">
+                                    <input type="checkbox" tabindex="0" class="hidden" checked>
+                                    <label>{{$category->name}}</label>
+                                </div>
+                            </div>
+                            @endforeach
+                            <div class="item fluid center">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <button class="ui button" type="submit">Clear</button>
+                                    </div>
+                                    <div class="field">
+                                        <button class="ui button green" type="submit">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="ui dropdown item">
                 Points <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item">English</a>
-                    <a class="item">Russian</a>
-                    <a class="item">Spanish</a>
+                <div id="points-form" class="menu" style="min-width: 300px;">
+                    <div class="ui basic segment">
+                        <form class="ui form">
+                            <div class="field">
+                                <div id="test-slider"></div>
+                            </div>
+                            <br>
+                            <div class="item fluid center">
+                                <div class="two fields">
+                                <div class="field">
+                                    <button class="ui button" type="submit">Clear</button>
+                                </div>
+                                <div class="field">
+                                    <button class="ui button green" type="submit">Apply</button>
+                                </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="ui dropdown item">
                 Start Date <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item">English</a>
-                    <a class="item">Russian</a>
-                    <a class="item">Spanish</a>
+                <div id="start-date-form" class="menu" style="min-width: 500px; min-height: 500px;">
+                    <div class="ui basic segment">
+                        <form class="ui form">
+                            <div class="fifteen wide field centered text-center">
+                                <label>AFTER</label>
+                                <input type="text" class="datepicker">
+                            </div>
+                            <div class="fifteen teen wide field centered text-center">
+                                <label>BEFORE</label>
+                                <input type="text" class="datepicker">
+                            </div>
+                            <div class="item fluid center">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <button class="ui button" type="submit">Clear</button>
+                                    </div>
+                                    <div class="field">
+                                        <button class="ui button green" type="submit">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="ui dropdown item">
+                Deadline <i class="dropdown icon"></i>
+                <div id="deadline-form" class="menu" style="min-width: 500px; min-height: 500px;">
+                    <div class="ui basic segment">
+                        <form class="ui form">
+                            <div class="fifteen wide field centered text-center">
+                                <label>AFTER</label>
+                                <input type="text" class="datepicker">
+                            </div>
+                            <div class="fifteen teen wide field centered text-center">
+                                <label>BEFORE</label>
+                                <input type="text" class="datepicker">
+                            </div>
+                            <div class="item fluid center">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <button class="ui button" type="submit">Clear</button>
+                                    </div>
+                                    <div class="field">
+                                        <button class="ui button green" type="submit">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="ui dropdown item">
                 Skills <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item">English</a>
-                    <a class="item">Russian</a>
-                    <a class="item">Spanish</a>
-                </div>
-            </div>
-            <div class="ui dropdown item">
-                Relevance <i class="dropdown icon"></i>
                 <div class="menu">
                     <a class="item">English</a>
                     <a class="item">Russian</a>
@@ -92,37 +168,9 @@
             Another Filter <i class="close icon"></i>
         </a>
     </div>
-    <div class="ui three stackable cards" style="margin: 25px 50px;">
+    <div id="project-tiles" class="ui three stackable cards" style="margin: 25px 50px;">
         @foreach($projects as $project)
-            <div class="ui raised card">
-                <div class="content">
-                    <div class="right floated meta">{{$project->estimated_hours}} <i class="fas fa-star"></i></div>
-                    <img class="ui avatar image" src="{{asset('images/tile.png')}}"> {{$project->Owner->first_name . " " . $project->Owner->last_name}}
-                    <div class="row" style="margin-bottom: 0; margin-top: 5px;">
-                        <div class="right floated meta">{{$project->start_date->format('M d')}} <i class="fas fa-calendar-alt"></i></div>
-                    </div>
-                </div>
-                <div class="content">
-                    <h3>{{$project->title}}</h3>
-                    @if(strlen($project->description)>250)
-                        <p>{{substr($project->description,0,250)}}...</p>
-                    @else
-                        <p>{{$project->description}}</p>
-                    @endif
-                </div>
-                <div class="content">
-                    <span class="right floated">
-                        <span class="comment-count">5</span> <i class="fas fa-comment"></i>
-                        <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) red-text @endif fas fa-heart favorite" data-project="{{$project->id}}"></i>
-                    </span>
-                    Skills:
-                    @foreach($project->Skills as $skill)
-                        <a class="ui label" style="margin-bottom: 5px;">
-                            {{$skill->name}}
-                        </a>
-                    @endforeach
-                </div>
-            </div>
+            @include('projects.project_tile')
         @endforeach
     </div>
     <div class="ui grid container">
@@ -133,7 +181,32 @@
 @endsection
 
 @section('footer_scripts')
+    <script src="{{ asset('js/nouislider.js') }}"></script>
     <script type="text/javascript">
+        $(document).ready(function () {
+            $('.ui.checkbox').checkbox();
+
+            $('.datepicker').pickadate();
+
+            var slider = document.getElementById('test-slider');
+            noUiSlider.create(slider, {
+                start: [0, 100],
+                connect: true,
+                step: 1,
+                orientation: 'horizontal', // 'horizontal' or 'vertical'
+                range: {
+                    'min': 0,
+                    'max': 100
+                },
+                pips: {
+                    mode: 'range',
+                    density: 10
+                },
+                format: wNumb({
+                    decimals: 0
+                })
+            });
+        });
         $(document).on("click",".favorite",function () {
             var project_id = $(this).attr('data-project');
             //set to true if has class red-text

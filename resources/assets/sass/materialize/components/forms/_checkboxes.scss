@@ -20,7 +20,7 @@ form p:last-child {
 }
 
 // Checkbox Styles
-[type="checkbox"] {
+[type="checkbox"]:not('.ui') {
   // Text Label Style
   + label {
     position: relative;
@@ -70,7 +70,7 @@ form p:last-child {
 }
 
 [type="checkbox"]:checked {
-  + label:before {
+  + label:before:not('.ui') {
     top: -4px;
     left: -5px;
     width: 12px;
