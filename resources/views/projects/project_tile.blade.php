@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="content">
-        <h3>{{$project->title}}</h3>
+        <h1 class="ui header">{{$project->title}}</h1>
         @if(strlen($project->description)>250)
             <p>{{substr($project->description,0,250)}}...</p>
         @else
