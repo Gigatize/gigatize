@@ -224,8 +224,10 @@
     <script type="text/javascript" src="{{ asset('js/nouislider.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
-            var searchHilitor = new Hilitor("content");
-            searchHilitor.apply("{{$term}}");
+            @if(isset($term))
+                var searchHilitor = new Hilitor("content");
+                searchHilitor.apply("{{$term}}");
+            @endif
 
             $('.ui.checkbox').checkbox();
             $('.datepicker').pickadate();
