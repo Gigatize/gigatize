@@ -147,7 +147,7 @@ class ProjectController extends Controller
   public function search(){
       $term = Input::get('term');
       $projects = Project::search($term, null, true)->distinct()->paginate(12);
-      return view('projects/index',compact('projects'));
+      return view('projects/index',compact('projects','term'));
   }
 
     /**

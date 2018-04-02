@@ -220,9 +220,13 @@
 @endsection
 
 @section('footer_scripts')
-    <script src="{{ asset('js/nouislider.js') }}"></script>
+    <script type="text/javascript" src="{{asset('js/hilitor.js')}}"></script>
+    <script type="text/javascript" src="{{ asset('js/nouislider.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            var searchHilitor = new Hilitor("content");
+            searchHilitor.apply("{{$term}}");
+
             $('.ui.checkbox').checkbox();
             $('.datepicker').pickadate();
             $('.more-skills').popup({
