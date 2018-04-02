@@ -54,11 +54,11 @@
         <a href="#" data-activates="mobile-demo" class="button-collapse" style="color: #000; z-index: 1001;"><i class="bars icon"></i></a>
         <ul class="right hide-on-med-and-down">
             <li>
-                <form id="navbarsearch">
+                <form id="navbarsearch" method="get" action="{{url('/projects/search')}}">
                     <div class="navfix">
                         <div id="navfix2">
                             <div class="input-field">
-                                <input class="searchbarfix" id="search" type="search" required style="margin: 0;">
+                                <input class="searchbarfix" name="term" id="search" type="search" required style="margin: 0;">
                                 <label class="label-icon search-label" for="search" style="top: -15%; left:80%;"><i class="fas fa-search"></i></label>
                             </div>
                         </div>
@@ -75,10 +75,10 @@
                 <a class="item">Quick Quest</a>
             </li>
             <li>
-                <a class="dropdown-button" href="#!" data-activates="dropdown1"><i class="user icon"></i> {{Auth::user()->first_name. " " . Auth::user()->last_name}}<i class="caret down icon"></i></a>
+                <a class="dropdown-button" href="#!" data-activates="dropdown1"><img class="ui avatar image" src="{{asset(Auth::user()->picture)}}"> {{Auth::user()->first_name. " " . Auth::user()->last_name}}<i class="caret down icon"></i></a>
             </li>
         </ul>
-        <ul class="side-nav" id="mobile-demo">
+        <ul class="side-nav" id="mobile-demo" style="z-index: 1001;">
             <li>
                 <a href="{{url('/projects/create')}}" class="item {{Request::is('projects/create') ? 'active' :  ''}}">Find Talent</a>
             </li>
@@ -89,16 +89,16 @@
                 <a class="item">Quick Quest</a>
             </li>
             <li>
-                <a class="dropdown-button" href="#!" data-activates="dropdown2"><i class="user icon"></i>{{Auth::user()->name}}<i class="caret down icon"></i></a>
+                <a class="dropdown-button" href="#!" data-activates="dropdown2"><img class="ui avatar image" src="{{asset(Auth::user()->picture)}}"> {{Auth::user()->first_name. " " . Auth::user()->last_name}}<i class="caret down icon"></i></a>
             </li>
         </ul>
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a class="item"><i class="edit icon"></i>Edit Profile</a></li>
+            <li><a class="item"><i class="icon address card" style="box-shadow: 0 0 0 0;"></i>Edit Profile</a></li>
             <li><a class="item"><i class="settings icon"></i>Account Settings</a></li>
         </ul>
         <ul id="dropdown2" class="dropdown-content">
-            <li><a class="item"><i class="edit icon"></i>Edit Profile</a></li>
+            <li><a class="item"><i class="icon address card" style="box-shadow: 0 0 0 0;"></i>Edit Profile</a></li>
             <li><a class="item"><i class="settings icon"></i>Account Settings</a></li>
         </ul>
     </div>

@@ -144,14 +144,22 @@ class ProjectController extends Controller
     
   }
 
+  public function search(){
+      $term = Input::get('term');
+      $projects = Project::search($term, null, true)->distinct()->paginate(12);
+      return view('projects/index',compact('projects'));
+  }
+
     /**
      * Favorite a particular project
      *
      * @param  Project $project
      * @return Response
      */
-    public function favoriteProject(Project $project)
+    public function favoriteProject($id)
     {
+        $project = Project::find($id);
+
         Auth::user()->Favorites()->attach($project->id);
 
         return response()->json(['success'=>true],200);
@@ -163,8 +171,10 @@ class ProjectController extends Controller
      * @param  Project $project
      * @return Response
      */
-    public function unFavoriteProject(Project $project)
+    public function unFavoriteProject($id)
     {
+        $project = Project::find($id);
+
         Auth::user()->Favorites()->detach($project->id);
 
         return response()->json(['success'=>true],200);

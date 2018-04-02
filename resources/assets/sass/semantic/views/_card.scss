@@ -434,6 +434,10 @@
 .ui.raised.card {
   box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 2px 4px 0px rgba(34, 36, 38, 0.12), 0px 2px 10px 0px rgba(34, 36, 38, 0.15);
 }
+.ui.raised.cards > .card,
+.ui.raised.card.sponsored {
+  box-shadow: 0px 0px 0px 1px #D4D4D5, 0px 0px 5px 5px rgba(250,205,57,0.12), 0px 0px 5px 5px rgba(250,205,57,0.12);
+}
 .ui.raised.cards a.card:hover,
 .ui.link.cards .raised.card:hover,
 a.ui.raised.card:hover,

@@ -1,5 +1,7 @@
 @extends('layouts.app')
 
+@section('title','Find a Gig')
+
 @section('header_styles')
     <link rel="stylesheet" type="text/css" href="{{ asset('css/nouislider.css') }}">
     <style type="text/css">
@@ -87,11 +89,11 @@
                     <div class="ui basic segment">
                         <form class="ui form">
                             <div class="fifteen wide field centered text-center">
-                                <label>AFTER</label>
+                                <label>FROM:</label>
                                 <input type="text" class="datepicker">
                             </div>
                             <div class="fifteen teen wide field centered text-center">
-                                <label>BEFORE</label>
+                                <label>TO:</label>
                                 <input type="text" class="datepicker">
                             </div>
                             <div class="item fluid center">
@@ -114,11 +116,11 @@
                     <div class="ui basic segment">
                         <form class="ui form">
                             <div class="fifteen wide field centered text-center">
-                                <label>AFTER</label>
+                                <label>FROM:</label>
                                 <input type="text" class="datepicker">
                             </div>
                             <div class="fifteen teen wide field centered text-center">
-                                <label>BEFORE</label>
+                                <label>TO:</label>
                                 <input type="text" class="datepicker">
                             </div>
                             <div class="item fluid center">
@@ -136,26 +138,63 @@
                 </div>
             </div>
             <div class="ui dropdown item">
-                Skills <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item">English</a>
-                    <a class="item">Russian</a>
-                    <a class="item">Spanish</a>
-                </div>
-            </div>
-            <div class="ui dropdown item">
                 Sort By <i class="dropdown icon"></i>
-                <div class="menu">
-                    <a class="item">English</a>
-                    <a class="item">Russian</a>
-                    <a class="item">Spanish</a>
+                <div id="category-form" class="menu">
+                    <div class="ui basic segment">
+                        <form class="ui form">
+                            <div class="grouped fields">
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="sort_by" checked="" tabindex="0" class="hidden">
+                                        <label>Relevance</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="sort_by" tabindex="0" class="hidden">
+                                        <label>Points</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="sort_by" tabindex="0" class="hidden">
+                                        <label>Favorites</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="sort_by" tabindex="0" class="hidden">
+                                        <label>Start Date</label>
+                                    </div>
+                                </div>
+                                <div class="field">
+                                    <div class="ui radio checkbox">
+                                        <input type="radio" name="sort_by" tabindex="0" class="hidden">
+                                        <label>Sponsored</label>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item fluid center">
+                                <div class="two fields">
+                                    <div class="field">
+                                        <button class="ui button" type="submit">Clear</button>
+                                    </div>
+                                    <div class="field">
+                                        <button class="ui button green" type="submit">Apply</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </div>
             <div class="ui category search item">
-                <div class="ui transparent icon input">
-                    <input class="prompt" type="text" placeholder="Search..." style="margin-bottom: 0">
-                    <i class="search link icon"></i>
-                </div>
+                <form method="get" action="{{url('/projects/search')}}">
+                    <div class="ui transparent icon input">
+                        <input class="prompt" name="term"  type="text" placeholder="Search..." style="margin-bottom: 0">
+                        <i class="search link icon"></i>
+                    </div>
+                </form>
                 <div class="results"></div>
             </div>
         </div>

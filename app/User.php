@@ -12,6 +12,15 @@ class User extends Authenticatable
     public $timestamps = true;
     protected $fillable = array('email', 'first_name', 'last_name', 'role', 'picture', 'remember_token');
 
+    public function getPictureAttribute($value)
+    {
+        if(is_null($value)){
+            return 'images/user.svg';
+        }else{
+            return $value;
+        }
+    }
+
     public function OwnedProjects()
     {
         return $this->hasMany('App\Project', 'user_id');

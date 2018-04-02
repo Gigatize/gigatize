@@ -47,6 +47,7 @@ Route::group(['middleware' => ['checkauth']], function () {
     Route::get('/projects','ProjectController@index');
     Route::get('/projects/create','ProjectController@create');
     Route::post('/projects/store','ProjectController@store');
+    Route::get('/projects/search','ProjectController@search');
 
     /*
     |---------------------------------------------------------------|

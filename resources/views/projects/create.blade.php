@@ -1,6 +1,6 @@
 @extends('layouts.app')
 
-@section('title','Find Talent')
+@section('title','Post a Gig')
 
 @section('header_styles')
     <link href="https://fonts.googleapis.com/css?family=Cambay" rel="stylesheet">

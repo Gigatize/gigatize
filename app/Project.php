@@ -4,18 +4,50 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
+use Nicolaslopezj\Searchable\SearchableTrait;
+use Spatie\Sluggable\HasSlug;
+use Spatie\Sluggable\SlugOptions;
 
 class Project extends Model 
 {
+    use SearchableTrait;
+    use HasSlug;
 
     protected $table = 'projects';
     public $timestamps = true;
-    protected $fillable = array('title', 'user_id', 'category_id', 'description', 'start_date', 'deadline', 'location_id', 'timezone', 'impact', 'user_count', 'estimated_hours', 'resources_link', 'additional_info', 'flexible_start', 'on_site', 'renew','complete');
+    protected $fillable = array('title', 'slug','user_id', 'category_id', 'description', 'start_date', 'deadline', 'location_id', 'timezone', 'impact', 'user_count', 'estimated_hours', 'resources_link', 'additional_info', 'flexible_start', 'on_site', 'renew','complete');
     protected $dates = [
         'created_at',
         'updated_at',
         'start_date',
         'deadline'
+    ];
+
+    protected $searchable = [
+        /**
+         * Columns and their priority in search results.
+         * Columns with higher values are more important.
+         * Columns with equal values have equal importance.
+         *
+         * @var array
+         */
+        'columns' => [
+            'title' => 10,
+            'description' => 10,
+            'impact' => 2,
+            'additional_info' => 2,
+            'users.email' => 1,
+            'users.first_name' => 1,
+            'users.last_name' => 1,
+            'categories.name' => 1,
+            'skills.name' => 5,
+        ],
+        'joins' => [
+            'users' => ['projects.user_id','users.id'],
+            'categories' => ['projects.category_id','categories.id'],
+            'project_skill' => ['project_skill.project_id','projects.id'],
+            'skills' => ['skills.id','project_skill.skill_id'],
+        ],
     ];
 
     static $rules = [
@@ -32,6 +64,16 @@ class Project extends Model
         'estimated_hours' => 'required|numeric|max:20',
         'resources_link' => 'nullable|url',
     ];
+
+    /**
+     * Get the options for generating the slug.
+     */
+    public function getSlugOptions() : SlugOptions
+    {
+        return SlugOptions::create()
+            ->generateSlugsFrom('title')
+            ->saveSlugsTo('slug');
+    }
 
     public function Owner()
     {
@@ -68,6 +110,10 @@ class Project extends Model
         return $this->belongsToMany('App\User', 'favorites', 'project_id', 'user_id')->withTimeStamps();
     }
 
+    public function Sponsors(){
+        return $this->belongsToMany('App\User', 'project_sponsor');
+    }
+
 
     /*
     |---------------------------------------------------------------|
@@ -83,6 +129,16 @@ class Project extends Model
 
     public function favoriteCount(){
         return $this->Favorites()->count();
+    }
+
+    /*
+    |---------------------------------------------------------------|
+    |Sponsor Methods
+    |---------------------------------------------------------------|
+    */
+
+    public function isSponsored(){
+        return $this->Sponsors()->exists();
     }
 
 }
