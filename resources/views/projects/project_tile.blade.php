@@ -20,7 +20,7 @@
     <div class="content like" style="position: relative">
                     <span class="right floated">
                         <span class="comment-count">5</span> <i class="fas fa-comment"></i>
-                        <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) red-text @endif fas fa-heart favorite" data-project="{{$project->id}}"></i>
+                        <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) red-text @endif fas fa-heart favorite icon like" data-project="{{$project->id}}"></i>
                     </span>
         Skills:
         @foreach($project->Skills()->limit(2)->get() as $skill)
