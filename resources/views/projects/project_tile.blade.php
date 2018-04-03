@@ -1,5 +1,5 @@
 <div id="project_{{$project}}" class="ui raised card @if($project->isSponsored()) sponsored @endif" >
-    <div class="content">
+    <div class="content project-header" data-color="{{$project->Category->color}}">
         <div class="right floated meta">{{$project->estimated_hours}} <i class="fas fa-trophy"></i></div>
         <img class="ui avatar image" src="{{asset('images/tile.png')}}"> {{$project->Owner->first_name . " " . $project->Owner->last_name}}
         <div class="row" style="margin-bottom: 0; margin-top: 5px;">

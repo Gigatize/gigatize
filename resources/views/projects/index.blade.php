@@ -224,6 +224,13 @@
     <script type="text/javascript" src="{{ asset('js/nouislider.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
+            var purple = ['#541388','#632892','#522178','#491E6B','#713B9B'];
+            var green = ['#87CD5F','#7BBB57','#6FA84E','#91D16D','#A7DA8A'];
+            var red = ['#E13C47','#CD3741','#B9323B','#E34D57','#E65F68'];
+            var blue = ['#8CC4C8','#81BFC3','#76AEB2','#97CACD','#A3D0D3'];
+            var yellow = ['#EBC947','#ECCD57','#EBC947','#F0D779','#F2DC89'];
+            var orange = ['#F58F29','#DF8226','#C97622','#F5993C','#F6A34F'];
+            
             @if(isset($term))
                 var searchHilitor = new Hilitor("content");
                 searchHilitor.apply("{{$term}}");
@@ -236,6 +243,26 @@
                 position   : 'bottom center',
                 variation: 'inverted'
             });
+
+            $('.project-header').each(function () {
+                var categoryColor = $(this).attr('data-color');
+                var color;
+                if(categoryColor == 'blue'){
+                    color = blue[Math.floor(Math.random()*blue.length)];
+                }else if(categoryColor == 'green'){
+                    color = green[Math.floor(Math.random()*green.length)];
+                }else if(categoryColor == 'red'){
+                    color = red[Math.floor(Math.random()*red.length)];
+                }else if(categoryColor == 'yellow'){
+                    color = yellow[Math.floor(Math.random()*yellow.length)];
+                }else if(categoryColor == 'orange'){
+                    color = orange[Math.floor(Math.random()*orange.length)];
+                }else if(categoryColor == 'purple'){
+                    color = purple[Math.floor(Math.random()*purple.length)];
+                }
+
+                $(this).css({'background-color': color});
+            })
 
             var slider = document.getElementById('test-slider');
             noUiSlider.create(slider, {
