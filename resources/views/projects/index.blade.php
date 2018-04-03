@@ -230,7 +230,7 @@
             var blue = ['#8CC4C8','#81BFC3','#76AEB2','#97CACD','#A3D0D3'];
             var yellow = ['#EBC947','#ECCD57','#EBC947','#F0D779','#F2DC89'];
             var orange = ['#F58F29','#DF8226','#C97622','#F5993C','#F6A34F'];
-            
+
             @if(isset($term))
                 var searchHilitor = new Hilitor("content");
                 searchHilitor.apply("{{$term}}");
