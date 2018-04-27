@@ -1,0 +1,65 @@
+// FONTS
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../public/fonts/open-sans/OpenSans-Regular.ttf');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../public/fonts/open-sans/OpenSans-Light.ttf');
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../public/fonts/open-sans/OpenSans-SemiBold.ttf');
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../public/fonts/open-sans/OpenSans-Bold.ttf');
+    font-weight: 800;
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    src: url('../../public/fonts/open-sans/OpenSans-ExtraBold.ttf');
+    font-weight: 900;
+}
+
+$font-family-sans-serif: 'Open Sans';
+
+// COLORS
+
+$body-bg: #eeeeee;
+
+$theme-colors: (
+	"empty": #ffffff,
+	"primary": #00A1AC,
+	"alternate": #C3D023,
+	"accent": #FFD11F
+);
+
+// FONT SIZE
+
+$font-size-xl:                1.5rem !default;
+
+// BORDER RADIUS
+
+$border-radius-xl:            .6rem !default;
+
+// INPUTS
+
+$input-btn-padding-y-xl:      1rem !default;
+$input-btn-padding-x-xl:      1.5rem !default;
+$input-btn-line-height-xl:    1.5rem !default;
+
+// BUTTONS
+
+$btn-padding-y-xl:            $input-btn-padding-y-xl !default;
+$btn-padding-x-xl:            $input-btn-padding-x-xl !default;
+$btn-line-height-xl:          $input-btn-line-height-xl !default;
+
+$btn-border-radius-xl:        $border-radius-xl !default;

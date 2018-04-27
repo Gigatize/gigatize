@@ -1,0 +1,22 @@
+@import "custom-variables";
+@import "../libs/bootstrap-4.0.0/scss/bootstrap";
+@import "custom-elements";
+
+.no-rounded-corners {
+	border-radius: 0px;
+}
+
+.no-border {
+	border: 0px;
+}
+
+.gradient-divider {
+	height: 4px;
+
+	/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#c4d023+0,00a1ac+100 */
+	background: #c4d023; /* Old browsers */
+	background: -moz-linear-gradient(left, #c4d023 0%, #00a1ac 100%); /* FF3.6-15 */
+	background: -webkit-linear-gradient(left, #c4d023 0%,#00a1ac 100%); /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to right, #c4d023 0%,#00a1ac 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4d023', endColorstr='#00a1ac',GradientType=1 ); /* IE6-9 */
+}
