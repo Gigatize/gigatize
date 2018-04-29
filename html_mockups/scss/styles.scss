@@ -2,12 +2,41 @@
 @import "../libs/bootstrap-4.0.0/scss/bootstrap";
 @import "custom-elements";
 
+html,
+body {
+	min-height: 100%;
+}
+
 .no-rounded-corners {
 	border-radius: 0px;
 }
 
 .no-border {
 	border: 0px;
+}
+
+.no-header {
+	
+	thead {
+		display: none;
+	}
+}
+
+.no-footer {
+	border-bottom: 0px !important;
+
+	.dataTables_scrollBody {
+		border-bottom: 0px !important;
+	}
+}
+
+.full-width {
+	display: block;
+}
+
+.divider {
+	height: 1px;
+	background-color: theme-color('primary');
 }
 
 .gradient-divider {
@@ -19,4 +48,139 @@
 	background: -webkit-linear-gradient(left, #c4d023 0%,#00a1ac 100%); /* Chrome10-25,Safari5.1-6 */
 	background: linear-gradient(to right, #c4d023 0%,#00a1ac 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#c4d023', endColorstr='#00a1ac',GradientType=1 ); /* IE6-9 */
+}
+
+.gradient-bg {
+	
+	&.gradient-bg-blue {
+		/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#00a1ac+0,6a67cc+100 */
+		background: #00a1ac; /* Old browsers */
+		background: -moz-linear-gradient(-45deg, #00a1ac 0%, #6a67cc 100%); /* FF3.6-15 */
+		background: -webkit-linear-gradient(-45deg, #00a1ac 0%,#6a67cc 100%); /* Chrome10-25,Safari5.1-6 */
+		background: linear-gradient(135deg, #00a1ac 0%,#6a67cc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a1ac', endColorstr='#6a67cc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+		background-position: fixed;
+	}
+}
+
+.dataTables_wrapper {
+
+	.dataTables_info {
+		font-size: $font-size-sm;
+	}
+}
+
+#global_community_table {
+	font-size: 14px;
+	font-weight: $font-weight-bold;
+	color: theme-color('primary');
+}
+
+#global_community_container {
+	// height: 0px;
+	// padding-bottom: 70%;
+
+	#global_community {
+		// position: absolute;
+	}
+}
+
+#top_gigatizers_table {
+	line-height: 1.2;
+
+	td {
+		&:last-of-type {
+			width: 100%;
+			padding-left: 0px;
+		}
+	}
+}
+
+.photo-container {
+	border-radius: 50%;
+	border: 2px solid theme-color('primary');
+	overflow: hidden;
+	position: relative;
+	height: 0px;
+	padding-bottom: 100%;
+
+	img {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		width: 103%;
+	}
+}
+
+.photo-thumbnail-container {
+	width: 76px !important;
+	padding: 8px !important;
+}
+
+.photo-thumbnail {
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	border: 1px solid theme-color('primary');
+	overflow: hidden;
+	position: relative;
+
+	&.photo-thumbnail-small {
+		width: 40px;
+		height: 40px;
+	}
+
+	&.photo-thumbnail-square {
+		border-radius: 0px;
+	}
+
+	img {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translateY(-50%) translateX(-50%);
+		width: 100%;
+	}
+}
+
+.card {
+	position: relative;
+
+	.card-icon {
+		font-size: 40px;
+		position: absolute;
+		top: 0px;
+		right: 8px;
+		@extend .text-muted;
+	}
+}
+
+.quote {
+	border-left: 4px solid #ccc;
+	padding-left: 8px;
+
+	.me {
+		border-left: 4px solid theme-color('primary');
+	}
+}
+
+.activity-item {
+	border-bottom: 1px solid #eee;
+}
+
+.achievement {
+	font-size: 14px;
+	
+	.achievement-image {
+		border-radius: 50%;
+		border: 2px solid theme-color('primary');
+		overflow: hidden;
+		position: relative;
+		display: block;
+
+		img {
+			width: 100%;
+		}
+	}
 }
