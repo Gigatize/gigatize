@@ -37,12 +37,18 @@ $body-bg: #eeeeee;
 
 $theme-colors: (
 	// "success": #C4D02E,
-	"warning": #FFD11F,
-	"danger": #CF1F37,
+	"warning": #FFD11F, // Sunglow
+	"danger": #CF1F37, // Azalea
 	"empty": #ffffff,
-	"primary": #00A1AC,
+	"primary": #00A1AC, // Blue Munsell
 	"alternate": #C3D023,
-	"accent": #FFD11F
+	"accent": #FFD11F, // Sunglow
+	"teal": #00A1AC, // Blue Munsell
+	"red": #CF1F37, // Azalea
+	"yellow": #FFD11F, // Sunglow
+	"green": #C4D02E, // Peak
+	"blue": #6A67CC, // Slate Blue
+	"orange": #FB8139 // Mango Tango
 );
 
 // FONT SIZE
