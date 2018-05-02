@@ -11,6 +11,7 @@ class CreateCategoriesTable extends Migration {
 			$table->increments('id');
 			$table->string('name', 200);
 			$table->string('icon_path', 200);
+			$table->string('color', 100);
 			$table->timestamps();
 		});
 	}

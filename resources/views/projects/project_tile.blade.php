@@ -1,7 +1,7 @@
 <div id="project_{{$project}}" class="ui raised card @if($project->isSponsored()) sponsored @endif" >
     <div class="content project-header" data-color="{{$project->Category->color}}">
         <div class="right floated">{{$project->estimated_hours}} <i class="fas fa-trophy"></i></div>
-        <img class="ui avatar image" src="{{asset('images/tile.png')}}"> {{$project->Owner->first_name . " " . $project->Owner->last_name}}
+        <img class="ui avatar image" src="{{asset('images/tile.png')}}"><a href="{{url('users/'.$project->Owner->id)}}" style="color:rgb(64,63,50)">{{$project->Owner->first_name . " " . $project->Owner->last_name}}</a>
         <div class="row" style="margin-bottom: 0; margin-top: 5px;">
             @if($project->isSponsored())
                 <a class="ui blue ribbon label text-center">Sponsored by: <hr style="margin-bottom: 5px;"> @foreach($project->Sponsors as $sponsor) <img class="ui avatar image" src="{{asset($sponsor->picture)}}"> {{$sponsor->first_name}} {{$sponsor->last_name}} <br> @endforeach</a>
@@ -34,4 +34,10 @@
             </a>
         @endif
     </div>
+    <a href="{{url('/projects/'.$project->id)}}">
+        <div class="ui bottom attached button">
+                <i class="eye icon"></i>
+                View Details
+        </div>
+    </a>
 </div>

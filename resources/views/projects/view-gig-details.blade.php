@@ -17,7 +17,7 @@
 				{{$project->title}}<br />
 			</h1>
 			<h5 class="text-muted mb-3">{{$project->description}}</h5>
-			<div class="gradient-divider gradient-divider-green mb-1"></div>
+			<div class="gradient-divider gradient-divider-{{$project->Category->color}} mb-1"></div>
 			<div class="row no-gutters">
 				<div class="col col-lg-3">
 					<button type="button" class="btn btn-empty btn-block">
@@ -51,9 +51,9 @@
 				<div class="card no-rounded-corners no-border mr-3">
 					<div class="row align-items-start">
 						<div class="col-xs-12 col-sm-6 col-md-12 text-center">
-							<img src="{{asset('images/data_analysis_icon.png')}}" class="sidebar-icon mt-3" />
+							<img src="{{asset($project->Category->icon_path)}}" class="sidebar-icon mt-3" />
 							<div class="text-uppercase m-2">Data Analysis</div>
-							<div class="gradient-divider gradient-divider-green mx-3"></div>
+							<div class="gradient-divider gradient-divider-{{$project->Category->color}} mx-3"></div>
 						</div>
 						<div class="col-xs-12 col-sm-6 col-md-12 w-100">
 							<div class="pt-3 pr-3 pb-2 pl-3">
