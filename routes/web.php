@@ -15,15 +15,6 @@ Auth::routes();
 
 Route::group(['middleware' => ['checkauth']], function () {
 
-    Route::get('send_test_email', function(){
-        Mail::raw('Hey there Cutie! Just testing sending emails via our app. Wanted to say hi, and that I love you!', function($message)
-        {
-            $message->subject('Sent via Gigatize.io');
-            $message->to('tobi@gigatize.io');
-        });
-    });
-
-
     Route::get('/', function () {
         return view('welcome');
     });
@@ -48,6 +39,7 @@ Route::group(['middleware' => ['checkauth']], function () {
     Route::get('/projects/create','ProjectController@create');
     Route::post('/projects/store','ProjectController@store');
     Route::get('/projects/search','ProjectController@search');
+    Route::get('/projects/{project}','ProjectController@show');
 
     /*
     |---------------------------------------------------------------|
@@ -56,6 +48,10 @@ Route::group(['middleware' => ['checkauth']], function () {
     */
     Route::post('/favorite/{project}', 'ProjectController@favoriteProject');
     Route::post('/unfavorite/{project}', 'ProjectController@unFavoriteProject');
+
+
+    Route::get('/users/{id}','UserController@show');
+    Route::get('/company-profile','CompanyController@index');
 
 
 });

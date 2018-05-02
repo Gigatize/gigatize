@@ -10,6 +10,7 @@ use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Input;
+use Illuminate\Support\Facades\View;
 
 class ProjectController extends Controller 
 {
@@ -103,12 +104,12 @@ class ProjectController extends Controller
   /**
    * Display the specified resource.
    *
-   * @param  int  $id
-   * @return Response
+   * @param  Project  $project
+   * @return View
    */
-  public function show($id)
+  public function show(Project $project)
   {
-    
+      return view('projects/view-gig-details',compact('project'));
   }
 
   /**

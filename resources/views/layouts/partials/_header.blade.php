@@ -72,7 +72,7 @@
                 <a href="{{url('/projects')}}" class="item {{Request::is('projects') ? 'active' :  ''}}">Find a Gig</a>
             </li>
             <li>
-                <a class="item">Quick Quest</a>
+                <a href="{{url('/company-profile')}}" class="item">Company Impact</a>
             </li>
             <li>
                 <a class="dropdown-button" href="#!" data-activates="dropdown1"><img class="ui avatar image" src="{{asset(Auth::user()->picture)}}"> {{Auth::user()->first_name. " " . Auth::user()->last_name}}<i class="caret down icon"></i></a>
