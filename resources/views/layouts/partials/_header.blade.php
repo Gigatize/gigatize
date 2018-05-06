@@ -66,13 +66,13 @@
                 </form>
             </li>
             <li>
-                <a href="{{url('/projects/create')}}" class="item {{Request::is('projects/create') ? 'active' :  ''}}">Find Talent</a>
+                <a href="{{url('/projects/create')}}" class="item {{Request::is('projects/create') ? 'active' :  ''}}">Post a Gig</a>
             </li>
             <li>
                 <a href="{{url('/projects')}}" class="item {{Request::is('projects') ? 'active' :  ''}}">Find a Gig</a>
             </li>
             <li>
-                <a href="{{url('/company-profile')}}" class="item">Company Impact</a>
+                <a href="{{url('/company-profile')}}" class="item {{Request::is('company-profile') ? 'active' :  ''}}">Company Impact</a>
             </li>
             <li>
                 <a class="dropdown-button" href="#!" data-activates="dropdown1"><img class="ui avatar image" src="{{asset(Auth::user()->picture)}}"> {{Auth::user()->first_name. " " . Auth::user()->last_name}}<i class="caret down icon"></i></a>
@@ -80,13 +80,13 @@
         </ul>
         <ul class="side-nav" id="mobile-demo" style="z-index: 1001;">
             <li>
-                <a href="{{url('/projects/create')}}" class="item {{Request::is('projects/create') ? 'active' :  ''}}">Find Talent</a>
+                <a href="{{url('/projects/create')}}" class="item {{Request::is('projects/create') ? 'active' :  ''}}">Post a Gig</a>
             </li>
             <li>
-                <a class="item">Find a Gig</a>
+                <a href="{{url('/projects')}}" class="item {{Request::is('projects') ? 'active' :  ''}}">Find a Gig</a>
             </li>
             <li>
-                <a class="item">Quick Quest</a>
+                <a href="{{url('/company-profile')}}" class="item {{Request::is('company-profile') ? 'active' :  ''}}">Company Impact</a>
             </li>
             <li>
                 <a class="dropdown-button" href="#!" data-activates="dropdown2"><img class="ui avatar image" src="{{asset(Auth::user()->picture)}}"> {{Auth::user()->first_name. " " . Auth::user()->last_name}}<i class="caret down icon"></i></a>
@@ -94,11 +94,11 @@
         </ul>
         <!-- Dropdown Structure -->
         <ul id="dropdown1" class="dropdown-content">
-            <li><a class="item"><i class="icon address card" style="box-shadow: 0 0 0 0;"></i>Edit Profile</a></li>
+            <li><a class="item" href="{{url('users/'.Auth::id())}}"><i class="icon address card" style="box-shadow: 0 0 0 0;"></i> Profile</a></li>
             <li><a class="item"><i class="settings icon"></i>Account Settings</a></li>
         </ul>
         <ul id="dropdown2" class="dropdown-content">
-            <li><a class="item"><i class="icon address card" style="box-shadow: 0 0 0 0;"></i>Edit Profile</a></li>
+            <li><a class="item" href="{{url('users/'.Auth::id())}}"><i class="icon address card" style="box-shadow: 0 0 0 0;"></i>Profile</a></li>
             <li><a class="item"><i class="settings icon"></i>Account Settings</a></li>
         </ul>
     </div>
