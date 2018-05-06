@@ -64,7 +64,7 @@
 		<div class="row">
 			<div class="col-3 p-3">
 				<div class="photo-container">
-					<img src="http://placehold.it/400x400" />
+					<img src="https://placehold.it/400x400" />
 				</div>
 				<h2 class="mt-3">{{$user->first_name . ' ' . $user->last_name}}</h2>
 				<div class="text-muted" style="line-height: 1.2;">
@@ -116,7 +116,7 @@
 						<table class="table no-header" style="margin-top: -1px;">
 							<tr>
 								<td>
-									<img class="photo-thumbnail" src="http://placehold.it/80x80" />
+									<img class="photo-thumbnail" src="https://placehold.it/80x80" />
 								</td>
 								<td width="100%">
 									<h6 class="text-primary mb-0"><strong>IMAX Logo Design Project</strong></h6>
@@ -134,7 +134,7 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="photo-thumbnail" src="http://placehold.it/80x80" />
+									<img class="photo-thumbnail" src="https://placehold.it/80x80" />
 								</td>
 								<td width="100%">
 									<h6 class="text-primary mb-0"><strong>Expertise Needed</strong></h6>
@@ -152,7 +152,7 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="photo-thumbnail" src="http://placehold.it/80x80" />
+									<img class="photo-thumbnail" src="https://placehold.it/80x80" />
 								</td>
 								<td width="100%">
 									<h6 class="text-primary mb-0"><strong>VBA Macro for Shawnee Site</strong></h6>
@@ -174,7 +174,7 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="photo-thumbnail" src="http://placehold.it/80x80" />
+									<img class="photo-thumbnail" src="https://placehold.it/80x80" />
 								</td>
 								<td width="100%">
 									<h6 class="text-primary mb-0"><strong>VBA Macro for Shawnee Site</strong></h6>
@@ -196,7 +196,7 @@
 							</tr>
 							<tr>
 								<td>
-									<img class="photo-thumbnail" src="http://placehold.it/80x80" />
+									<img class="photo-thumbnail" src="https://placehold.it/80x80" />
 								</td>
 								<td width="100%">
 									<h6 class="text-primary mb-0"><strong>You've earned a new Badge!</strong></h6>
@@ -227,7 +227,7 @@
 							<div class="col-12 col-md-6 col-lg-3 text-center">
 								<div class="achievement mb-3">
 									<div class="achievement-image mb-1">
-										<img src="http://placehold.it/400x400" class="img-fluid" />
+										<img src="https://placehold.it/400x400" class="img-fluid" />
 									</div>
 									<div class="text-uppercase">Region Champion - USA</div>
 									<span class="small">#1 Contributor in your Region</span>
@@ -236,7 +236,7 @@
 							<div class="col-12 col-md-6 col-lg-3 text-center">
 								<div class="achievement mb-3">
 									<div class="achievement-image mb-1">
-										<img src="http://placehold.it/400x400" class="img-fluid" />
+										<img src="https://placehold.it/400x400" class="img-fluid" />
 									</div>
 									<div class="text-uppercase">First Time Host</div>
 									<span class="small">Hosted your first project!</span>
@@ -245,7 +245,7 @@
 							<div class="col-12 col-md-6 col-lg-3 text-center">
 								<div class="achievement mb-3">
 									<div class="achievement-image mb-1">
-										<img src="http://placehold.it/400x400" class="img-fluid" />
+										<img src="https://placehold.it/400x400" class="img-fluid" />
 									</div>
 									<div class="text-uppercase">Mount Everest Status</div>
 									<span class="small">#1 Contributor in your Region</span>
@@ -254,7 +254,7 @@
 							<div class="col-12 col-md-6 col-lg-3 text-center">
 								<div class="achievement mb-3">
 									<div class="achievement-image mb-1">
-										<img src="http://placehold.it/400x400" class="img-fluid" />
+										<img src="https://placehold.it/400x400" class="img-fluid" />
 									</div>
 									<div class="text-uppercase">Region Champion - USA</div>
 									<span class="small">#1 Contributor in your Region</span>
