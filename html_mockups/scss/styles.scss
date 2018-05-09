@@ -152,6 +152,37 @@ body {
 	}
 }
 
+[data-toggle="collapse"]  {
+	
+	.fa-caret-up {
+		display: none;
+	}
+	
+	.fa-caret-down {
+		display: inline;
+	}
+}
+
+[data-toggle="collapse"].collapsed  {
+	
+	.fa-caret-up {
+		display: inline;
+	}
+	
+	.fa-caret-down {
+		display: none;
+	}
+}
+
+.collapse,
+.collapsing {
+
+	ul,
+	p {
+		margin: 0px;
+	}
+}
+
 .sidebar-icon {
 	max-width: 140px;
 	width: 100%;

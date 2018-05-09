@@ -9895,6 +9895,29 @@ body {
   width: 40px;
 }
 
+[data-toggle="collapse"] .fa-caret-up {
+  display: none;
+}
+
+[data-toggle="collapse"] .fa-caret-down {
+  display: inline;
+}
+
+[data-toggle="collapse"].collapsed .fa-caret-up {
+  display: inline;
+}
+
+[data-toggle="collapse"].collapsed .fa-caret-down {
+  display: none;
+}
+
+.collapse ul,
+.collapse p,
+.collapsing ul,
+.collapsing p {
+  margin: 0px;
+}
+
 .sidebar-icon {
   max-width: 140px;
   width: 100%;

@@ -9,11 +9,17 @@
 <link rel="stylesheet" href="css/styles.css">
 
 <!-- LIBRARIES -->
-<script src="libs/jquery-3.2.1.slim.min.js"></script>
+<script src="../public/libs/jquery-3.3.1.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
-<script src="libs/bootstrap-4.0.0/js/bootstrap.min.js"></script>
+<script src="../public/libs/popper.min.js"></script>
+<script src="../public/libs/bootstrap-4.0.0/js/bootstrap.min.js"></script>
 <!-- Font Awesome -->
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
+<!-- Datatables -->
+<link rel="stylesheet" href="https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css">
+<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.datatables.net/buttons/1.5.1/css/buttons.dataTables.min.css">
 
 </head>
 
@@ -90,20 +96,36 @@
 				</div>
 			</div>
 			<!-- Main Content -->
-			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card no-rounded-corners no-border p-3">
+			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card no-rounded-corners no-border p-3 h-100">
 				<div class="w-100">
-					<h2>Logistics</h2>
-					<p>
-						The gig will kick off in <strong class="text-teal">5 days</strong> on <strong class="text-teal">4/30/2018</strong> and you will be one of <strong class="text-teal">3 members</strong> on the team. Completion of this gig is estimated to take <strong class="text-teal">5 hours</strong> per member.
-					</p>
-					<h5>You will gain <span class="badge badge-pill badge-accent">35 experience points</span> distributed among the following skillsets</h5>
-					<ul>
-						<li>Excel <span class="badge badge-pill badge-accent">+10</span></li>
-						<li>SQL <span class="badge badge-pill badge-accent">+5</span></li>
-						<li>SFDC <span class="badge badge-pill badge-accent">+5</span></li>
-						<li>Data Analytics <span class="badge badge-pill badge-accent">+10</span></li>
-						<li>Sales <span class="badge badge-pill badge-accent">+5</span></li>
-					</ul>
+					<div id="accordion">
+						<h2 data-toggle="collapse" data-target="#logistics"><i class="fas fa-xs fa-caret-down"></i><i class="fas fa-xs fa-caret-up"></i> Logistics</h2>
+						<div id="logistics" class="collapse show" data-parent="#accordion">
+							<p>
+								The gig will kick off in <strong class="text-teal">5 days</strong> on <strong class="text-teal">4/30/2018</strong> and you will be one of <strong class="text-teal">3 members</strong> on the team. Completion of this gig is estimated to take <strong class="text-teal">5 hours</strong> per member.
+							</p><br />
+							<h5>You will gain <span class="badge badge-pill badge-accent">35 experience points</span> distributed among the following skillsets</h5>
+							<ul>
+								<li>Excel <span class="badge badge-pill badge-accent">+10</span></li>
+								<li>SQL <span class="badge badge-pill badge-accent">+5</span></li>
+								<li>SFDC <span class="badge badge-pill badge-accent">+5</span></li>
+								<li>Data Analytics <span class="badge badge-pill badge-accent">+10</span></li>
+								<li>Sales <span class="badge badge-pill badge-accent">+5</span></li>
+							</ul>
+						</div>
+						<h2 data-toggle="collapse" data-target="#details" class="mt-3 collapsed"><i class="fas fa-xs fa-caret-down"></i><i class="fas fa-xs fa-caret-up"></i> Details</h2>
+						<div id="details" class="collapse" data-parent="#accordion">
+							<p>
+								The gig will kick off in <strong class="text-teal">5 days</strong> on <strong class="text-teal">4/30/2018</strong> and you will be one of <strong class="text-teal">3 members</strong> on the team. Completion of this gig is estimated to take <strong class="text-teal">5 hours</strong> per member.
+							</p>
+						</div>
+						<h2 data-toggle="collapse" data-target="#team" class="mt-3 collapsed"><i class="fas fa-xs fa-caret-down"></i><i class="fas fa-xs fa-caret-up"></i> Team</h2>
+						<div id="team" class="collapse" data-parent="#accordion">
+							<p>
+								The gig will kick off in <strong class="text-teal">5 days</strong> on <strong class="text-teal">4/30/2018</strong> and you will be one of <strong class="text-teal">3 members</strong> on the team. Completion of this gig is estimated to take <strong class="text-teal">5 hours</strong> per member.
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
