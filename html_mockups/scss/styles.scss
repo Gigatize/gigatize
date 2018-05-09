@@ -1,5 +1,5 @@
 @import "custom-variables";
-@import "../libs/bootstrap-4.0.0/scss/bootstrap";
+@import "../../public/libs/bootstrap-4.0.0/scss/bootstrap";
 @import "custom-elements";
 
 html,
@@ -98,6 +98,57 @@ body {
 		background: linear-gradient(135deg, #00a1ac 0%,#6a67cc 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
 		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00a1ac', endColorstr='#6a67cc',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
 		background-position: fixed;
+	}
+}
+
+#header {
+	font-size: $font-size-sm;
+	white-space: nowrap;
+
+	#header-search {
+		position: relative;
+		@extend .clearfix;
+			
+		&.active {
+
+			input {
+				width: 100%;
+				border-bottom: 2px solid theme-color('yellow');
+			}
+		}
+
+		i {
+			position: absolute;
+			right: 0;
+			top: 50%;
+			transform: translateY(-50%);
+			z-index: 1;
+			cursor: pointer;
+		}
+
+		input {
+			float: right;
+			border-radius: 0px;
+			border: 0px solid theme-color('yellow');
+			outline: 0px;
+			box-shadow: none;
+			padding-left: 0px;
+			width: 20px;
+			transition: width .5s;
+		}
+	}
+	
+	.logo {
+		max-width: 200px;
+		width: 100%;
+	}
+
+	#profile-dropdown-button {
+		margin-top: 4px;
+
+		.avatar {
+			width: 40px;
+		}
 	}
 }
 

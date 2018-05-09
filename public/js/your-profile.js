@@ -1,4 +1,25 @@
 $(document).ready(function() {
+
+    var headerSearch =  $('#header-search');
+    var searchbar = headerSearch.find('input');
+    var icon = headerSearch.find('i');
+    icon.on('click', function(){
+        if (headerSearch.hasClass('active') && searchbar.val().length > 0){
+            // submit search
+        } else {
+            headerSearch.addClass('active');
+            searchbar.focus();
+        }
+    });
+    searchbar.on('focus', function(){
+        headerSearch.addClass('active');
+    });
+    searchbar.on('change blur', function(){
+        if (searchbar.val().length < 1){
+            headerSearch.removeClass('active');
+        }
+    })
+
     $.fn.dataTable.ext.classes.sPageButton = 'btn btn-sm btn-empty';
 
     var team_members = [{
