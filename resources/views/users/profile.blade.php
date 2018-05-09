@@ -15,9 +15,52 @@
 			background-color: #fff;
 			max-height: 100%;
 		}
+		div#header div.px-3 a.text-secondary{
+			font-family: "Open Sans", sans-serif;
+			font-size: 15px;
+			font-weight: 300;
+			color: #000 !important;
+		}
+
+		div#header div.px-3{
+			padding: 0 15px;
+		}
+		div#header{
+			background-color: #FFF;
+			box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
+		}
 	</style>
 @endsection
 
+@section('content')
+	<div id="header" style="padding: 5px 20px; height: 80px;">
+		<div class="d-flex align-items-center">
+			<div class="mr-auto">
+				<a href="{{url('/')}}"><img src="{{asset('images/logo.svg')}}" width="240px" height="70px" class="logo" /></a>
+			</div>
+			<div class="px-3" id="header-search">
+				<i class="fas fa-search"></i>
+			</div>
+			<div class="px-3">
+				<a href="#" class="text-secondary">Post a Gig</a>
+			</div>
+			<div class="px-3">
+				<a href="#" class="text-secondary">Find a Gig</a>
+			</div>
+			<div class="px-3">
+				<a href="#" class="text-secondary">Company Impact</a>
+			</div>
+			<div class="px-3">
+				<div class="dropdown" id="profile-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					<a class="text-secondary" href="#"><img src="https://gigatize.io/images/user.svg" height="30px" class="avatar" />&nbsp; {{Auth::user()->first_name . " " . Auth::user()->last_name}} <i class="fas fa-caret-down"></i></a>
+					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown-button">
+						<a class="dropdown-item" href="#"><small><i class="fas fa-fw fa-address-card"></i> Profile</small></a>
+						<a class="dropdown-item" href="#"><small><i class="fas fa-fw fa-cogs"></i> Account Settings</small></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 	<div class="gradient-bg gradient-bg-blue pt-3">
 		<div class="container">
 			<div class="row no-gutters align-items-stretch">
@@ -266,18 +309,22 @@
 			</div>
 		</div>
 	</div>
+@endsection
+
 @section('footer_scripts')
 	<!-- LIBRARIES -->
 	<script
 			src="{{asset('libs/jquery-3.3.1.min.js')}}"
 			integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
 			crossorigin="anonymous"></script>
+
+	<script src="{{asset('js/your-profile.js')}}"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="{{asset('libs/bootstrap-4.0.0/js/bootstrap.min.js')}}"></script>
+	<script src="{{asset('libs/popper.min.js')}}"></script>
 
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
 
-	<script src="{{asset('js/your-profile.js')}}"></script>
 @endsection
