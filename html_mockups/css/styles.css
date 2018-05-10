@@ -9978,6 +9978,11 @@ body {
   height: 40px;
 }
 
+.photo-thumbnail.photo-thumbnail-large {
+  width: 100%;
+  height: auto;
+}
+
 .photo-thumbnail.photo-thumbnail-square {
   border-radius: 0px;
 }
