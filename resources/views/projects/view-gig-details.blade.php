@@ -131,7 +131,7 @@
 						<h2 data-toggle="collapse" data-target="#logistics"><i class="fas fa-xs fa-caret-down"></i> Logistics</h2>
 						<div id="logistics" class="collapse show" data-parent="#accordion">
 							<p>
-								The gig will kick off in <strong class="text-primary">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-primary">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-primary">{{$project->user_count}} members</strong> on the team. Completion of this gig is estimated to take <strong class="text-primary">{{$project->estimated_hours}} hours</strong> per member.
+								The gig will kick off in <strong class="text-{{$project->Category->color}}">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-{{$project->Category->color}}">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-{{$project->Category->color}}">{{$project->user_count}} members</strong> on the team. Completion of this gig is estimated to take <strong class="text-{{$project->Category->color}}">{{$project->estimated_hours}} hours</strong> per member.
 							</p>
 							<h5>You will gain <span class="badge badge-pill badge-accent">{{$project->Skills()->count() * 5}} experience points</span> distributed among the following skillsets</h5>
 							<ul>
