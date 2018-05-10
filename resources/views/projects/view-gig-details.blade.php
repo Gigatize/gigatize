@@ -125,24 +125,41 @@
 				</div>
 			</div>
 			<!-- Main Content -->
-			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card no-rounded-corners no-border p-3">
+			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card no-rounded-corners no-border p-3 h-100">
 				<div class="w-100">
-					<h2>Logistics</h2>
-					<p>
-						The gig will kick off in <strong class="text-primary">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-primary">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-primary">{{$project->user_count}} members</strong> on the team. Completion of this gig is estimated to take <strong class="text-primary">{{$project->estimated_hours}} hours</strong> per member.
-					</p>
-					<h5>You will gain <span class="badge badge-pill badge-accent">{{$project->Skills()->count() * 5}} experience points</span> distributed among the following skillsets</h5>
-					<ul>
-						@foreach($project->Skills as $skill)
-						<li>{{$skill->name}} <span class="badge badge-pill badge-accent">+5</span></li>
-						@endforeach
-					</ul>
-					<h5>This gig will be complete when the following criteria has been met:</h5>
-					<ul style="list-style-type:square">
-						@foreach($project->AcceptanceCriteria as $criteria)
-							<li>{{$criteria->criteria}}</li>
-						@endforeach
-					</ul>
+					<div id="accordion">
+						<h2 data-toggle="collapse" data-target="#logistics"><i class="fas fa-xs fa-caret-down"></i> Logistics</h2>
+						<div id="logistics" class="collapse show" data-parent="#accordion">
+							<p>
+								The gig will kick off in <strong class="text-primary">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-primary">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-primary">{{$project->user_count}} members</strong> on the team. Completion of this gig is estimated to take <strong class="text-primary">{{$project->estimated_hours}} hours</strong> per member.
+							</p>
+							<h5>You will gain <span class="badge badge-pill badge-accent">{{$project->Skills()->count() * 5}} experience points</span> distributed among the following skillsets</h5>
+							<ul>
+								@foreach($project->Skills as $skill)
+									<li>{{$skill->name}} <span class="badge badge-pill badge-accent">+5</span></li>
+								@endforeach
+							</ul>
+						</div>
+						<h2 data-toggle="collapse" data-target="#details" class="mt-3 collapsed"><i class="fas fa-xs fa-caret-down"></i></i> Details</h2>
+						<div id="details" class="collapse" data-parent="#accordion">
+							<p>{{$project->impact}}</p>
+							<h5>More Information:</h5>
+							<p><a href="{{$project->resources_link}}">{{$project->resources_link}}</a></p>
+
+							<h5>This gig will be complete when the following criteria has been met:</h5>
+							<ul style="list-style-type:square">
+								@foreach($project->AcceptanceCriteria as $criteria)
+									<li>{{$criteria->criteria}}</li>
+								@endforeach
+							</ul>
+						</div>
+						<h2 data-toggle="collapse" data-target="#team" class="mt-3 collapsed"><i class="fas fa-xs fa-caret-down"></i></i> Team</h2>
+						<div id="team" class="collapse" data-parent="#accordion">
+							<p>
+								The gig will kick off in <strong class="text-teal">5 days</strong> on <strong class="text-teal">4/30/2018</strong> and you will be one of <strong class="text-teal">3 members</strong> on the team. Completion of this gig is estimated to take <strong class="text-teal">5 hours</strong> per member.
+							</p>
+						</div>
+					</div>
 				</div>
 			</div>
 		</div>
