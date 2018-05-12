@@ -112,7 +112,7 @@ $(document).ready(function() {
         impact_score_change: 10
     },{
         id: 'JR1',
-        photo: '../images/professional-man-1.png',
+        photo: '../images/profile-josh.jpg',
         name: 'Josh Richmond',
         impact_score: 90,
         impact_score_change: 1
