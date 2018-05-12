@@ -94,31 +94,31 @@ $(document).ready(function() {
 
     var team_members = [{
         id: 'AP1',
-        photo: 'http://placehold.it/200x200/',
+        photo: '../images/professional-woman-2.png',
         name: 'Ayushi Patidar',
         impact_score: 74,
         impact_score_change: 1
     },{
         id: 'CH1',
-        photo: 'http://placehold.it/200x200/',
+        photo: '../images/professional-man-2.png',
         name: 'Camden Hill',
         impact_score: 79,
         impact_score_change: 6
     },{
         id: 'TP1',
-        photo: 'http://placehold.it/200x200/',
+        photo: '../images/professional-woman-1.png',
         name: 'Tobi Polland',
         impact_score: 85,
         impact_score_change: 10
     },{
         id: 'JR1',
-        photo: 'http://placehold.it/200x200/',
+        photo: '../images/professional-man-1.png',
         name: 'Josh Richmond',
         impact_score: 90,
         impact_score_change: 1
     },{
         id: 'EE1',
-        photo: 'http://placehold.it/200x200/',
+        photo: '../images/professional-man-3.png',
         name: 'Eric Edgerton',
         impact_score: 70,
         impact_score_change: 10

@@ -24,31 +24,31 @@ $(document).ready(function() {
 
     var team_members = [{
         id: 'AP1',
-        photo: 'http://placehold.it/200x200/',
+        photo: '../images/professional-man-2.png',
         name: 'Ayushi Patidar',
         impact_score: 74,
         impact_score_change: 1
     },{
         id: 'CH1',
-        photo: 'http://placehold.it/200x200/',
+        photo: '../images/professional-man-3.png',
         name: 'Camden Hill',
         impact_score: 79,
         impact_score_change: 6
     },{
         id: 'TP1',
-        photo: 'http://placehold.it/200x200/',
+        photo: '../images/professional-woman-3.png',
         name: 'Tobi Polland',
         impact_score: 85,
         impact_score_change: 10
     },{
         id: 'JR1',
-        photo: 'http://placehold.it/200x200/',
+        photo: '../images/professional-man-1.png',
         name: 'Josh Richmond',
         impact_score: 90,
         impact_score_change: 1
     },{
         id: 'EE1',
-        photo: 'http://placehold.it/200x200/',
+        photo: '../images/professional-man-1.png',
         name: 'Eric Edgerton',
         impact_score: 70,
         impact_score_change: 10
@@ -57,7 +57,7 @@ $(document).ready(function() {
     var gigs = [{
         id: 'brilliant',
         name: 'Brilliant Design Dashboard',
-        teamMembers: ['TP1', 'JR1'],
+        teamMembers: ['AP1', 'JR1'],
         created: 'May 5, 2018',
         progress: 70,
         status: 3,
@@ -66,7 +66,7 @@ $(document).ready(function() {
     },{
         id: 'imax',
         name: 'IMAX Logo Design',
-        teamMembers: ['TP1', 'EE1'],
+        teamMembers: ['CH1', 'EE1'],
         created: 'May 3, 2018',
         progress: 60,
         status: 3,
@@ -75,7 +75,7 @@ $(document).ready(function() {
     },{
         id: 'tableauDashboard',
         name: 'Tableau Dashboard for HQ',
-        teamMembers: ['TP1', 'JR1'],
+        teamMembers: ['EE1', 'TP1'],
         created: 'May 2, 2018',
         progress: 60,
         status: 1,
@@ -84,7 +84,7 @@ $(document).ready(function() {
     },{
         id: 'haz',
         name: 'Hazardous Waste Scanning',
-        teamMembers: ['TP1', 'JR1'],
+        teamMembers: ['CH1', 'JR1'],
         created: 'May 7, 2018',
         progress: 12,
         status: 2,
@@ -137,7 +137,7 @@ $(document).ready(function() {
                     var photoContainer = $('<div />');
                     for (var i = 0; i < data.length; i++){
                         var photoThumbnail = $('<div />', {
-                            class: 'photo-thumbnail photo-thumbnail-small photo-thumbnail-square',
+                            class: 'photo-thumbnail photo-thumbnail-small',
                             style: 'display: inline-block; margin-right: 4px;'
                         });
                         var photo = $('<img />');

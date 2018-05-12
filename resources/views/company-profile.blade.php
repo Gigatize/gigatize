@@ -25,6 +25,9 @@
 		background-color: #FFF;
 		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 	}
+	div#header div.px-3 a.text-secondary.active {
+		color: #f6d448 !important;
+	}
 </style>
 @endsection
 
@@ -38,13 +41,13 @@
 			<i class="fas fa-search"></i>
 		</div>
 		<div class="px-3">
-			<a href="#" class="text-secondary">Post a Gig</a>
+			<a href="{{url('/projects/create')}}" class="text-secondary">Post a Gig</a>
 		</div>
 		<div class="px-3">
-			<a href="#" class="text-secondary">Find a Gig</a>
+			<a href="{{url('/projects')}}" class="text-secondary">Find a Gig</a>
 		</div>
 		<div class="px-3">
-			<a href="#" class="text-secondary">Company Impact</a>
+			<a href="{{url('/company-profile')}}" class="text-secondary {{Request::is('company-profile') ? 'active' :  ''}}">Company Impact</a>
 		</div>
 		<div class="px-3">
 			<div class="dropdown" id="profile-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

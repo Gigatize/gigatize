@@ -36,13 +36,13 @@
 			<i class="fas fa-search"></i>
 		</div>
 		<div class="px-3">
-			<a href="#" class="text-secondary">Post a Gig</a>
+			<a href="{{url('/projects/create')}}" class="text-secondary">Post a Gig</a>
 		</div>
 		<div class="px-3">
-			<a href="#" class="text-secondary">Find a Gig</a>
+			<a href="{{url('/projects')}}" class="text-secondary">Find a Gig</a>
 		</div>
 		<div class="px-3">
-			<a href="#" class="text-secondary">Company Impact</a>
+			<a href="{{url('/company-profile')}}" class="text-secondary">Company Impact</a>
 		</div>
 		<div class="px-3">
 			<div class="dropdown" id="profile-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -131,7 +131,7 @@
 						<h2 data-toggle="collapse" data-target="#logistics"><i class="fas fa-xs fa-caret-down"></i> Logistics</h2>
 						<div id="logistics" class="collapse show" data-parent="#accordion">
 							<p>
-								The gig will kick off in <strong class="text-{{$project->Category->color}}">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-{{$project->Category->color}}">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-{{$project->Category->color}}">{{$project->user_count}} members</strong> on the team. Completion of this gig is estimated to take <strong class="text-{{$project->Category->color}}">{{$project->estimated_hours}} hours</strong> per member.
+								The gig will kick off in <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-{{$project->Category->text_color}}">{{$project->user_count}} members</strong> on the team. Completion of this gig is estimated to take <strong class="text-{{$project->Category->text_color}}">{{$project->estimated_hours}} hours</strong> per member.
 							</p>
 							<h5>You will gain <span class="badge badge-pill badge-accent">{{$project->Skills()->count() * 5}} experience points</span> distributed among the following skillsets</h5>
 							<ul>
@@ -155,9 +155,38 @@
 						</div>
 						<h2 data-toggle="collapse" data-target="#team" class="mt-3 collapsed"><i class="fas fa-xs fa-caret-down"></i></i> Team</h2>
 						<div id="team" class="collapse" data-parent="#accordion">
-							<p>
-								The gig will kick off in <strong class="text-teal">5 days</strong> on <strong class="text-teal">4/30/2018</strong> and you will be one of <strong class="text-teal">3 members</strong> on the team. Completion of this gig is estimated to take <strong class="text-teal">5 hours</strong> per member.
-							</p>
+							<div class="row justify-content-center mb-3">
+								<div class="col-xs-12 col-md-6 col-lg-4" style="text-align: center">
+									<img src="{{asset('images/professional-woman-1.png')}}" class="photo-thumbnail photo-thumbnail-large mb-2"  style="height: 200px; width: 200px; border-radius: 200px;"/><br />
+									<strong>Eleanor Rigby</strong><br />
+									Gig Sponsor <br />
+									<div class="btn-group btn-group-sm" role="group">
+										<button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button>
+										<button type="button" class="btn btn-empty"><i class="fas fa-address-card"></i></button>
+									</div>
+								</div>
+							</div>
+							<div class="row justify-content-center mb-3">
+								<div class="col-md-6 col-lg-4" style="text-align: center">
+									<img src="{{asset('images/professional-man-2.png')}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
+									<strong>Ronald McDonald</strong><br />
+									Team Member 1<br />
+									<div class="btn-group btn-group-sm" role="group">
+										<button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button>
+										<button type="button" class="btn btn-empty"><i class="fas fa-address-card"></i></button>
+									</div>
+								</div>
+								<div class="col-md-6 col-lg-4" style="text-align: center">
+									<img src="{{asset('images/user.svg')}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
+									<strong>Open Position</strong><br />
+									Team Member 2<br />
+								</div>
+								<div class="col-md-6 col-lg-4" style="text-align: center">
+									<img src="{{asset('images/user.svg')}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
+									<strong>Open Position</strong><br />
+									Team Member 3<br />
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>
