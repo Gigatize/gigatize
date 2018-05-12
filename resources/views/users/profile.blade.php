@@ -57,7 +57,7 @@
 				<div class="dropdown" id="profile-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 					<a class="text-secondary" href="#"><img src="https://gigatize.io/images/user.svg" height="30px" class="avatar" />&nbsp; {{Auth::user()->first_name . " " . Auth::user()->last_name}} <i class="fas fa-caret-down"></i></a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown-button">
-						<a class="dropdown-item" href="#"><small><i class="fas fa-fw fa-address-card"></i> Profile</small></a>
+						<a class="dropdown-item" href="{{url('users/'.Auth::id())}}"><small><i class="fas fa-fw fa-address-card"></i> Profile</small></a>
 						<a class="dropdown-item" href="#"><small><i class="fas fa-fw fa-cogs"></i> Account Settings</small></a>
 					</div>
 				</div>
@@ -323,8 +323,8 @@
 
 	<script src="{{asset('js/your-profile.js')}}"></script>
 	<!-- Latest compiled and minified JavaScript -->
-	<script src="{{asset('libs/bootstrap-4.0.0/js/bootstrap.min.js')}}"></script>
 	<script src="{{asset('libs/popper.min.js')}}"></script>
+	<script src="{{asset('libs/bootstrap-4.0.0/js/bootstrap.min.js')}}"></script>
 
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
