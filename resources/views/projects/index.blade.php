@@ -217,10 +217,7 @@
     </div>
     <div class="ui secondary menu" style="margin:0 50px; max-height: 25px">
         <a class="ui label" style="max-height: 25px">
-            Some Filter <i class="close icon"></i>
-        </a>
-        <a class="ui label" style="max-height: 25px">
-            Another Filter <i class="close icon"></i>
+            Sort By: Relevance <i class="close icon"></i>
         </a>
     </div>
     <div id="project-tiles" class="ui three stackable cards" style="margin: 25px 50px;">
