@@ -43,8 +43,8 @@
                     Find help when you need it,<br>help others when you can.
                 </h5>
                 <br>
-                <button class="ui big yellow basic button" style="border: 2px solid #FBBD08;" href="{{url('/projects')}}"><span class="black-text" style="text-transform: capitalize">Find A Gig</span></button>
-                <button class="ui big yellow basic button" style="border: 2px solid #FBBD08;" {{url('/projects/create')}}><span class="black-text" style="text-transform: capitalize">Post A Gig</span></button>
+                <a href="{{url('/projects')}}"><button class="ui big yellow basic button" style="border: 2px solid #FBBD08;"><span class="black-text" style="text-transform: capitalize">Find A Gig</span></button></a>
+                <a href="{{url('/projects/create')}}"><button class="ui big yellow basic button" style="border: 2px solid #FBBD08;"><span class="black-text" style="text-transform: capitalize">Post A Gig</span></button></a>
             </div>
         </div>
         <div class="parallax">
