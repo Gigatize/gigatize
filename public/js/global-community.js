@@ -226,7 +226,7 @@ $(document).ready(function() {
                     var photoContainer = $('<div />');
                     for (var i = 0; i < data.length; i++){
                         var photoThumbnail = $('<div />', {
-                            class: 'photo-thumbnail photo-thumbnail-small photo-thumbnail-square',
+                            class: 'photo-thumbnail photo-thumbnail-medium',
                             style: 'display: inline-block; margin-right: 4px;'
                         });
                         var photo = $('<img />');

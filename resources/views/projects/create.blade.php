@@ -89,7 +89,7 @@
         #msform textarea {
             padding: 15px;
             margin-bottom: 10px;
-            font-family: inspira-sans;
+            font-family: "Open Sans";
             border-radius: 5px;
             color: #454955;
             font-size: 13px;
