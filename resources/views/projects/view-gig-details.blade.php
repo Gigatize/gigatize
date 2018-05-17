@@ -107,21 +107,21 @@
 							</div>
 							<div class="row no-gutters text-center">
 								<div class="col card bg-light no-rounded-corners p-2" style="border-left: 0px;">
-									<h4 class="text-primary mb-1">{{$project->start_date->diffInDays()}}</h4>
+									<h4 class="text-{{$project->Category->text_color}} mb-1">{{$project->start_date->diffInDays()}}</h4>
 									<small style="font-size: 11px;">Days Until Start</small>
 								</div>
 								<div class="col card bg-light no-rounded-corners p-2" style="border-left: 0px;">
-									<h4 class="text-primary mb-1">{{$project->estimated_hours}}</h4>
+									<h4 class="text-{{$project->Category->text_color}} mb-1">{{$project->estimated_hours}}</h4>
 									<small style="font-size: 11px;">Estimated Hours</small>
 								</div>
 								<div class="col card bg-light no-rounded-corners p-2" style="border-left: 0px; border-right: 0px;">
-									<h4 class="text-primary mb-1">{{$project->deadline->diffInDays()}}</h4>
+									<h4 class="text-{{$project->Category->text_color}} mb-1">{{$project->deadline->diffInDays()}}</h4>
 									<small style="font-size: 11px;">Days Until Deadline</small>
 								</div>
 							</div>
 						</div>
 					</div>
-					<button type="button" class="btn btn-accent btn-xl no-rounded-corners btn-block text-uppercase">Make an Impact</button>
+					<button type="button" class="btn btn-accent btn-xl no-rounded-corners btn-block text-uppercase">Join Project</button>
 				</div>
 			</div>
 			<!-- Main Content -->
@@ -133,10 +133,10 @@
 							<p>
 								The gig will kick off in <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-{{$project->Category->text_color}}">{{$project->user_count}} members</strong> on the team. Completion of this gig is estimated to take <strong class="text-{{$project->Category->text_color}}">{{$project->estimated_hours}} hours</strong> per member.
 							</p>
-							<h5>You will gain <span class="badge badge-pill badge-accent">{{$project->Skills()->count() * 5}} experience points</span> distributed among the following skillsets</h5>
+							<h5>You will gain <span class="text-{{$project->Category->text_color}}">{{$project->Skills()->count() * 5}} experience points</span> distributed among the following skillsets</h5>
 							<ul>
 								@foreach($project->Skills as $skill)
-									<li>{{$skill->name}} <span class="badge badge-pill badge-accent">+5</span></li>
+									<li>{{$skill->name}} <span class="text-{{$project->Category->text_color}}">+5</span></li>
 								@endforeach
 							</ul>
 						</div>

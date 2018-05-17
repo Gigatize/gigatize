@@ -81,8 +81,8 @@
 						<div class="card-icon">
 							<i class="far fa-newspaper"></i>
 						</div>
-						<h2 class="text-primary mb-0"><strong>4</strong></h2>
-						Gigs Contributed <i class="fas fa-question-circle small text-muted"></i>
+						<h2 class="text-primary mb-0"><strong>10</strong></h2>
+						Gigs Completed <i class="fas fa-question-circle small text-muted"></i>
 					</div>
 				</div>
 				<div class="col-12 col-sm-6 col-md-3 px-2 pb-3">
@@ -99,8 +99,8 @@
 						<div class="card-icon">
 							<i class="fas fa-users"></i>
 						</div>
-						<h2 class="text-primary mb-0"><strong>4</strong></h2>
-						Crowd Quests Answered <i class="fas fa-question-circle small text-muted"></i>
+						<h2 class="text-primary mb-0"><strong>350</strong></h2>
+						Impact Score <i class="fas fa-question-circle small text-muted"></i>
 					</div>
 				</div>
 			</div>
@@ -294,16 +294,16 @@
 										<img src="{{asset('images/mountain-goal-2.png')}}" class="img-fluid" />
 									</div>
 									<div class="text-uppercase">Mount Everest Status</div>
-									<span class="small">#1 Contributor in your Region</span>
+									<span class="small">You've completed 10 Gigs</span>
 								</div>
 							</div>
 							<div class="col-12 col-md-6 col-lg-3 text-center">
 								<div class="achievement mb-3">
 									<div class="achievement-image mb-1">
-										<img src="{{asset('images/award-badge-3.png')}}" class="img-fluid" />
+										<img src="{{asset('images/trophy-1.png')}}" class="img-fluid" />
 									</div>
-									<div class="text-uppercase">Region Champion - USA</div>
-									<span class="small">#1 Contributor in your Region</span>
+									<div class="text-uppercase">Star Contributor</div>
+									<span class="small">100% Sponsor Satisfaction Streak 10+</span>
 								</div>
 							</div>
 						</div>

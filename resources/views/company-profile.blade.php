@@ -93,7 +93,7 @@
 				</div>
 			</div>
 			<div class="col-12 col-md-4 col-lg-3">
-				<div class="card no-rounded-corners no-border p-3" style="height: 383px;">
+				<div class="card no-rounded-corners no-border p-3" style="height: 406px;">
 					<div class="card no-rounded-corners p-3">
 						<strong>
 							Top Gigatizers
