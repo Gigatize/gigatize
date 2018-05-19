@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Database\Seeder;
-use App\Location
+use App\Location;
 
 class LocationsTableSeeder extends Seeder
 {
@@ -16,7 +16,7 @@ class LocationsTableSeeder extends Seeder
 
         DB::table('locations')->delete();
         $locations = array('New York City, NY', 'Boston, MA', 'San Diego, CA', 'San Francisco, CA', 'Baltimore, MD', 'Houston, TX', 'Austin, TX', 'Denver, CO', 'Las Vegas, NV', 'New Orleans, LA', 'Richmond, VA', 'Charlotte, NC', 'Seattle, Washington', 'Ann Arbor, MI', 'Chicago, IL', 'London, England', 'Dublin, Ireland', 'Tokyo, Japan', 'Shanghai, China', 'Hong Kong, China', 'Bangalore, India', 'Paris, France', 'Frankfurt, Germany', 'Berlin, Germany', 'Sydney, Australia');
-        foreach($locations as $locationName){
+        foreach ($locations as $locationName){
             $location = ['name' => $locationName];
             Location::create($location);
         }
