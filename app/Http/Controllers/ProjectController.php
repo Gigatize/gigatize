@@ -33,7 +33,7 @@ class ProjectController extends Controller
    */
   public function create()
   {
-        $skills = Skill::all()->take(1000);
+        $skills = Skill::orderBy('name')->take(1000)->get();
         $locations = Location::all();
         $categories = Category::all();
         return view('projects/create', compact('skills','locations','categories'));
