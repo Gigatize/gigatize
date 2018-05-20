@@ -12,7 +12,7 @@
     <div class="content">
         <h1 class="ui header">{{$project->title}}</h1>
         @if(strlen($project->description)>250)
-            <p>{{substr($project->description,0,250)}}...</p>
+            <p>{{substr($project->description,0,200)}}...</p>
         @else
             <p>{{$project->description}}</p>
         @endif
