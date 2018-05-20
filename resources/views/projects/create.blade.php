@@ -332,12 +332,12 @@
                         <div class="eight wide field">
                             <label>START DATE</label>
                             <input name="start_date" type="text" class="datepicker" placeholder="&#xf310;"
-                                   style="font-family:Cambay, Icons"/>
+                                   style="font-family:'Open Sans', Icons"/>
                         </div>
                         <div class="eight wide field">
                             <label>DEADLINE</label>
                             <input name="deadline" type="text" class="datepicker" placeholder="&#xf310;"
-                                   style="font-family:Cambay, Icons"/>
+                                   style="font-family:'Open Sans', Icons"/>
                         </div>
                     </div>
                     <div class="fields">
@@ -355,7 +355,7 @@
                             </div>
                         </div>
                         <div class="eight wide field">
-                            <label>TIMEZONE PREFERENCES</label>
+                            <label>TIMEZONE</label>
                             <select name="timezone" class="ui search selection dropdown select">
                                 <option value="" selected="selected">Select your timezone</option>
                                 <option value="(GMT -5:00) Eastern Time (US & Canada), Bogota, Lima">(GMT -5:00) Eastern Time (US & Canada), Bogota, Lima</option>
