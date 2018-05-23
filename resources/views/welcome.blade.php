@@ -44,8 +44,8 @@
 
         .testimonial_photo {
             border-radius: 50%;
-            overflow: auto;
-            margin: 16px;
+            overflow: hidden;
+            margin: 16px auto;
             width: 200px;
             height: 200px;
             text-align: center;
@@ -161,10 +161,10 @@
 
 
     <div class="container">
-        <h1 class="header col s12 yellow-text" style="padding: 30px 0;"><strong>LEARN HOW GIGATIZE IS TRANSFORMING COMPANIES</strong></h1>
+        <h3 class="header col s12 yellow-text center" style="padding: 30px 0;"><strong>LEARN HOW GIGATIZE IS<br />TRANSFORMING COMPANIES</strong></h3>
     </div>
     <div style="background-image: url('/images/conference_room.jpg'); background-size: cover;">
-        <div class="row" style="padding-top: 50px;">
+        <div class="row" style="padding: 50px 0;">
             <div class="col s12 m4" style="padding: 0 30px;">
                 <div class="testimonial_photo">
                     <img src="/images/photo_allyson.jpg">
