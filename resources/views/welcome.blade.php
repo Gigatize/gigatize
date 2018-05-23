@@ -27,6 +27,20 @@
           color: #6C6865;
           font-size: 16px;
       }
+        .icon-label {
+            border: 2px solid #ffd45a;
+            padding: 8px;
+            text-transform: uppercase;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 16px;
+        }
+
+        .icon {
+            display: block;
+            margin: 16px auto;
+            width: 140px;
+        }
   </style>
 @endsection
 
@@ -59,59 +73,72 @@
         <div class="section">
 
             <!--   Icon Section   -->
-            <div class="row" style="padding: 50px 0">
-                <div class="col s12 m3">
-                    <div class="icon-block center grey-text" style="text-transform: capitalize" >
-                        <h2><i class="ui icon lightbulb outline"></i></h2>
-                        <div class="ui statistic">
-                            <div class="value">
-                                121
-                            </div>
-                            <div class="label">
-                                Total Gigs <br> Completed
-                            </div>
+            <div class="row" style="padding: 50px 0 0">
+                <div class="col s12 m4">
+                    <div class="icon-block center">
+                        <img src="/images/productivity_icon.png" class="icon" />
+                        <div class="icon-label">
+                            Productivity
                         </div>
+                        <h4>Embrace the<br />Gig Economy</h4>
+                        <p>
+                            We connect solution seekers with problem solvers to leverage the power of your internal workforce. Our dashboards visualize your productivity savings in real-time.
+                        </p>
+                        <a class="waves-effect waves-light btn-small" href="#">Read More</a>
                     </div>
                 </div>
-
-                <div class="col s12 m3">
-                    <div class="center icon-block grey-text" style="text-transform: capitalize">
-                        <h2><i class="ui icon lightbulb outline"></i></h2>
-                        <div class="ui statistic">
-                            <div class="value">
-                                156
-                            </div>
-                            <div class="label">
-                                Quick Quest <br> Answered
-                            </div>
+                <div class="col s12 m4">
+                    <div class="icon-block center">
+                        <img src="/images/engagement_icon.png" class="icon" />
+                        <div class="icon-label">
+                            Engagement
                         </div>
+                        <h4>Inspire Loyalty,<br />Reduce Turnover</h4>
+                        <p>
+                            Are you ready for the #FutureOfWork? We help you combat growing skill shortages, turnover, and disengagement through a platform that empowers your workforce to take the lead!
+                        </p>
+                        <a class="waves-effect waves-light btn-small" href="#">Read More</a>
                     </div>
                 </div>
-
-                <div class="col s12 m3">
-                    <div class="center icon-block grey-text" style="text-transform: capitalize">
-                        <h2><i class="ui icon lightbulb outline"></i></h2>
-                        <div class="ui statistic">
-                            <div class="value">
-                                24
-                            </div>
-                            <div class="label">
-                                New Ideas <br> Generated
-                            </div>
+                <div class="col s12 m4">
+                    <div class="icon-block center">
+                        <img src="/images/crosstrain_icon.png" class="icon" />
+                        <div class="icon-label">
+                            Cross-Train
                         </div>
+                        <h4>Upskill Your<br />Workforce</h4>
+                        <p>
+                            We partner skill seekers with subject matter experts to encourage learning by doing and sharing. Why outsource if you can insource quality, homegrown talent?
+                        </p>
+                        <a class="waves-effect waves-light btn-small" href="#">Read More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row" style="padding: 20px 0 50px">
+                <div class="col s12 m3">
+                    <div class="icon-block center">
+                        <img src="/images/empower_icon.png" class="icon" />
+                        <div class="icon-label">
+                            Empower
+                        </div>
+                        <h4>Break Down<br />Knowledge Silos</h4>
+                        <p>
+                            We help your organization establish an organic network that goes beyond the confines of roles and org charts to get you connected with the guidance you need.
+                        </p>
+                        <a class="waves-effect waves-light btn-small" href="#">Read More</a>
                     </div>
                 </div>
                 <div class="col s12 m3">
-                    <div class="center icon-block grey-text" style="text-transform: capitalize">
-                        <h2><i class="ui icon lightbulb outline"></i></h2>
-                        <div class="ui statistic">
-                            <div class="value">
-                                53
-                            </div>
-                            <div class="label">
-                                Awards <br> Granted
-                            </div>
+                    <div class="icon-block center">
+                        <img src="/images/recognize_icon.png" class="icon" />
+                        <div class="icon-label">
+                            Recognize
                         </div>
+                        <h4>Cultivate a<br />Community Culture</h4>
+                        <p>
+                            We gamify gigs and quests so your workforce is well-recognized and rewarded for their engagement. We ensure that your org has an easy way to visibly track and showcase above &amp; beyond efforts.
+                        </p>
+                        <a class="waves-effect waves-light btn-small" href="#">Read More</a>
                     </div>
                 </div>
             </div>
@@ -120,91 +147,35 @@
 
 
     <div class="parallax-container valign-wrapper" style="height: 550px;">
-            <div class="container overlay">
-                <div class="row center" style="padding: 100px 0;">
-                    <h1 class="header col s12 yellow-text">STEP 1:</h1>
-                    <h3 class="header col s12 dark-grey-text">LEARN WHAT GIGATIZE <br>CAN DO FOR YOU</h3>
-                    <h5 class="header col s12 dark-grey-text">Take our quick 2 minute survey to learn how you <br> can benefit the most from Gigatize.</h5>
-                    <button class="ui big yellow basic button" style="border: 2px solid #FBBD08;"><span class="black-text" style="text-transform: capitalize">LET'S FIND OUT</span></button>
+        <div class="container overlay">
+            <div class="row center" style="padding: 100px 0;">
+                <h1 class="header col s12 yellow-text">LEARN HOW GIGATIZE IS TRANSFORMING COMPANIES</h1>
+            </div>
+            <div class="row" style="padding-top: 50px;">
+                <div class="col s12 m4" style="padding: 0 30px;">
+                    <img src="/images/recognize_icon.png" class="testimonial_photo">
+                    <h4 class="center yellow-text">Allyson MacKay, M&amp;T Bank</h4>
+                    <p>
+                        As a Project Leader, it is difficult to find the resources I need when my team faces roadblocks. Gigatize has given me the freedom to find resources without having to go through a painfully long external hire process and the best part is, I am meeting new people within my organization that have the skills and desire to work on what I'm trying to drive.
+                    </p>
+                </div>
+                <div class="col s12 m4" style="padding: 0 30px;">
+                    <img src="/images/recognize_icon.png" class="testimonial_photo">
+                    <h4 class="center yellow-text">Dominique Riley, GE</h4>
+                    <p>
+                        My background is in Chemistry, but I've been taking coding classes and have been loving it! Gigatize was able to connect me with opportunities so I could apply what I am learning and help my company at the same time!
+                    </p>
+                </div>
+                <div class="col s12 m4" style="padding: 0 30px;">
+                    <img src="/images/recognize_icon.png" class="testimonial_photo">
+                    <h4 class="center yellow-text">Kareem Dandy, First Data</h4>
+                    <p>
+                        Cybersecurity experts are hard to find and even harder to keep given the competitive market. I've been fortunate that several of the people who've completed gigs for my team have joined as full-time members and have proved more valuable than many of the external hires we fight to hire and lose after a few months. 
+                    </p>
                 </div>
             </div>
+        </div>
         <div class="parallax"><img src="{{asset('images/background2.png')}}" alt="Unsplashed background img 2"></div>
-    </div>
-
-    <div class="container hide-on-med-and-down">
-        <div class="row center">
-            <div class="ui equal width grid">
-                <div class="column">
-                    <div class="item yellow center" style="height: 100%; position: relative;">
-                        <h4 class="white-text flow-text" style=" padding-top: 35%"><b>STRATEGY</b></h4>
-                        <button class="ui big grey basic button fluid tile-button"><span>READ MORE</span></button>
-                    </div>
-                </div>
-                <div class="column tile">
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{asset('images/tile.png')}}" style="width:100%; height:100%">
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="item yellow center" style="height: 100%; position: relative;">
-                        <h4 class="white-text flow-text" style=" padding-top: 30%"><b>TECHNICAL EXPERTISE</b></h4>
-                        <button class="ui big grey basic button fluid tile-button"><span>READ MORE</span></button>
-                    </div>
-                </div>
-                <div class="column tile">
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{asset('images/tile2.png')}}" style="width:100%; height:100%">
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="item yellow center" style="height: 100%; position: relative;">
-                        <h4 class="white-text flow-text" style=" padding-top: 35%"><b>DESIGN</b></h4>
-                        <button class="ui big grey basic button fluid tile-button"><span>READ MORE</span></button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="row center">
-            <div class="ui equal width grid">
-                <div class="column tile">
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{asset('images/tile3.png')}}" style="width:100%; height:100%">
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="item yellow center" style="height: 100%; position: relative;">
-                        <h4 class="white-text flow-text" style=" padding-top: 30%"><b>DIGITAL MARKETING</b></h4>
-                        <button class="ui big grey basic button fluid tile-button"><span>READ MORE</span></button>
-                    </div>
-                </div>
-                <div class="column tile">
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{asset('images/tile4.png')}}" style="width:100%; height:100%">
-                        </div>
-                    </div>
-                </div>
-                <div class="column">
-                    <div class="item yellow center" style="height: 100%; position: relative;">
-                        <h4 class="white-text flow-text" style=" padding-top: 35%"><b>ENGINEERING</b></h4>
-                        <button class="ui big grey basic button fluid tile-button"><span>READ MORE</span></button>
-                    </div>
-                </div>
-                <div class="column tile">
-                    <div class="item">
-                        <div class="image">
-                            <img src="{{asset('images/tile5.png')}}" style="width:100%; height:100%">
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
     </div>
 @endsection
 
