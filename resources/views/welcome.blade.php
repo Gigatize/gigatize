@@ -163,7 +163,7 @@
     <div class="container">
         <h3 class="header col s12 yellow-text center" style="padding: 30px 0;"><strong>LEARN HOW GIGATIZE IS<br />TRANSFORMING COMPANIES</strong></h3>
     </div>
-    <div style="background-image: url('/images/conference_room.jpg'); background-size: cover;">
+    <div style="background-image: url('/images/room.jpg'); background-size: cover;">
         <div class="row" style="padding: 50px 0;">
             <div class="col s12 m4" style="padding: 0 30px;">
                 <div class="testimonial_photo">
@@ -171,7 +171,8 @@
                 </div>
                 <h4 class="center" style="color: #DDB40D;">Allyson MacKay, M&amp;T Bank</h4>
                 <p style="text-align: center; line-height: 1.6;">
-                    As a Project Leader, it is difficult to find the resources I need when my team faces roadblocks. Gigatize has given me the freedom to find resources without having to go through a painfully long external hire process and the best part is, I am meeting new people within my organization that have the skills and desire to work on what I'm trying to drive.
+                    As a Project Leader, it is difficult to find the resources I need when my team faces roadblocks. Gigatize has given me the freedom to find resources without having to go through a painfully long external hire process and the best part is, I am meeting new people within my organization that have the skills and desire to work on what I'm trying to drive
+                    <div style="font-size: 70px; font-family: serif; color: #DDB40D; line-height: 80px;">&rdquo;</div>
                 </p>
             </div>
             <div class="col s12 m4" style="padding: 0 30px;">
@@ -180,7 +181,8 @@
                 </div>
                 <h4 class="center" style="color: #DDB40D;">Dominique Riley, GE</h4>
                 <p style="text-align: center; line-height: 1.6;">
-                    My background is in Chemistry, but I've been taking coding classes and have been loving it! Gigatize was able to connect me with opportunities so I could apply what I am learning and help my company at the same time!
+                    My background is in Chemistry, but I've been taking coding classes and have been loving it! Gigatize was able to connect me with opportunities so I could apply what I am learning and help my company at the same time
+                    <div style="font-size: 70px; font-family: serif; color: #DDB40D; line-height: 80px;">&rdquo;</div>
                 </p>
             </div>
             <div class="col s12 m4" style="padding: 0 30px;">
@@ -189,7 +191,8 @@
                 </div>
                 <h4 class="center" style="color: #DDB40D;">Kareem Dandy, First Data</h4>
                 <p style="text-align: center; line-height: 1.6;">
-                    Cybersecurity experts are hard to find and even harder to keep given the competitive market. I've been fortunate that several of the people who've completed gigs for my team have joined as full-time members and have proved more valuable than many of the external hires we fight to hire and lose after a few months. 
+                    Cybersecurity experts are hard to find and even harder to keep given the competitive market. I've been fortunate that several of the people who've completed gigs for my team have joined as full-time members and have proved more valuable than many of the external hires we fight to hire and lose after a few months.
+                    <div style="font-size: 70px; font-family: serif; color: #DDB40D; line-height: 80px;">&rdquo;</div>
                 </p>
             </div>
         </div>
