@@ -41,6 +41,16 @@
             margin: 16px auto;
             width: 140px;
         }
+
+        .testimonial_photo {
+            border-radius: 50%;
+            overflow: auto;
+            margin: 16px auto;
+        }
+
+        .testimonial_photo img {
+            width: 100%;
+        }
   </style>
 @endsection
 
@@ -84,7 +94,7 @@
                         <p>
                             We connect solution seekers with problem solvers to leverage the power of your internal workforce. Our dashboards visualize your productivity savings in real-time.
                         </p>
-                        <a class="waves-effect waves-light btn-small" href="#">Read More</a>
+                        <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
                     </div>
                 </div>
                 <div class="col s12 m4">
@@ -97,7 +107,7 @@
                         <p>
                             Are you ready for the #FutureOfWork? We help you combat growing skill shortages, turnover, and disengagement through a platform that empowers your workforce to take the lead!
                         </p>
-                        <a class="waves-effect waves-light btn-small" href="#">Read More</a>
+                        <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
                     </div>
                 </div>
                 <div class="col s12 m4">
@@ -110,12 +120,12 @@
                         <p>
                             We partner skill seekers with subject matter experts to encourage learning by doing and sharing. Why outsource if you can insource quality, homegrown talent?
                         </p>
-                        <a class="waves-effect waves-light btn-small" href="#">Read More</a>
+                        <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
                     </div>
                 </div>
             </div>
             <div class="row" style="padding: 20px 0 50px">
-                <div class="col s12 m3">
+                <div class="col s12 m4 offset-m2">
                     <div class="icon-block center">
                         <img src="/images/empower_icon.png" class="icon" />
                         <div class="icon-label">
@@ -125,10 +135,10 @@
                         <p>
                             We help your organization establish an organic network that goes beyond the confines of roles and org charts to get you connected with the guidance you need.
                         </p>
-                        <a class="waves-effect waves-light btn-small" href="#">Read More</a>
+                        <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
                     </div>
                 </div>
-                <div class="col s12 m3">
+                <div class="col s12 m4">
                     <div class="icon-block center">
                         <img src="/images/recognize_icon.png" class="icon" />
                         <div class="icon-label">
@@ -138,7 +148,7 @@
                         <p>
                             We gamify gigs and quests so your workforce is well-recognized and rewarded for their engagement. We ensure that your org has an easy way to visibly track and showcase above &amp; beyond efforts.
                         </p>
-                        <a class="waves-effect waves-light btn-small" href="#">Read More</a>
+                        <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
                     </div>
                 </div>
             </div>
@@ -146,36 +156,39 @@
     </div>
 
 
-    <div class="parallax-container valign-wrapper" style="height: 550px;">
-        <div class="container overlay">
-            <div class="row center" style="padding: 100px 0;">
-                <h1 class="header col s12 yellow-text">LEARN HOW GIGATIZE IS TRANSFORMING COMPANIES</h1>
-            </div>
+    <div>
+        <h1 class="header col s12 yellow-text" style="padding: 30px 0;"><strong>LEARN HOW GIGATIZE IS TRANSFORMING COMPANIES</strong></h1>
+        <div class="container" style="background-image: url('/images/conference_room.jpg'); background-size: cover;">
             <div class="row" style="padding-top: 50px;">
                 <div class="col s12 m4" style="padding: 0 30px;">
-                    <img src="/images/recognize_icon.png" class="testimonial_photo">
-                    <h4 class="center yellow-text">Allyson MacKay, M&amp;T Bank</h4>
-                    <p>
+                    <div class="testimonial_photo">
+                        <img src="/images/photo_allyson.jpg">
+                    </div>
+                    <h4 class="center" style="color: #DDB40D;">Allyson MacKay, M&amp;T Bank</h4>
+                    <p style="text-align: center; line-height: 1.6;">
                         As a Project Leader, it is difficult to find the resources I need when my team faces roadblocks. Gigatize has given me the freedom to find resources without having to go through a painfully long external hire process and the best part is, I am meeting new people within my organization that have the skills and desire to work on what I'm trying to drive.
                     </p>
                 </div>
                 <div class="col s12 m4" style="padding: 0 30px;">
-                    <img src="/images/recognize_icon.png" class="testimonial_photo">
-                    <h4 class="center yellow-text">Dominique Riley, GE</h4>
-                    <p>
+                    <div class="testimonial_photo">
+                        <img src="/images/photo_dominique.jpg">
+                    </div>
+                    <h4 class="center" style="color: #DDB40D;">Dominique Riley, GE</h4>
+                    <p style="text-align: center; line-height: 1.6;">
                         My background is in Chemistry, but I've been taking coding classes and have been loving it! Gigatize was able to connect me with opportunities so I could apply what I am learning and help my company at the same time!
                     </p>
                 </div>
                 <div class="col s12 m4" style="padding: 0 30px;">
-                    <img src="/images/recognize_icon.png" class="testimonial_photo">
-                    <h4 class="center yellow-text">Kareem Dandy, First Data</h4>
-                    <p>
+                    <div class="testimonial_photo">
+                        <img src="/images/photo_kareem.jpg">
+                    </div>
+                    <h4 class="center" style="color: #DDB40D;">Kareem Dandy, First Data</h4>
+                    <p style="text-align: center; line-height: 1.6;">
                         Cybersecurity experts are hard to find and even harder to keep given the competitive market. I've been fortunate that several of the people who've completed gigs for my team have joined as full-time members and have proved more valuable than many of the external hires we fight to hire and lose after a few months. 
                     </p>
                 </div>
             </div>
         </div>
-        <div class="parallax"><img src="{{asset('images/background2.png')}}" alt="Unsplashed background img 2"></div>
     </div>
 @endsection
 
