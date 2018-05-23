@@ -156,37 +156,37 @@
     </div>
 
 
-    <div>
+    <div class="container">
         <h1 class="header col s12 yellow-text" style="padding: 30px 0;"><strong>LEARN HOW GIGATIZE IS TRANSFORMING COMPANIES</strong></h1>
-        <div class="container" style="background-image: url('/images/conference_room.jpg'); background-size: cover;">
-            <div class="row" style="padding-top: 50px;">
-                <div class="col s12 m4" style="padding: 0 30px;">
-                    <div class="testimonial_photo">
-                        <img src="/images/photo_allyson.jpg">
-                    </div>
-                    <h4 class="center" style="color: #DDB40D;">Allyson MacKay, M&amp;T Bank</h4>
-                    <p style="text-align: center; line-height: 1.6;">
-                        As a Project Leader, it is difficult to find the resources I need when my team faces roadblocks. Gigatize has given me the freedom to find resources without having to go through a painfully long external hire process and the best part is, I am meeting new people within my organization that have the skills and desire to work on what I'm trying to drive.
-                    </p>
+    </div>
+    <div style="background-image: url('/images/conference_room.jpg'); background-size: cover;">
+        <div class="row" style="padding-top: 50px;">
+            <div class="col s12 m4" style="padding: 0 30px;">
+                <div class="testimonial_photo">
+                    <img src="/images/photo_allyson.jpg">
                 </div>
-                <div class="col s12 m4" style="padding: 0 30px;">
-                    <div class="testimonial_photo">
-                        <img src="/images/photo_dominique.jpg">
-                    </div>
-                    <h4 class="center" style="color: #DDB40D;">Dominique Riley, GE</h4>
-                    <p style="text-align: center; line-height: 1.6;">
-                        My background is in Chemistry, but I've been taking coding classes and have been loving it! Gigatize was able to connect me with opportunities so I could apply what I am learning and help my company at the same time!
-                    </p>
+                <h4 class="center" style="color: #DDB40D;">Allyson MacKay, M&amp;T Bank</h4>
+                <p style="text-align: center; line-height: 1.6;">
+                    As a Project Leader, it is difficult to find the resources I need when my team faces roadblocks. Gigatize has given me the freedom to find resources without having to go through a painfully long external hire process and the best part is, I am meeting new people within my organization that have the skills and desire to work on what I'm trying to drive.
+                </p>
+            </div>
+            <div class="col s12 m4" style="padding: 0 30px;">
+                <div class="testimonial_photo">
+                    <img src="/images/photo_dominique.jpg">
                 </div>
-                <div class="col s12 m4" style="padding: 0 30px;">
-                    <div class="testimonial_photo">
-                        <img src="/images/photo_kareem.jpg">
-                    </div>
-                    <h4 class="center" style="color: #DDB40D;">Kareem Dandy, First Data</h4>
-                    <p style="text-align: center; line-height: 1.6;">
-                        Cybersecurity experts are hard to find and even harder to keep given the competitive market. I've been fortunate that several of the people who've completed gigs for my team have joined as full-time members and have proved more valuable than many of the external hires we fight to hire and lose after a few months. 
-                    </p>
+                <h4 class="center" style="color: #DDB40D;">Dominique Riley, GE</h4>
+                <p style="text-align: center; line-height: 1.6;">
+                    My background is in Chemistry, but I've been taking coding classes and have been loving it! Gigatize was able to connect me with opportunities so I could apply what I am learning and help my company at the same time!
+                </p>
+            </div>
+            <div class="col s12 m4" style="padding: 0 30px;">
+                <div class="testimonial_photo">
+                    <img src="/images/photo_kareem.jpg">
                 </div>
+                <h4 class="center" style="color: #DDB40D;">Kareem Dandy, First Data</h4>
+                <p style="text-align: center; line-height: 1.6;">
+                    Cybersecurity experts are hard to find and even harder to keep given the competitive market. I've been fortunate that several of the people who've completed gigs for my team have joined as full-time members and have proved more valuable than many of the external hires we fight to hire and lose after a few months. 
+                </p>
             </div>
         </div>
     </div>
