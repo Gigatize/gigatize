@@ -170,7 +170,7 @@
                     <img src="/images/photo_allyson.jpg">
                 </div>
                 <h4 class="center" style="color: #DDB40D;">Allyson MacKay
-                <br /><small>M&amp;T Bank</small></h4>
+                <br /><small style="font-weight: 700;">M&amp;T Bank</small></h4>
                 <p style="text-align: center; line-height: 1.6;">
                     As a Project Leader, it is difficult to find the resources I need when my team faces roadblocks. Gigatize has given me the freedom to find resources without having to go through a painfully long external hire process and the best part is, I am meeting new people within my organization that have the skills and desire to work on what I'm trying to drive
                     <div style="font-size: 70px; font-family: serif; color: #DDB40D; line-height: 80px; text-align: center;">&rdquo;</div>
@@ -180,7 +180,7 @@
                 <div class="testimonial_photo">
                     <img src="/images/photo_dominique.jpg">
                 </div>
-                <h4 class="center" style="color: #DDB40D;">Dominique Riley<br/><small>GE</small></h4>
+                <h4 class="center" style="color: #DDB40D;">Dominique Riley<br/><small style="font-weight: 700;">GE</small></h4>
                 <p style="text-align: center; line-height: 1.6;">
                     My background is in Chemistry, but I've been taking coding classes and have been loving it! Gigatize was able to connect me with opportunities so I could apply what I am learning and help my company at the same time
                     <div style="font-size: 70px; font-family: serif; color: #DDB40D; line-height: 80px; text-align: center;">&rdquo;</div>
@@ -190,7 +190,7 @@
                 <div class="testimonial_photo">
                     <img src="/images/photo_kareem.jpg">
                 </div>
-                <h4 class="center" style="color: #DDB40D;">Kareem Dandy<br/><small>First Data</small></h4>
+                <h4 class="center" style="color: #DDB40D;">Kareem Dandy<br/><small style="font-weight: 700;">First Data</small></h4>
                 <p style="text-align: center; line-height: 1.6;">
                     Cybersecurity experts are hard to find and even harder to keep given the competitive market. I've been fortunate that several of the people who've completed gigs for my team have joined as full-time members and have proved more valuable than many of the external hires we fight to hire and lose after a few months.
                     <div style="font-size: 70px; font-family: serif; color: #DDB40D; line-height: 80px; text-align: center;">&rdquo;</div>
