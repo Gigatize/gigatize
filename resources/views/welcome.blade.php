@@ -45,11 +45,15 @@
         .testimonial_photo {
             border-radius: 50%;
             overflow: auto;
-            margin: 16px auto;
+            margin: 16px;
+            width: 200px;
+            height: 200px;
+            text-align: center;
         }
 
         .testimonial_photo img {
-            width: 100%;
+            width: 200px;
+            height: 200px;
         }
   </style>
 @endsection
