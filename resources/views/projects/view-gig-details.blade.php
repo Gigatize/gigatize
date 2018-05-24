@@ -163,7 +163,7 @@
 							<div class="row justify-content-center mb-3">
 								<div class="col-xs-12 col-md-6 col-lg-4" style="text-align: center">
 									<img src="{{asset($project->Owner->picture)}}" class="photo-thumbnail photo-thumbnail-large mb-2"  style="height: 200px; width: 200px; border-radius: 200px;"/><br />
-									<strong>{{$project->Owner->name}}</strong><br />
+									<strong>{{$user->first_name . " " . $user->last_name}}</strong><br />
 									Gig Sponsor <br />
 									<div class="btn-group btn-group-sm" role="group">
                                         <a href="mailto:{{$project->Owner->email}}"><button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button></a>
@@ -175,7 +175,7 @@
                                 @foreach($project->Users as $index=>$user)
 								<div class="col-md-6 col-lg-{{$columns}}" style="text-align: center">
 									<img src="{{asset('images/professional-man-2.png')}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
-									<strong>{{$user->name}}</strong><br />
+									<strong>{{$user->first_name . " " . $user->last_name}}</strong><br />
 									Team Member {{$index+1}}<br />
 									<div class="btn-group btn-group-sm" role="group">
                                         <a href="mailto:{{$user->email}}"><button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button></a>
