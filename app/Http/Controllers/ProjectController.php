@@ -109,7 +109,8 @@ class ProjectController extends Controller
    */
   public function show(Project $project)
   {
-      return view('projects/view-gig-details',compact('project'));
+      $columns = 12/$project->user_count;
+      return view('projects/view-gig-details',compact('project','columns'));
   }
 
   /**

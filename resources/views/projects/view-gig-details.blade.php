@@ -23,6 +23,11 @@
 		background-color: #FFF;
 		box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.3);
 	}
+    a#join_btn:hover{
+        text-decoration: none;
+        cursor: hand;
+        font-family: "Open Sans",sans-serif;
+    }
 </style>
 @endsection
 
@@ -56,7 +61,7 @@
 	</div>
 </div>
 	<div class="container">
-		<div class="card no-rounded-corners no-border py-1 px-3 mt-3 mb-3">
+		<div class="card rounded-corners no-border py-1 px-3 mt-3 mb-3">
 			<h1 class="mt-3">
 				{{$project->title}}<br />
 			</h1>
@@ -92,7 +97,7 @@
 		<div class="row no-gutters align-items-stretch">
 			<!-- Sidebar -->
 			<div class="col-12 col-md-5 col-lg-4 col-xl-3">
-				<div class="card no-rounded-corners no-border mr-3">
+				<div class="card rounded-corners no-border mr-3">
 					<div class="row align-items-start">
 						<div class="col-xs-12 col-sm-6 col-md-12 text-center">
 							<img src="{{asset($project->Category->icon_path)}}" class="sidebar-icon mt-3" />
@@ -102,7 +107,7 @@
 						<div class="col-xs-12 col-sm-6 col-md-12 w-100">
 							<div class="pt-3 pr-3 pb-2 pl-3">
 								@foreach($project->Skills as $skill)
-								<button type="button" class="btn btn-outline-secondary mb-1">{{$skill->name}}</button>
+								<button type="button" class="btn btn-outline-secondary mb-1" style="white-space: normal;">{{$skill->name}}</button>
 								@endforeach
 							</div>
 							<div class="row no-gutters text-center">
@@ -121,11 +126,11 @@
 							</div>
 						</div>
 					</div>
-					<button type="button" class="btn btn-accent btn-xl no-rounded-corners btn-block text-uppercase">Join Project</button>
+                    <a id="join_btn" href="{{url('/projects/join')}}"><button type="button" class="btn btn-accent btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" @if($project->Owner->id == Auth::id() or $project->Users->count() == $project->user_count) disabled @endif>Join Project</button></a>
 				</div>
 			</div>
 			<!-- Main Content -->
-			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card no-rounded-corners no-border p-3 h-100">
+			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card rounded-corners no-border p-3 h-100">
 				<div class="w-100">
 					<div id="accordion">
 						<h2 data-toggle="collapse" data-target="#logistics"><i class="fas fa-xs fa-caret-down"></i> Logistics</h2>
@@ -157,35 +162,34 @@
 						<div id="team" class="collapse" data-parent="#accordion">
 							<div class="row justify-content-center mb-3">
 								<div class="col-xs-12 col-md-6 col-lg-4" style="text-align: center">
-									<img src="{{asset('images/professional-woman-1.png')}}" class="photo-thumbnail photo-thumbnail-large mb-2"  style="height: 200px; width: 200px; border-radius: 200px;"/><br />
-									<strong>Eleanor Rigby</strong><br />
+									<img src="{{asset($project->Owner->picture)}}" class="photo-thumbnail photo-thumbnail-large mb-2"  style="height: 200px; width: 200px; border-radius: 200px;"/><br />
+									<strong>{{$project->Owner->name}}</strong><br />
 									Gig Sponsor <br />
 									<div class="btn-group btn-group-sm" role="group">
-										<button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button>
-										<button type="button" class="btn btn-empty"><i class="fas fa-address-card"></i></button>
+                                        <a href="mailto:{{$project->Owner->email}}"><button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button></a>
+                                        <a href="{{url('/users/'.$project->Owner->id)}}"><button type="button" class="btn btn-empty"><i class="fas fa-address-card"></i></button></a>
 									</div>
 								</div>
 							</div>
 							<div class="row justify-content-center mb-3">
-								<div class="col-md-6 col-lg-4" style="text-align: center">
+                                @foreach($project->Users as $index=>$user)
+								<div class="col-md-6 col-lg-{{$columns}}" style="text-align: center">
 									<img src="{{asset('images/professional-man-2.png')}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
-									<strong>Ronald McDonald</strong><br />
-									Team Member 1<br />
+									<strong>{{$user->name}}</strong><br />
+									Team Member {{$index+1}}<br />
 									<div class="btn-group btn-group-sm" role="group">
-										<button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button>
-										<button type="button" class="btn btn-empty"><i class="fas fa-address-card"></i></button>
+                                        <a href="mailto:{{$user->email}}"><button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button></a>
+                                        <a href="{{url('/users/'.$user->id)}}"><button type="button" class="btn btn-empty"><i class="fas fa-address-card"></i></button></a>
 									</div>
 								</div>
-								<div class="col-md-6 col-lg-4" style="text-align: center">
+                                @endforeach
+                                @for ($i = $project->Users->count()+1 ; $i <= $project->user_count ; $i++)
+								<div class="col-md-6 col-lg-{{$columns}}" style="text-align: center">
 									<img src="{{asset('images/user.svg')}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
 									<strong>Open Position</strong><br />
-									Team Member 2<br />
+									Team Member {{$i}}<br />
 								</div>
-								<div class="col-md-6 col-lg-4" style="text-align: center">
-									<img src="{{asset('images/user.svg')}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
-									<strong>Open Position</strong><br />
-									Team Member 3<br />
-								</div>
+                                @endfor
 							</div>
 						</div>
 					</div>

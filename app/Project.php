@@ -92,7 +92,7 @@ class Project extends Model
 
     public function Users()
     {
-        return $this->hasMany('App\User');
+        return $this->belongsToMany('App\User');
     }
 
     public function AcceptanceCriteria()
