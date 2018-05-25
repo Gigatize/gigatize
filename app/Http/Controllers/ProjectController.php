@@ -147,7 +147,7 @@ class ProjectController extends Controller
     
   }
 
-  public function joinProject(Project $Project, User $user){
+  public function joinProject(Project $project, User $user){
       $project->Users()->attach($user->id);
       return redirect('/projects/'.$project->id)->with('success','You successfully joined the project');
   }
