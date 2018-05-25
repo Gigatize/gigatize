@@ -16,37 +16,37 @@ use Illuminate\Support\Facades\View;
 class ProjectController extends Controller 
 {
 
-  /**
-   * Display a listing of the resource.
-   *
-   * @return Response
-   */
-  public function index()
-  {
+    /**
+    * Display a listing of the resource.
+    *
+    * @return Response
+    */
+    public function index()
+    {
       $projects = Project::where('start_date','>',Carbon::now())->paginate(12);
       return view('projects/index',compact('projects'));
-  }
+    }
 
-  /**
-   * Show the form for creating a new resource.
-   *
-   * @return Response
-   */
-  public function create()
-  {
+    /**
+    * Show the form for creating a new resource.
+    *
+    * @return Response
+    */
+    public function create()
+    {
         $skills = Skill::orderBy('name')->take(1000)->get();
         $locations = Location::all();
         $categories = Category::all();
         return view('projects/create', compact('skills','locations','categories'));
-  }
+    }
 
-  /**
-   * Store a newly created resource in storage.
-   *
-   * @return Response
-   */
-  public function store(Request $request)
-  {
+    /**
+    * Store a newly created resource in storage.
+    *
+    * @return Response
+    */
+    public function store(Request $request)
+    {
       //validate request input
       $validator = $request->validate(Project::$rules);
 
@@ -100,63 +100,68 @@ class ProjectController extends Controller
       }
 
       return redirect('/')->with('success','You have successfully posted your project');
-  }
+    }
 
-  /**
-   * Display the specified resource.
-   *
-   * @param  Project  $project
-   * @return View
-   */
-  public function show(Project $project)
-  {
+    /**
+    * Display the specified resource.
+    *
+    * @param  Project  $project
+    * @return View
+    */
+    public function show(Project $project)
+    {
       $columns = 12/$project->user_count;
       return view('projects/view-gig-details',compact('project','columns'));
-  }
+    }
 
-  /**
-   * Show the form for editing the specified resource.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function edit($id)
-  {
-    
-  }
+    /**
+    * Show the form for editing the specified resource.
+    *
+    * @param  int  $id
+    * @return Response
+    */
+    public function edit($id)
+    {
 
-  /**
-   * Update the specified resource in storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function update($id)
-  {
-    
-  }
+    }
 
-  /**
-   * Remove the specified resource from storage.
-   *
-   * @param  int  $id
-   * @return Response
-   */
-  public function destroy($id)
-  {
-    
-  }
+    /**
+    * Update the specified resource in storage.
+    *
+    * @param  int  $id
+    * @return Response
+    */
+    public function update($id)
+    {
 
-  public function joinProject(Project $project, User $user){
+    }
+
+    /**
+    * Remove the specified resource from storage.
+    *
+    * @param  int  $id
+    * @return Response
+    */
+    public function destroy($id)
+    {
+
+    }
+
+    public function joinProject(Project $project, User $user){
       $project->Users()->attach($user->id);
       return redirect('/projects/'.$project->id)->with('success','You successfully joined the project');
-  }
+    }
 
-  public function search(){
+    public function leaveProject(Project $project, User $user){
+        $project->Users()->detach($user->id);
+        return redirect('/projects/'.$project->id)->with('success','You successfully left the project');
+    }
+
+    public function search(){
       $term = Input::get('term');
       $projects = Project::search($term, null, true)->distinct()->paginate(12);
       return view('projects/index',compact('projects','term'));
-  }
+    }
 
     /**
      * Favorite a particular project

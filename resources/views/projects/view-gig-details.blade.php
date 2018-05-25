@@ -28,6 +28,11 @@
         cursor: hand;
         font-family: "Open Sans",sans-serif;
     }
+	a#leave_btn:hover{
+		text-decoration: none;
+		cursor: hand;
+		font-family: "Open Sans",sans-serif;
+	}
 </style>
 @endsection
 
@@ -126,7 +131,11 @@
 							</div>
 						</div>
 					</div>
-                    <a id="join_btn" href="{{url('/projects/'.$project->id.'/users/'.Auth::id())}}"><button type="button" class="btn btn-accent btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" @if($project->Owner->id == Auth::id() or $project->Users->count() == $project->user_count or $project->hasUser(Auth::user())) disabled @endif>Join Project</button></a>
+					@if($project->hasUser(Auth::user()))
+                    <a id="leave_btn" href="{{url('/projects/'.$project->id.'/users/'.Auth::id().'/leave')}}"><button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Leave Project</button></a>
+					@else
+					<a id="join_btn" href="{{url('/projects/'.$project->id.'/users/'.Auth::id().'/join')}}"><button type="button" class="btn btn-accent btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" @if($project->Owner->id == Auth::id() or $project->Users->count() == $project->user_count) disabled @endif>Join Project</button></a>
+					@endif
 				</div>
 			</div>
 			<!-- Main Content -->
