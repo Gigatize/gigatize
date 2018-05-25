@@ -126,7 +126,7 @@
 							</div>
 						</div>
 					</div>
-                    <a id="join_btn" href="{{url('/projects/join')}}"><button type="button" class="btn btn-accent btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" @if($project->Owner->id == Auth::id() or $project->Users->count() == $project->user_count) disabled @endif>Join Project</button></a>
+                    <a id="join_btn" href="{{url('/projects/'.$project->id.'/users/'.Auth::id())}}"><button type="button" class="btn btn-accent btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" @if($project->Owner->id == Auth::id() or $project->Users->count() == $project->user_count) disabled @endif>Join Project</button></a>
 				</div>
 			</div>
 			<!-- Main Content -->

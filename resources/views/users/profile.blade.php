@@ -68,7 +68,7 @@
 		<div class="container">
 			<div class="row no-gutters align-items-stretch">
 				<div class="col-12 col-sm-6 col-md-3 px-2 pb-3">
-					<div class="card no-rounded-corners p-3 w-100" style="display: inline-block;">
+					<div class="card rounded-corners p-3 w-100" style="display: inline-block;">
 						<div class="card-icon">
 							<i class="fas fa-clock"></i>
 						</div>
@@ -77,7 +77,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-sm-6 col-md-3 px-2 pb-3">
-					<div class="card no-rounded-corners p-3 w-100" style="display: inline-block;">
+					<div class="card rounded-corners p-3 w-100" style="display: inline-block;">
 						<div class="card-icon">
 							<i class="far fa-newspaper"></i>
 						</div>
@@ -86,7 +86,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-sm-6 col-md-3 px-2 pb-3">
-					<div class="card no-rounded-corners p-3 w-100" style="display: inline-block;">
+					<div class="card rounded-corners p-3 w-100" style="display: inline-block;">
 						<div class="card-icon">
 							<i class="far fa-check-square"></i>
 						</div>
@@ -95,7 +95,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-sm-6 col-md-3 px-2 pb-3">
-					<div class="card no-rounded-corners p-3 w-100" style="display: inline-block;">
+					<div class="card rounded-corners p-3 w-100" style="display: inline-block;">
 						<div class="card-icon">
 							<i class="fas fa-users"></i>
 						</div>
@@ -140,7 +140,7 @@
 				</div>
 			</div>
 			<div class="col-9 p-3">
-				<div class="card bg-light no-rounded-corners mx-1 mb-3 p-2 flex-row justify-content-between">
+				<div class="card bg-light rounded-corners mx-1 mb-3 p-2 flex-row justify-content-between">
 					<div><strong>My Public Profile</strong></div>
 					<div class="card flex-row align-items-center small px-2">
 						<i class="fas fa-calendar"></i>&nbsp;<strong>April 15, 2018 - May 16, 2018</strong>

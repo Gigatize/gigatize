@@ -6,6 +6,7 @@ use App\Category;
 use App\Location;
 use App\Project;
 use App\Skill;
+use App\User;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -22,7 +23,7 @@ class ProjectController extends Controller
    */
   public function index()
   {
-      $projects = Project::paginate(12);
+      $projects = Project::where('start_date','>',Carbon::now())->paginate(12);
       return view('projects/index',compact('projects'));
   }
 
@@ -144,6 +145,11 @@ class ProjectController extends Controller
   public function destroy($id)
   {
     
+  }
+
+  public function joinProject(Project $Project, User $user){
+      $project->Users()->attach($user->id);
+      return redirect('/projects/'.$project->id)->with('success','You successfully joined the project');
   }
 
   public function search(){

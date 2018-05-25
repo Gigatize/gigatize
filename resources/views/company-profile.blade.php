@@ -53,7 +53,7 @@
 			<div class="dropdown" id="profile-dropdown-button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<a class="text-secondary" href="#"><img src="{{asset(Auth::user()->picture)}}" height="30px" class="avatar" style="border-radius: 30px;"/>&nbsp; {{Auth::user()->first_name . " " . Auth::user()->last_name}} <i class="fas fa-caret-down"></i></a>
 				<div class="dropdown-menu dropdown-menu-right" aria-labelledby="profile-dropdown-button">
-					<a class="dropdown-item" href="{{url('users/'.Auth::id())}}"><small><i class="fas fa-fw fa-address-card"></i> Profile</small></a>
+					<a class="dropdown-item" href="{{url('/users/'.Auth::id())}}"><small><i class="fas fa-fw fa-address-card"></i> Profile</small></a>
 					<a class="dropdown-item" href="#"><small><i class="fas fa-fw fa-cogs"></i> Account Settings</small></a>
 				</div>
 			</div>
@@ -61,10 +61,31 @@
 	</div>
 </div>
 	<div class="container">
+		<div class="card rounded-corners no-border mt-3 p-3">
+			<strong>
+				Current Gigs in Progress
+				<div class="btn-group float-right mb-1" role="group">
+					<button type="button" class="btn btn-sm btn-empty" title="Settings"><i class="fas fa-wrench"></i></button>
+				</div>
+			</strong>
+			<div class="divider"></div>
+			<table class="table table-sm table-striped table-hover no-footer" id="this_months_gigs_table" width="100%">
+				<thead>
+				<tr class="small">
+					<th>ID</th>
+					<th>Name</th>
+					<th>Team Members</th>
+					<th>Gig Progress</th>
+					<th>Status</th>
+					<th>Actions</th>
+				</tr>
+				</thead>
+			</table>
+		</div>
 		<div class="row no-gutters align-items-stretch mt-3">
 			<div class="col-12 col-md-8 col-lg-9">
-				<div class="card no-rounded-corners no-border mr-3 p-3">
-					<div class="card no-rounded-corners p-3">
+				<div class="card rounded-corners no-border mr-3 p-3">
+					<div class="card rounded-corners p-3">
 						<strong>
 							Our Global Community
 							<div class="btn-group float-right mb-1" role="group">
@@ -93,8 +114,8 @@
 				</div>
 			</div>
 			<div class="col-12 col-md-4 col-lg-3">
-				<div class="card no-rounded-corners no-border p-3" style="height: 406px;">
-					<div class="card no-rounded-corners p-3">
+				<div class="card rounded-corners no-border p-3" style="height: 406px;">
+					<div class="card rounded-corners p-3">
 						<strong>
 							Top Gigatizers
 							<div class="btn-group float-right mb-1" role="group">
@@ -113,27 +134,6 @@
 					</div>
 				</div>
 			</div>
-		</div>
-		<div class="card no-rounded-corners no-border mt-3 p-3">
-			<strong>
-				This Month's Gigs in Progress
-				<div class="btn-group float-right mb-1" role="group">
-					<button type="button" class="btn btn-sm btn-empty" title="Settings"><i class="fas fa-wrench"></i></button>
-				</div>
-			</strong>
-			<div class="divider"></div>
-			<table class="table table-sm table-striped table-hover no-footer" id="this_months_gigs_table" width="100%">
-				<thead>
-					<tr class="small">
-						<th>ID</th>
-						<th>Name</th>
-						<th>Team Members</th>
-						<th>Gig Progress</th>
-						<th>Status</th>
-						<th>Actions</th>
-					</tr>
-				</thead>
-			</table>
 		</div>
 	</div>
 @endsection
