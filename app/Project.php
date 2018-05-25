@@ -148,7 +148,7 @@ class Project extends Model
     */
 
     public function hasUser($user){
-        return $this->Users()->where('id',$user->id)->exists();
+        return $this->Users()->where('users.id',$user->id)->exists();
     }
 
 }
