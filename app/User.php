@@ -34,4 +34,6 @@ class User extends Authenticatable
         return $this->belongsToMany('App\Project', 'favorites', 'user_id', 'project_id')->withTimeStamps();
     }
 
+
+
 }
