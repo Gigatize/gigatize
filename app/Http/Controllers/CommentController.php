@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use Actuallymab\LaravelComment\Models\Comment;
+use App\Project;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class CommentController extends Controller 
 {
@@ -22,9 +25,9 @@ class CommentController extends Controller
    *
    * @return Response
    */
-  public function create()
+  public function create(Request $request, Project $project)
   {
-    
+
   }
 
   /**
@@ -34,7 +37,9 @@ class CommentController extends Controller
    */
   public function store(Request $request)
   {
-    
+      $user = Auth::user();
+      $user->comment($project, $request->get('comment'));
+      return redirect()->back()->with('success','You successfully commented on the project');
   }
 
   /**
@@ -78,7 +83,8 @@ class CommentController extends Controller
    */
   public function destroy($id)
   {
-    
+        Comment::find($id)->destroy();
+        return redirect()->back()->with('success','You successfully deleted the comment');
   }
   
 }

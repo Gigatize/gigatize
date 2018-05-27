@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Actuallymab\LaravelComment\Commentable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Auth;
 use Nicolaslopezj\Searchable\SearchableTrait;
@@ -12,10 +13,12 @@ class Project extends Model
 {
     use SearchableTrait;
     use HasSlug;
+    use Commentable;
 
     protected $table = 'projects';
     public $timestamps = true;
     protected $fillable = array('title', 'slug','user_id', 'category_id', 'description', 'start_date', 'deadline', 'location_id', 'timezone', 'impact', 'user_count', 'estimated_hours', 'resources_link', 'additional_info', 'flexible_start', 'on_site', 'renew','complete');
+    protected $mustBeApproved = false;
     protected $dates = [
         'created_at',
         'updated_at',

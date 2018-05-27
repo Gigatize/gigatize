@@ -2,11 +2,13 @@
 
 namespace App;
 
+use Actuallymab\LaravelComment\CanComment;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 
 class User extends Authenticatable
 {
+    use CanComment;
 
     protected $table = 'users';
     public $timestamps = true;
@@ -32,6 +34,10 @@ class User extends Authenticatable
     public function Favorites()
     {
         return $this->belongsToMany('App\Project', 'favorites', 'user_id', 'project_id')->withTimeStamps();
+    }
+
+    public function reviews(){
+        return $this->hasMany('App\Review', 'reviewer_id');
     }
 
 

@@ -131,77 +131,134 @@
 							</div>
 						</div>
 					</div>
-					@if($project->hasUser(Auth::user()))
-                    <a id="leave_btn" href="{{url('/projects/'.$project->id.'/users/'.Auth::id().'/leave')}}"><button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Leave Project</button></a>
+					@if($project->complete)
+						<button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" disabled>Complete</button>
+					@elseif($project->Owner->id == Auth::id())
+						<a id="complete_btn" href="{{url('/projects/'.$project->id.'/complete')}}"><button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Complete Project</button></a>
+					@elseif($project->hasUser(Auth::user()))
+                    	<a id="leave_btn" href="{{url('/projects/'.$project->id.'/users/'.Auth::id().'/leave')}}"><button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Leave Project</button></a>
 					@else
-					<a id="join_btn" href="{{url('/projects/'.$project->id.'/users/'.Auth::id().'/join')}}"><button type="button" class="btn btn-accent btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" @if($project->Owner->id == Auth::id() or $project->Users->count() == $project->user_count) disabled @endif>Join Project</button></a>
+						<a id="join_btn" href="{{url('/projects/'.$project->id.'/users/'.Auth::id().'/join')}}"><button type="button" class="btn btn-accent btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" @if($project->Users->count() == $project->user_count) disabled @endif>Join Project</button></a>
 					@endif
 				</div>
 			</div>
 			<!-- Main Content -->
 			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card rounded-corners no-border p-3 h-100">
-				<div class="w-100">
-					<div id="accordion">
-						<h2 data-toggle="collapse" data-target="#logistics"><i class="fas fa-xs fa-caret-down"></i> Logistics</h2>
-						<div id="logistics" class="collapse show" data-parent="#accordion">
-							<p>
-								The gig will kick off in <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-{{$project->Category->text_color}}">{{$project->user_count}} members</strong> on the team. Completion of this gig is estimated to take <strong class="text-{{$project->Category->text_color}}">{{$project->estimated_hours}} hours</strong> per member.
-							</p>
-							<h5>You will gain <span class="text-{{$project->Category->text_color}}">{{$project->Skills()->count() * 5}} experience points</span> distributed among the following skillsets</h5>
-							<ul>
-								@foreach($project->Skills as $skill)
-									<li>{{$skill->name}} <span class="text-{{$project->Category->text_color}}">+5</span></li>
-								@endforeach
-							</ul>
-						</div>
-						<h2 data-toggle="collapse" data-target="#details" class="mt-3 collapsed"><i class="fas fa-xs fa-caret-down"></i></i> Details</h2>
-						<div id="details" class="collapse" data-parent="#accordion">
-							<p>{{$project->impact}}</p>
-							<h5>More Information:</h5>
-							<p><a href="{{$project->resources_link}}">{{$project->resources_link}}</a></p>
 
-							<h5>This gig will be complete when the following criteria has been met:</h5>
-							<ul style="list-style-type:square">
-								@foreach($project->AcceptanceCriteria as $criteria)
-									<li>{{$criteria->criteria}}</li>
-								@endforeach
-							</ul>
+				<!--Accordion wrapper-->
+				<div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
+
+					<!-- Accordion card -->
+					<div class="card">
+
+						<!-- Card header -->
+						<div class="card-header" role="tab" id="headingOne">
+							<a data-toggle="collapse" href="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+								<h5 class="mb-0">
+									Logistics <i class="fa fa-angle-down rotate-icon"></i>
+								</h5>
+							</a>
 						</div>
-						<h2 data-toggle="collapse" data-target="#team" class="mt-3 collapsed"><i class="fas fa-xs fa-caret-down"></i></i> Team</h2>
-						<div id="team" class="collapse" data-parent="#accordion">
-							<div class="row justify-content-center mb-3">
-								<div class="col-xs-12 col-md-6 col-lg-4" style="text-align: center">
-									<img src="{{asset($project->Owner->picture)}}" class="photo-thumbnail photo-thumbnail-large mb-2"  style="height: 200px; width: 200px; border-radius: 200px;"/><br />
-									<strong>{{$project->Owner->first_name . " " . $project->Owner->last_name}}</strong><br />
-									Gig Sponsor <br />
-									<div class="btn-group btn-group-sm" role="group">
-                                        <a href="mailto:{{$project->Owner->email}}"><button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button></a>
-                                        <a href="{{url('/users/'.$project->Owner->id)}}"><button type="button" class="btn btn-empty"><i class="fas fa-address-card"></i></button></a>
-									</div>
-								</div>
-							</div>
-							<div class="row justify-content-center mb-3">
-                                @foreach($project->Users as $index=>$user)
-								<div class="col-md-6 col-lg-{{$columns}}" style="text-align: center">
-									<img src="{{asset($user->picture)}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
-									<strong>{{$user->first_name . " " . $user->last_name}}</strong><br />
-									Team Member {{$index+1}}<br />
-									<div class="btn-group btn-group-sm" role="group">
-                                        <a href="mailto:{{$user->email}}"><button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button></a>
-                                        <a href="{{url('/users/'.$user->id)}}"><button type="button" class="btn btn-empty"><i class="fas fa-address-card"></i></button></a>
-									</div>
-								</div>
-                                @endforeach
-                                @for ($i = $project->Users->count()+1 ; $i <= $project->user_count ; $i++)
-								<div class="col-md-6 col-lg-{{$columns}}" style="text-align: center">
-									<img src="{{asset('images/user.svg')}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
-									<strong>Open Position</strong><br />
-									Team Member {{$i}}<br />
-								</div>
-                                @endfor
+
+						<!-- Card body -->
+						<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx" >
+							<div class="card-body">
+								<p>
+									The gig will kick off in <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-{{$project->Category->text_color}}">{{$project->user_count}} members</strong> on the team. Completion of this gig is estimated to take <strong class="text-{{$project->Category->text_color}}">{{$project->estimated_hours}} hours</strong> per member.
+								</p>
+								<h5>You will gain <span class="text-{{$project->Category->text_color}}">{{$project->Skills()->count() * 5}} experience points</span> distributed among the following skillsets</h5>
+								<ul>
+									@foreach($project->Skills as $skill)
+										<li>{{$skill->name}} <span class="text-{{$project->Category->text_color}}">+5</span></li>
+									@endforeach
+								</ul>
 							</div>
 						</div>
 					</div>
+					<!-- Accordion card -->
+
+					<!-- Accordion card -->
+					<div class="card">
+
+						<!-- Card header -->
+						<div class="card-header" role="tab" id="headingTwo">
+							<a class="collapsed" data-toggle="collapse" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+								<h5 class="mb-0">
+									Details <i class="fa fa-angle-down rotate-icon"></i>
+								</h5>
+							</a>
+						</div>
+
+						<!-- Card body -->
+						<div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo" data-parent="#accordionEx" >
+							<div class="card-body">
+								<p>{{$project->impact}}</p>
+								<h5>More Information:</h5>
+								<p><a href="{{$project->resources_link}}">{{$project->resources_link}}</a></p>
+
+								<h5>This gig will be complete when the following criteria has been met:</h5>
+								<ul style="list-style-type:square">
+									@foreach($project->AcceptanceCriteria as $criteria)
+										<li>{{$criteria->criteria}}</li>
+									@endforeach
+								</ul>
+							</div>
+						</div>
+					</div>
+					<!-- Accordion card -->
+
+					<!-- Accordion card -->
+					<div class="card">
+
+						<!-- Card header -->
+						<div class="card-header" role="tab" id="headingThree">
+							<a class="collapsed" data-toggle="collapse" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+								<h5 class="mb-0">
+									Team <i class="fa fa-angle-down rotate-icon"></i>
+								</h5>
+							</a>
+						</div>
+
+						<!-- Card body -->
+						<div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree" data-parent="#accordionEx">
+							<div class="card-body">
+								<div class="row justify-content-center mb-3">
+									<div class="col-xs-12 col-md-6 col-lg-4" style="text-align: center">
+										<img src="{{asset($project->Owner->picture)}}" class="photo-thumbnail photo-thumbnail-large mb-2"  style="height: 200px; width: 200px; border-radius: 200px;"/><br />
+										<strong>{{$project->Owner->first_name . " " . $project->Owner->last_name}}</strong><br />
+										Gig Sponsor <br />
+										<div class="btn-group btn-group-sm" role="group">
+											<a href="mailto:{{$project->Owner->email}}"><button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button></a>
+											<a href="{{url('/users/'.$project->Owner->id)}}"><button type="button" class="btn btn-empty"><i class="fas fa-address-card"></i></button></a>
+										</div>
+									</div>
+								</div>
+								<div class="row justify-content-center mb-3">
+									@foreach($project->Users as $index=>$user)
+										<div class="col-md-6 col-lg-{{$columns}}" style="text-align: center">
+											<img src="{{asset($user->picture)}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
+											<strong>{{$user->first_name . " " . $user->last_name}}</strong><br />
+											Team Member {{$index+1}}<br />
+											<div class="btn-group btn-group-sm" role="group">
+												<a href="mailto:{{$user->email}}"><button type="button" class="btn btn-empty"><i class="fas fa-envelope"></i></button></a>
+												<a href="{{url('/users/'.$user->id)}}"><button type="button" class="btn btn-empty"><i class="fas fa-address-card"></i></button></a>
+											</div>
+										</div>
+									@endforeach
+									@for ($i = $project->Users->count()+1 ; $i <= $project->user_count ; $i++)
+										<div class="col-md-6 col-lg-{{$columns}}" style="text-align: center">
+											<img src="{{asset('images/user.svg')}}" class="photo-thumbnail photo-thumbnail-large mb-2" style="height: 200px; width: 200px; border-radius: 200px;" /><br />
+											<strong>Open Position</strong><br />
+											Team Member {{$i}}<br />
+										</div>
+									@endfor
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- Accordion card -->
+				</div>
+				<div class="w-100">
 				</div>
 			</div>
 		</div>

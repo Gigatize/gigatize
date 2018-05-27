@@ -160,6 +160,30 @@
 				<div class="tab-content">
 					<div role="tabpanel" class="tab-pane active" id="recentActivityTab">
 						<table class="table no-header" style="margin-top: -1px;">
+							@foreach($user->Reviews()->where('complete','!=',true)->get() as $review)
+								<tr>
+									<td>
+										<img class="photo-thumbnail" src="{{asset($review->User->picture)}}" />
+									</td>
+									<td width="100%">
+										<h6 class="text-primary mb-0"><strong>Review Required</strong></h6>
+										@if($review->review_type == 'User Review')
+											<div class="small quote my-1">Now that you've completed your gig, please take some time to review your team members.</div>
+										@else
+											<div class="small quote my-1">Thanks for helping out with the project {{$review->Project->title}}!, please take some time to review your gig sponsor.</div>
+										@endif
+										<a href="#" class="">
+											<i class="fas fa-fw fa-star"></i> <small>Review user</small>
+										</a>
+									</td>
+									<td>
+										<div class="activity-date text-right ml-3">
+											<h3 class="text-primary mb-0"><strong>{{$review->created_at->format('d')}}</strong></h3>
+											<small>{{$review->created_at->format('M')}}</small>
+										</div>
+									</td>
+								</tr>
+							@endforeach
 							<tr>
 								<td>
 									<img class="photo-thumbnail" src="{{asset('images/professional-man-3.png')}}" />

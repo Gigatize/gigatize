@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Category;
 use App\Location;
 use App\Project;
+use App\Review;
 use App\Skill;
 use App\User;
 use Carbon\Carbon;
@@ -23,7 +24,7 @@ class ProjectController extends Controller
     */
     public function index()
     {
-      $projects = Project::where('start_date','>',Carbon::now())->paginate(12);
+      $projects = Project::where('start_date','>',Carbon::now())->where('complete','!=',true)->paginate(12);
       return view('projects/index',compact('projects'));
     }
 
@@ -145,6 +146,28 @@ class ProjectController extends Controller
     public function destroy($id)
     {
 
+    }
+
+    public function completeProject(Project $project){
+        $project->complete = true;
+        $project->save();
+        foreach ($project->Users as $user){
+            $userReview = new Review();
+            $userReview->user_id = $user->id;
+            $userReview->reviewer_id = $project->user_id;
+            $userReview->project_id = $project->id;
+            $userReview->review_type = 'User Review';
+            $userReview->rating = $project->user_id;
+            $userReview->save();
+            $sponsorReview = new Review();
+            $sponsorReview->user_id = $project->user_id;
+            $sponsorReview->reviewer_id = $user->id;
+            $sponsorReview->project_id = $project->id;
+            $sponsorReview->review_type = 'Sponsor Review';
+            $sponsorReview->rating = $project->user_id;
+            $sponsorReview->save();
+        }
+        return redirect('/projects/'.$project->id)->with('success','You successfully completed the project');
     }
 
     public function joinProject(Project $project, User $user){
