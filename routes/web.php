@@ -43,6 +43,7 @@ Route::group(['middleware' => ['checkauth']], function () {
     Route::get('/projects/{project}/complete','ProjectController@completeProject');
     Route::get('/projects/{project}/users/{user}/join','ProjectController@joinProject');
     Route::get('/projects/{project}/users/{user}/leave','ProjectController@leaveProject');
+    Route::post('/projects/{project}/comment','CommentController@store');
 
     /*
     |---------------------------------------------------------------|
@@ -55,6 +56,8 @@ Route::group(['middleware' => ['checkauth']], function () {
 
     Route::get('/users/{id}','UserController@show');
     Route::get('/company-profile','CompanyController@index');
+
+    Route::post('/review/{review}','ReviewController@Store');
 
 
 });

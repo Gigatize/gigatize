@@ -31,11 +31,18 @@ class ReviewController extends Controller
      * Store a newly created resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
+     * @param  Review  $review
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(Request $request, Review $review)
     {
-        //
+        $review->rating = $request->get('rating');
+        $review->comment = $request->get('comments');
+        $review->complete = true;
+        $review->save();
+
+        return redirect()->back()->with('success','Thank you successfully submitted the review');
+
     }
 
     /**

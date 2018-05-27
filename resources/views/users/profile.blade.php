@@ -168,11 +168,11 @@
 									<td width="100%">
 										<h6 class="text-primary mb-0"><strong>Review Required</strong></h6>
 										@if($review->review_type == 'User Review')
-											<div class="small quote my-1">Now that you've completed your gig, please take some time to review your team members.</div>
+											<div class="small quote my-1">Now that you've completed your gig, please take some time to review {{$review->User->first_name . " " . $review->User->last_name}}.</div>
 										@else
 											<div class="small quote my-1">Thanks for helping out with the project {{$review->Project->title}}!, please take some time to review your gig sponsor.</div>
 										@endif
-										<a href="#" class="">
+										<a href="#" data-toggle="modal" data-target="#exampleModal_{{$review->id}}">
 											<i class="fas fa-fw fa-star"></i> <small>Review user</small>
 										</a>
 									</td>
@@ -335,6 +335,39 @@
 				</div>
 			</div>
 		</div>
+	@foreach($user->Reviews()->where('complete','!=',true)->get() as $review)
+		<!-- Modal -->
+		<div class="modal fade" id="exampleModal_{{$review->id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h5 class="modal-title" id="exampleModalLabel">Participant Review: <img class="photo-thumbnail" src="{{asset($review->User->picture)}}" /> {{$review->User->first_name . " " . $review->User->last_name}}</h5>
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+							<span aria-hidden="true">&times;</span>
+						</button>
+					</div>
+					<div class="modal-body text-center">
+						Please rate your experience working with {{$review->User->first_name . " " . $review->User->last_name}}. All reviews will be completely anonymous.
+						</br>
+						<form id="form_review_{{$review->id}}" method="post" action="{{url('review/'.$review->id)}}">
+							<div class="rating" style="width: 100%!important; font-size: 50px; color: gold; margin: 0 auto;" aria-required="true"></div>
+							<input type="hidden" name="rating" id="rating" value="">
+							<div class="md-form">
+								<i class="fa fa-comment prefix"></i> <label for="textareaPrefix">Comments</label>
+								<textarea name="comments" type="text" id="textareaPrefix" class="form-control md-textarea" length="250" rows="3"></textarea>
+							</div>
+							{{csrf_field()}}
+						</form>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<input type="submit" class="btn btn-primary" form="form_review_{{$review->id}}">
+					</div>
+				</div>
+			</div>
+		</div>
+	@endforeach
+
 	</div>
 @endsection
 
@@ -348,10 +381,32 @@
 	<script src="{{asset('js/your-profile.js')}}"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="{{asset('libs/popper.min.js')}}"></script>
+	<script src="{{asset('js/rater.js')}}"></script>
 	<script src="{{asset('libs/bootstrap-4.0.0/js/bootstrap.min.js')}}"></script>
 
 	<script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
 
 	<script src="https://cdn.datatables.net/buttons/1.5.1/js/dataTables.buttons.min.js"></script>
+	<script>
+        var options = {
+            max_value: 5,
+            step_size: 0.5,
+            initial_value: 0,
+            selected_symbol_type: 'utf8_star', // Must be a key from symbols
+            cursor: 'default',
+            readonly: false,
+            change_once: false, // Determines if the rating can only be set once
+            ajax_method: 'POST',
+            url: 'http://localhost/test.php',
+            additional_data: {} // Additional data to send to the server
+        }
+
+        $(".rating").rate(options);
+
+        $(".rating").on("change", function(ev, data){
+            console.log(data.to);
+			$('#rating').val(data.to);
+        });
+	</script>
 
 @endsection

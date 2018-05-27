@@ -35,7 +35,7 @@ class CommentController extends Controller
    *
    * @return Response
    */
-  public function store(Request $request)
+  public function store(Request $request, Project $project)
   {
       $user = Auth::user();
       $user->comment($project, $request->get('comment'));
