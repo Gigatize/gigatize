@@ -105,7 +105,7 @@
 				<div class="col col-lg-3">
 					<button type="button" class="btn btn-empty btn-block">
 						<i class="fas fa-comments"></i>&nbsp;
-						5 Comments
+						{{$project->totalCommentCount()}} Comments
 					</button>
 				</div>
 			</div>
