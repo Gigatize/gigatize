@@ -4,6 +4,7 @@
 
 @section('header_styles')
 
+<meta name="csrf-token" content="{{ csrf_token() }}">
 <!-- STYLES -->
 <link rel="stylesheet" href="{{asset('css/styles.css')}}">
 <!-- Font Awesome -->
@@ -29,6 +30,16 @@
         font-family: "Open Sans",sans-serif;
     }
 	a#leave_btn:hover{
+		text-decoration: none;
+		cursor: hand;
+		font-family: "Open Sans",sans-serif;
+	}
+	a#complete_btn:hover{
+		text-decoration: none;
+		cursor: hand;
+		font-family: "Open Sans",sans-serif;
+	}
+	a#start_btn:hover{
 		text-decoration: none;
 		cursor: hand;
 		font-family: "Open Sans",sans-serif;
@@ -131,7 +142,9 @@
 							</div>
 						</div>
 					</div>
-					@if($project->complete)
+					@if(!$project->started and $project->Owner->id == Auth::id())
+						<a id="start_btn" href="{{url('/projects/'.$project->id.'/start')}}"><button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Kickoff Project</button></a>
+					@elseif($project->complete)
 						<button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" disabled>Complete</button>
 					@elseif($project->Owner->id == Auth::id())
 						<a id="complete_btn" href="{{url('/projects/'.$project->id.'/complete')}}"><button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Complete Project</button></a>
@@ -199,7 +212,12 @@
 								<h5>This gig will be complete when the following criteria has been met:</h5>
 								<ul style="list-style-type:square">
 									@foreach($project->AcceptanceCriteria as $criteria)
-										<li>{{$criteria->criteria}}</li>
+										<div class="form-check">
+											<input class="form-check-input filled-in acceptance-criteria" data-id="{{$criteria->id}}" type="checkbox" value="" id="filledInCheckbox1" @if($project->Owner->id != Auth::id()) disabled @endif @if($criteria->complete) checked @endif>
+											<label class="form-check-label" for="filledInCheckbox1">
+												<li>{{$criteria->criteria}}</li>
+											</label>
+										</div>
 									@endforeach
 								</ul>
 							</div>
@@ -295,8 +313,31 @@
 
 @section('footer_scripts')
 	<!-- LIBRARIES -->
-	<script src="{{asset('libs/jquery-3.2.1.slim.min.js')}}"></script>
+	<script
+			src="https://code.jquery.com/jquery-3.3.1.js"
+			integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+			crossorigin="anonymous"></script>
 	<!-- Latest compiled and minified JavaScript -->
 	<script src="{{asset('libs/popper.min.js')}}"></script>
 	<script src="{{asset('libs/bootstrap-4.0.0/js/bootstrap.min.js')}}"></script>
+	<script>
+		$(document).ready(function(){
+		    $('.acceptance-criteria').change(function () {
+		        var id = $(this).attr('data-id');
+		        console.log(id);
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    type: "POST",
+                    url: "{{url('/acceptance-criteria/toggle')}}"+"/"+id,
+					dataType: 'json',
+                    success: function () {
+                    },
+                });
+            })
+		});
+	</script>
 @endsection

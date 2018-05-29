@@ -40,10 +40,12 @@ Route::group(['middleware' => ['checkauth']], function () {
     Route::post('/projects/store','ProjectController@store');
     Route::get('/projects/search','ProjectController@search');
     Route::get('/projects/{project}','ProjectController@show');
+    Route::get('/projects/{project}/start','ProjectController@startProject');
     Route::get('/projects/{project}/complete','ProjectController@completeProject');
     Route::get('/projects/{project}/users/{user}/join','ProjectController@joinProject');
     Route::get('/projects/{project}/users/{user}/leave','ProjectController@leaveProject');
     Route::post('/projects/{project}/comment','CommentController@store');
+    Route::post('/acceptance-criteria/toggle/{acceptanceCriteria}','AcceptanceCriteriaController@toggle');
 
     /*
     |---------------------------------------------------------------|

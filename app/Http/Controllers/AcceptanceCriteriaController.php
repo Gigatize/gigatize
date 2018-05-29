@@ -2,19 +2,29 @@
 
 namespace App\Http\Controllers;
 
+use App\AcceptanceCriteria;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class AcceptanceCriteriaController extends Controller 
 {
 
   /**
    * Display a listing of the resource.
-   *
+   * @param $id
    * @return Response
    */
-  public function index()
+  public function toggle($id)
   {
-    
+      $criteria = AcceptanceCriteria::find($id);
+    if($criteria->complete){
+        $criteria->complete = false;
+        $criteria->save();
+    }else{
+        $criteria->complete = true;
+        $criteria->save();
+    }
+    return response()->json(['success'=>true]);
   }
 
   /**

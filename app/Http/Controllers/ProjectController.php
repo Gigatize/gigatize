@@ -69,6 +69,8 @@ class ProjectController extends Controller
       $project->estimated_hours = Input::get('estimated_hours');
       $project->resources_link = Input::get('resources_link');
       $project->additional_info = Input::get('additional_info');
+      $project->status = 'Not Started';
+      $project->started = false;
       if(Input::get('flexible_start')) {
           $project->flexible_start = true;
       }else{
@@ -148,8 +150,16 @@ class ProjectController extends Controller
 
     }
 
+    public function startProject(Project $project){
+        $project->started = true;
+        $project->status = 'In Progress';
+        $project->save();
+        return redirect('/projects/'.$project->id);
+    }
+
     public function completeProject(Project $project){
         $project->complete = true;
+        $project->status = 'Complete';
         $project->save();
         foreach ($project->Users as $user){
             $userReview = new Review();
