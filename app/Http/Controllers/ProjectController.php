@@ -24,7 +24,7 @@ class ProjectController extends Controller
     */
     public function index()
     {
-      $projects = Project::where('start_date','>',Carbon::now())->where('complete','!=',true)->paginate(12);
+      $projects = Project::where('start_date','>',Carbon::now())->where('started','!=',true)->where('complete','!=',true)->paginate(12);
       return view('projects/index',compact('projects'));
     }
 
