@@ -13,13 +13,11 @@
 
 Auth::routes();
 
+Route::get('/', function () {
+    return view('welcome');
+});
+
 Route::group(['middleware' => ['checkauth']], function () {
-
-    Route::get('/', function () {
-        return view('welcome');
-    });
-
-
     /*
     |---------------------------------------------------------------|
     |Profile Routes 

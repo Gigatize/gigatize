@@ -74,9 +74,11 @@
             <li>
                 <a href="{{url('/company-profile')}}" class="item {{Request::is('company-profile') ? 'active' :  ''}}">Company Impact</a>
             </li>
+            @if(Auth::check())
             <li>
                 <a class="dropdown-button" href="#!" data-activates="dropdown1"><img class="ui avatar image" src="{{asset(Auth::user()->picture)}}"> {{Auth::user()->first_name. " " . Auth::user()->last_name}}<i class="caret down icon"></i></a>
             </li>
+            @endif
         </ul>
         <ul class="side-nav" id="mobile-demo" style="z-index: 1001;">
             <li>
@@ -88,11 +90,14 @@
             <li>
                 <a href="{{url('/company-profile')}}" class="item {{Request::is('company-profile') ? 'active' :  ''}}">Company Impact</a>
             </li>
+            @if(Auth::check())
             <li>
                 <a class="dropdown-button" href="#!" data-activates="dropdown2"><img class="ui avatar image" src="{{asset(Auth::user()->picture)}}"> {{Auth::user()->first_name. " " . Auth::user()->last_name}}<i class="caret down icon"></i></a>
             </li>
+            @endif
         </ul>
         <!-- Dropdown Structure -->
+        @if(Auth::check())
         <ul id="dropdown1" class="dropdown-content">
             <li><a class="item" href="{{url('users/'.Auth::id())}}"><i class="icon address card" style="box-shadow: 0 0 0 0;"></i> Profile</a></li>
             <li><a class="item"><i class="settings icon"></i>Account Settings</a></li>
@@ -101,5 +106,6 @@
             <li><a class="item" href="{{url('users/'.Auth::id())}}"><i class="icon address card" style="box-shadow: 0 0 0 0;"></i>Profile</a></li>
             <li><a class="item"><i class="settings icon"></i>Account Settings</a></li>
         </ul>
+        @endif
     </div>
 </nav>
