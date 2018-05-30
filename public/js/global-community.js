@@ -99,9 +99,9 @@ $(document).ready(function() {
         impact_score: 74,
         impact_score_change: 1
     },{
-        id: 'CH1',
+        id: 'JG1',
         photo: '../images/professional-man-2.png',
-        name: 'Camden Hill',
+        name: 'John Gibbons',
         impact_score: 79,
         impact_score_change: 6
     },{
@@ -176,7 +176,7 @@ $(document).ready(function() {
     },{
         id: 'shawneeMacro',
         name: 'VBA Macro for Shawnee',
-        teamMembers: ['CH1', 'AP1'],
+        teamMembers: ['JG1', 'AP1'],
         created: 'May 3, 2018',
         progress: 90,
         status: 3

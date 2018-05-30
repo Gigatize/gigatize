@@ -44,6 +44,12 @@
 		cursor: hand;
 		font-family: "Open Sans",sans-serif;
 	}
+	a h5.mb-0{
+		color: #000;
+	}
+	a:hover{
+		text-decoration: none;
+	}
 </style>
 @endsection
 
