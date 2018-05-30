@@ -177,7 +177,7 @@
 						<div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne" data-parent="#accordionEx" >
 							<div class="card-body">
 								<p>
-									The gig will kick off in <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-{{$project->Category->text_color}}">{{$project->user_count}} members</strong> on the team. Completion of this gig is estimated to take <strong class="text-{{$project->Category->text_color}}">{{$project->estimated_hours}} hours</strong> per member.
+									The gig will kick off in <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->diffInDays()}} days</strong> on <strong class="text-{{$project->Category->text_color}}">{{$project->start_date->toFormattedDateString()}}</strong> and you will be one of <strong class="text-{{$project->Category->text_color}}">{{$project->user_count}} @if($project->user_count > 1) members @else member @endif</strong> on the team. Completion of this gig is estimated to take <strong class="text-{{$project->Category->text_color}}">{{$project->estimated_hours}} hours</strong> per member.
 								</p>
 								<h5>You will gain <span class="text-{{$project->Category->text_color}}">{{$project->Skills()->count() * 5}} experience points</span> distributed among the following skillsets</h5>
 								<ul>
