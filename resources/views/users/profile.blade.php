@@ -173,7 +173,7 @@
 										@if($review->review_type == 'User Review')
 											<div class="small quote my-1">Now that you've completed your gig, please take some time to review {{$review->User->first_name . " " . $review->User->last_name}}.</div>
 										@else
-											<div class="small quote my-1">Thanks for helping out with the project {{$review->Project->title}}!, please take some time to review your gig sponsor.</div>
+											<div class="small quote my-1">Thanks for helping out with the project {{$review->Project->title}}! please take some time to review your gig sponsor.</div>
 										@endif
 										<a href="#" data-toggle="modal" data-target="#exampleModal_{{$review->id}}">
 											<i class="fas fa-fw fa-star"></i> <small>Review user</small>
