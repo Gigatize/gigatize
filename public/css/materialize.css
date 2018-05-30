@@ -9396,7 +9396,7 @@ input[type=range]:focus::-ms-fill-upper {
 
 .picker__date-display {
   text-align: left;
-  background-color: #87bcde;
+  background-color: #7F7F7F;
   color: #fff;
   padding: 18px;
   font-weight: 300;
@@ -9483,7 +9483,7 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .picker__day.picker__day--today {
-  color: #87bcde;
+  color: #7F7F7F;
 }
 
 .picker__day.picker__day--today.picker__day--selected {
@@ -9500,7 +9500,7 @@ input[type=range]:focus::-ms-fill-upper {
   border-radius: 50%;
   -webkit-transform: scale(0.9);
           transform: scale(0.9);
-  background-color: #87bcde;
+  background-color: #7F7F7F;
   color: #ffffff;
 }
 
@@ -9520,7 +9520,7 @@ input[type=range]:focus::-ms-fill-upper {
 .picker__clear {
   font-size: 1.1rem;
   padding: 0 1rem;
-  color: #87bcde;
+  color: #7F7F7F;
 }
 
 .picker__clear {

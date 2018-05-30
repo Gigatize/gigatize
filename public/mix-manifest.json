@@ -2,6 +2,6 @@
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
     "/css/materialize.css": "/css/materialize.css",
-    "/js/materialize.min.js": "/js/materialize.min.js",
-    "/css/semantic-ui.css": "/css/semantic-ui.css"
+    "/css/semantic-ui.css": "/css/semantic-ui.css",
+    "/js/materialize.min.js": "/js/materialize.min.js"
 }
