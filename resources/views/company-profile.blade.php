@@ -85,7 +85,7 @@
 				</thead>
 			</table>
 		</div>
-		<div class="row no-gutters align-items-stretch mt-3">
+		<div class="row no-gutters align-items-stretch my-3">
 			<div class="col-12 col-md-8 col-lg-9">
 				<div class="card rounded-corners no-border mr-3 p-3">
 					<div class="card rounded-corners p-3">
