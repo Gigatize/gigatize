@@ -102,7 +102,7 @@ class ProjectController extends Controller
           ]);
       }
 
-      return redirect('/')->with('success','You have successfully posted your project');
+      return redirect('/projects')->with('success','You have successfully posted your project');
     }
 
     /**
