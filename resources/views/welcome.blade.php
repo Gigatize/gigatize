@@ -85,9 +85,9 @@
         </div>
     </div>
 
-    <div style="background-image: url('/images/room.jpg'); background-size: cover;">
-        <h1 class="header col s12 yellow-text center" style="padding: 50px 0 20px;"><strong>WHAT IS GIGATIZE?</strong></h1>
-        <div class="container" style="padding-bottom: 50px; font-size: 20px; line-height: 1.4;">
+    <div style="background-image: url('/images/lounge.jpg'); background-size: cover; background-position: center;">
+        <h1 class="header col s12 yellow-text center" style="padding-top: 60px;"><strong>WHAT IS GIGATIZE?</strong></h1>
+        <div class="container" style="padding-bottom: 60px; font-size: 20px; line-height: 1.4;">
             Gigatize is an internal gig network design to inspire, empower, and engage employees to soar beyond the limits of "business as usual." We help organizations leverage their internal network to offer opportunities for empowerment, knowledge sharing, crowd-sourcing, and cross-training. We visualize this impact and showcase employee engagement through rewards and recognition gamified through the system.
         </div>
     </div>
@@ -169,7 +169,7 @@
     <div class="container">
         <h3 class="header col s12 yellow-text center" style="padding: 30px 0;"><strong>LEARN HOW GIGATIZE IS<br />TRANSFORMING COMPANIES</strong></h3>
     </div>
-    <div style="background-image: url('/images/room.jpg'); background-size: cover;">
+    <div style="background-image: url('/images/room.jpg'); background-size: cover; background-position: center;">
         <div class="row" style="padding: 50px 0;">
             <div class="col s12 m4" style="padding: 0 30px;">
                 <div class="testimonial_photo">
