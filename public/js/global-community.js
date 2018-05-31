@@ -41,7 +41,7 @@ $(document).ready(function() {
     // color can be whatever you wish
     var paletteScale = d3.scale.linear()
             .domain([minValue,maxValue])
-            .range(["#ffea94","#FFD11F"]); // blue color
+            .range(["#beebef","#00A1AC"]); // blue color
     // fill dataset in appropriate format
     series.forEach(function(item){ //
         // item example value ["USA", 70]
