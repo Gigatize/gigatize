@@ -285,35 +285,35 @@
 					</div>
 					<!-- Accordion card -->
 				</div>
-			</div>
-			<div class="col-md-9 offset-3 card rounded-corners" style="background-color: #fff">
-				<!-- Card content -->
-				<div class="card-body">
+				<div class="card mt-3 rounded-corners" style="background-color: #fff">
+					<!-- Card content -->
+					<div class="card-body">
 
-					<!-- Title -->
-					<h4 class="card-title"><strong><i class="fa fa-comments"></i> Comments</strong></h4>
-					<hr>
-					@foreach($project->comments as $comment)
-					<div class="media">
-						<img class="d-flex mr-3 photo-thumbnail" src="{{asset($comment->commented->picture)}}" alt="Generic placeholder image">
-						<div class="media-body">
-							<h5 class="mt-0 font-weight-bold">{{$comment->commented->first_name . " " . $comment->commented->last_name}}</h5>
-							{{$comment->comment}}
+						<!-- Title -->
+						<h4 class="card-title"><strong><i class="fa fa-comments"></i> Comments</strong></h4>
+						<hr>
+						@foreach($project->comments as $comment)
+						<div class="media">
+							<img class="d-flex mr-3 photo-thumbnail" src="{{asset($comment->commented->picture)}}" alt="Generic placeholder image">
+							<div class="media-body">
+								<h5 class="mt-0 font-weight-bold">{{$comment->commented->first_name . " " . $comment->commented->last_name}}</h5>
+								{{$comment->comment}}
+							</div>
 						</div>
+						<hr>
+						@endforeach
+						<form id="comments_form" method="post" action="{{url('/projects/'.$project->id.'/comment')}}">
+							<!-- Default textarea -->
+							<div class="form-group">
+								<label for="exampleFormControlTextarea1">Leave Comment</label>
+								<textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+							</div>
+							{{csrf_field()}}
+							<input type="submit" class="btn btn-primary">
+						</form>
 					</div>
-					<hr>
-					@endforeach
-					<form id="comments_form" method="post" action="{{url('/projects/'.$project->id.'/comment')}}">
-						<!-- Default textarea -->
-						<div class="form-group">
-							<label for="exampleFormControlTextarea1">Leave Comment</label>
-							<textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-						</div>
-						{{csrf_field()}}
-						<input type="submit" class="btn btn-primary">
-					</form>
-				</div>
 
+				</div>
 			</div>
 			</div>
 		</div>
