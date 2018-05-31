@@ -41,7 +41,7 @@ $(document).ready(function() {
     // color can be whatever you wish
     var paletteScale = d3.scale.linear()
             .domain([minValue,maxValue])
-            .range(["#ffea94","#FFD11F"]); // blue color
+            .range(["#beebef","#00A1AC"]); // blue color
     // fill dataset in appropriate format
     series.forEach(function(item){ //
         // item example value ["USA", 70]
@@ -61,18 +61,18 @@ $(document).ready(function() {
             return { path: path, projection: projection };
         },
         responsive: true,
-        fills: { defaultFill: '#fff7d6' },
+        fills: { defaultFill: '#beebef' },
         data: dataset,
         geographyConfig: {
-            borderColor: '#DEDEDE',
+            borderColor: '#00A1AC',
             borderWidth: 0,
             highlightBorderWidth: 1,
             // don't change color on mouse hover
             highlightFillColor: function(geo) {
-                return geo['fillColor'] || '#fff7d6';
+                return geo['fillColor'] || '#beebef';
             },
             // only change border
-            highlightBorderColor: '#d1a700',
+            highlightBorderColor: '#00A1AC',
             // show desired information in tooltip
             popupTemplate: function(geo, data) {
                 // don't show tooltip if country don't present in dataset

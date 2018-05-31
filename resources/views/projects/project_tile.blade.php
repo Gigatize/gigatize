@@ -1,5 +1,5 @@
 <div id="project_{{$project}}" class="ui raised card @if($project->isSponsored()) sponsored @endif">
-    <div class="content project-header background-gradient-{{$project->Category->color}}" style="flex-shrink: 0">
+    <div class="content project-header background-gradient-{{$project->Category->color}}" style="flex-shrink: 0; flex-grow: 0;">
         <div class="right floated">{{$project->estimated_hours}} <i class="fas fa-trophy"></i></div>
         <img class="ui image"><a href="{{url('users/'.$project->Owner->id)}}" style="color:rgb(64,63,50)"></a>
         <div class="row" style="margin-bottom: 0; margin-top: 5px;">
@@ -9,7 +9,7 @@
             <div class="right floated">{{$project->start_date->diffForHumans(null, true)}} <i class="fas fa-calendar-alt"></i></div>
         </div>
     </div>
-    <div class="content">
+    <div class="content" style="flex-grow: 1;">
         <h1 class="ui header">{{$project->title}}</h1>
         @if(strlen($project->description)>250)
             <p>{{substr($project->description,0,200)}}...</p>
@@ -17,11 +17,11 @@
             <p>{{$project->description}}</p>
         @endif
     </div>
-    <div class="content like" style="position: relative">
-                    <span class="right floated">
-                        <span class="comment-count">{{$project->totalCommentCount()}}</span> <i class="fas fa-comment"></i>
-                        <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) red-text @endif fas fa-heart favorite icon like" data-project="{{$project->id}}"></i>
-                    </span>
+    <div class="content like" style="position: relative; flex-grow: 0;">
+        <span class="right floated">
+            <span class="comment-count">{{$project->totalCommentCount()}}</span> <i class="fas fa-comment"></i>
+            <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) red-text @endif fas fa-heart favorite icon like" data-project="{{$project->id}}"></i>
+        </span>
         Skills:
         @foreach($project->Skills()->limit(2)->get() as $skill)
             <a class="ui label" style="margin-bottom: 5px;">

@@ -165,7 +165,7 @@
 				</div>
 			</div>
 			<!-- Main Content -->
-			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card rounded-corners no-border p-3 h-100">
+			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card rounded-corners no-border p-3 mb-3 h-100">
 
 				<!--Accordion wrapper-->
 				<div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
@@ -219,7 +219,7 @@
 								<p><a href="{{$project->resources_link}}">{{$project->resources_link}}</a></p>
 
 								<h5>This gig will be complete when the following criteria has been met:</h5>
-								<ul style="list-style-type:square">
+								<ul style="list-style-type:none">
 									@foreach($project->AcceptanceCriteria as $criteria)
 										<div class="form-check">
 											<input class="form-check-input filled-in acceptance-criteria" data-id="{{$criteria->id}}" type="checkbox" value="" id="filledInCheckbox1" @if($project->Owner->id != Auth::id()) disabled @endif @if($criteria->complete) checked @endif>
@@ -285,35 +285,35 @@
 					</div>
 					<!-- Accordion card -->
 				</div>
-			</div>
-			<div class="col-md-9 offset-3 card rounded-corners" style="background-color: #fff">
-				<!-- Card content -->
-				<div class="card-body">
+				<div class="card mt-3 rounded-corners" style="background-color: #fff">
+					<!-- Card content -->
+					<div class="card-body">
 
-					<!-- Title -->
-					<h4 class="card-title"><strong><i class="fa fa-comments"></i> Comments</strong></h4>
-					<hr>
-					@foreach($project->comments as $comment)
-					<div class="media">
-						<img class="d-flex mr-3 photo-thumbnail" src="{{asset($comment->commented->picture)}}" alt="Generic placeholder image">
-						<div class="media-body">
-							<h5 class="mt-0 font-weight-bold">{{$comment->commented->first_name . " " . $comment->commented->last_name}}</h5>
-							{{$comment->comment}}
+						<!-- Title -->
+						<h4 class="card-title"><strong><i class="fa fa-comments"></i> Comments</strong></h4>
+						<hr>
+						@foreach($project->comments as $comment)
+						<div class="media">
+							<img class="d-flex mr-3 photo-thumbnail" src="{{asset($comment->commented->picture)}}" alt="Generic placeholder image">
+							<div class="media-body">
+								<h5 class="mt-0 font-weight-bold">{{$comment->commented->first_name . " " . $comment->commented->last_name}}</h5>
+								{{$comment->comment}}
+							</div>
 						</div>
+						<hr>
+						@endforeach
+						<form id="comments_form" method="post" action="{{url('/projects/'.$project->id.'/comment')}}">
+							<!-- Default textarea -->
+							<div class="form-group">
+								<label for="exampleFormControlTextarea1">Leave Comment</label>
+								<textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+							</div>
+							{{csrf_field()}}
+							<input type="submit" class="btn btn-primary">
+						</form>
 					</div>
-					<hr>
-					@endforeach
-					<form id="comments_form" method="post" action="{{url('/projects/'.$project->id.'/comment')}}">
-						<!-- Default textarea -->
-						<div class="form-group">
-							<label for="exampleFormControlTextarea1">Leave Comment</label>
-							<textarea name="comment" class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
-						</div>
-						{{csrf_field()}}
-						<input type="submit" class="btn btn-primary">
-					</form>
-				</div>
 
+				</div>
 			</div>
 			</div>
 		</div>
