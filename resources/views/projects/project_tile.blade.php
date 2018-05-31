@@ -17,11 +17,11 @@
             <p>{{$project->description}}</p>
         @endif
     </div>
-    <div class="content like" style="position: relative">
-                    <span class="right floated">
-                        <span class="comment-count">{{$project->totalCommentCount()}}</span> <i class="fas fa-comment"></i>
-                        <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) red-text @endif fas fa-heart favorite icon like" data-project="{{$project->id}}"></i>
-                    </span>
+    <div class="content like" style="position: relative; flex-grow: 0;">
+        <span class="right floated">
+            <span class="comment-count">{{$project->totalCommentCount()}}</span> <i class="fas fa-comment"></i>
+            <span class="favorite-count" data-project="{{$project->id}}" style="margin-left: 3px;">{{$project->favoriteCount()}}</span> <i class="@if($project->favorited()) red-text @endif fas fa-heart favorite icon like" data-project="{{$project->id}}"></i>
+        </span>
         Skills:
         @foreach($project->Skills()->limit(2)->get() as $skill)
             <a class="ui label" style="margin-bottom: 5px;">
