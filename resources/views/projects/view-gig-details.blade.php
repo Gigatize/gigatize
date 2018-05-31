@@ -165,7 +165,7 @@
 				</div>
 			</div>
 			<!-- Main Content -->
-			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card rounded-corners no-border p-3 h-100">
+			<div class="col-12 col-md-7 col-lg-8 col-xl-9 card rounded-corners no-border p-3 mb-3 h-100">
 
 				<!--Accordion wrapper-->
 				<div class="accordion" id="accordionEx" role="tablist" aria-multiselectable="true">
@@ -219,7 +219,7 @@
 								<p><a href="{{$project->resources_link}}">{{$project->resources_link}}</a></p>
 
 								<h5>This gig will be complete when the following criteria has been met:</h5>
-								<ul style="list-style-type:square">
+								<ul style="list-style-type:none">
 									@foreach($project->AcceptanceCriteria as $criteria)
 										<div class="form-check">
 											<input class="form-check-input filled-in acceptance-criteria" data-id="{{$criteria->id}}" type="checkbox" value="" id="filledInCheckbox1" @if($project->Owner->id != Auth::id()) disabled @endif @if($criteria->complete) checked @endif>

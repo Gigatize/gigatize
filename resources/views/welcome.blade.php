@@ -55,6 +55,9 @@
             width: 200px;
             height: 200px;
         }
+        .big.yellow.basic.button:hover {
+            background-color: #FBBD08 !important;
+        }
   </style>
 @endsection
 
@@ -83,77 +86,73 @@
     </div>
 
 
-    <div class="container">
-        <div class="section">
+    <div style="padding: 30px 40px 0;">
 
-            <!--   Icon Section   -->
-            <div class="row" style="padding: 50px 0 0">
-                <div class="col s12 m4">
-                    <div class="icon-block center">
-                        <img src="/images/productivity_icon.png" class="icon" />
-                        <div class="icon-label">
-                            Productivity
-                        </div>
-                        <h4>Embrace the<br />Gig Economy</h4>
-                        <p>
-                            We connect solution seekers with problem solvers to leverage the power of your internal workforce. Our dashboards visualize your productivity savings in real-time.
-                        </p>
-                        <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
+        <!--   Icon Section   -->
+        <div style="padding: 50px 0 0; display: flex; flex-direction: row;">
+            <div style="padding: 8px;">
+                <div class="icon-block center">
+                    <img src="/images/productivity_icon.png" class="icon" />
+                    <div class="icon-label">
+                        Productivity
                     </div>
-                </div>
-                <div class="col s12 m4">
-                    <div class="icon-block center">
-                        <img src="/images/engagement_icon.png" class="icon" />
-                        <div class="icon-label">
-                            Engagement
-                        </div>
-                        <h4>Inspire Loyalty,<br />Reduce Turnover</h4>
-                        <p>
-                            Are you ready for the #FutureOfWork? We help you combat growing skill shortages, turnover, and disengagement through a platform that empowers your workforce to take the lead!
-                        </p>
-                        <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
-                    </div>
-                </div>
-                <div class="col s12 m4">
-                    <div class="icon-block center">
-                        <img src="/images/crosstrain_icon.png" class="icon" />
-                        <div class="icon-label">
-                            Cross-Train
-                        </div>
-                        <h4>Upskill Your<br />Workforce</h4>
-                        <p>
-                            We partner skill seekers with subject matter experts to encourage learning by doing and sharing. Why outsource if you can insource quality, homegrown talent?
-                        </p>
-                        <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
-                    </div>
+                    <h4>Embrace the<br />Gig Economy</h4>
+                    <p>
+                        We connect solution seekers with problem solvers to leverage the power of your internal workforce. Our dashboards visualize your productivity savings in real-time.
+                    </p>
+                    <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
                 </div>
             </div>
-            <div class="row" style="padding: 20px 0 50px">
-                <div class="col s12 m4 offset-m2">
-                    <div class="icon-block center">
-                        <img src="/images/empower_icon.png" class="icon" />
-                        <div class="icon-label">
-                            Empower
-                        </div>
-                        <h4>Break Down<br />Knowledge Silos</h4>
-                        <p>
-                            We help your organization establish an organic network that goes beyond the confines of roles and org charts to get you connected with the guidance you need.
-                        </p>
-                        <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
+            <div style="padding: 8px;">
+                <div class="icon-block center">
+                    <img src="/images/engagement_icon.png" class="icon" />
+                    <div class="icon-label">
+                        Engagement
                     </div>
+                    <h4>Inspire Loyalty,<br />Reduce Turnover</h4>
+                    <p>
+                        Are you ready for the #FutureOfWork? We help you combat growing skill shortages, turnover, and disengagement through a platform that empowers your workforce to take the lead!
+                    </p>
+                    <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
                 </div>
-                <div class="col s12 m4">
-                    <div class="icon-block center">
-                        <img src="/images/recognize_icon.png" class="icon" />
-                        <div class="icon-label">
-                            Recognize
-                        </div>
-                        <h4>Cultivate a<br />Community Culture</h4>
-                        <p>
-                            We gamify gigs and quests so your workforce is well-recognized and rewarded for their engagement. We ensure that your org has an easy way to visibly track and showcase above &amp; beyond efforts.
-                        </p>
-                        <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
+            </div>
+            <div style="padding: 8px;">
+                <div class="icon-block center">
+                    <img src="/images/crosstrain_icon.png" class="icon" />
+                    <div class="icon-label">
+                        Cross-Train
                     </div>
+                    <h4>Upskill Your<br />Workforce</h4>
+                    <p>
+                        We partner skill seekers with subject matter experts to encourage learning by doing and sharing. Why outsource if you can insource quality, homegrown talent?
+                    </p>
+                    <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
+                </div>
+            </div>
+            <div style="padding: 8px;">
+                <div class="icon-block center">
+                    <img src="/images/empower_icon.png" class="icon" />
+                    <div class="icon-label">
+                        Empower
+                    </div>
+                    <h4>Break Down<br />Knowledge Silos</h4>
+                    <p>
+                        We help your organization establish an organic network that goes beyond the confines of roles and org charts to get you connected with the guidance you need.
+                    </p>
+                    <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
+                </div>
+            </div>
+            <div style="padding: 8px;">
+                <div class="icon-block center">
+                    <img src="/images/recognize_icon.png" class="icon" />
+                    <div class="icon-label">
+                        Recognize
+                    </div>
+                    <h4>Cultivate a<br />Community Culture</h4>
+                    <p>
+                        We gamify gigs and quests so your workforce is well-recognized and rewarded for their engagement. We ensure that your org has an easy way to visibly track and showcase above &amp; beyond efforts.
+                    </p>
+                    <a class="waves-effect waves-light btn-small" href="#" style="color: #DDB40D;">Read More &gt;</a>
                 </div>
             </div>
         </div>
