@@ -146,7 +146,7 @@
 				<div class="card bg-light rounded-corners mx-1 mb-3 p-2 flex-row justify-content-between">
 					<div><strong>My Public Profile</strong></div>
 					<div class="card flex-row align-items-center small px-2">
-						<i class="fas fa-calendar"></i>&nbsp;<strong>April 15, 2018 - May 16, 2018</strong>
+						<i class="fas fa-calendar"></i>&nbsp;<strong>May 10, 2018 - June 10, 2018</strong>
 					</div>
 				</div>
 				<ul class="nav nav-tabs mx-1">

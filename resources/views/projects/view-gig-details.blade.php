@@ -152,11 +152,11 @@
 						</div>
 					</div>
 					@if(!$project->started and $project->Owner->id == Auth::id())
-						<a id="start_btn" href="{{url('/projects/'.$project->id.'/start')}}"><button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Kickoff Project</button></a>
+						<a id="start_btn" href="{{url('/projects/'.$project->id.'/start')}}"><button type="button" class="btn btn-success btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Kickoff Project</button></a>
 					@elseif($project->complete)
-						<button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" disabled>Complete</button>
+						<button type="button" class="btn btn-success btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px" disabled>Complete</button>
 					@elseif($project->Owner->id == Auth::id())
-						<a id="complete_btn" href="{{url('/projects/'.$project->id.'/complete')}}"><button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Complete Project</button></a>
+						<a id="complete_btn" href="{{url('/projects/'.$project->id.'/complete')}}"><button type="button" class="btn btn-success btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Complete Project</button></a>
 					@elseif($project->hasUser(Auth::user()))
                     	<a id="leave_btn" href="{{url('/projects/'.$project->id.'/users/'.Auth::id().'/leave')}}"><button type="button" class="btn btn-danger btn-xl no-rounded-corners btn-block text-uppercase" style="border-radius: 0 0 5px 5px">Leave Project</button></a>
 					@else
