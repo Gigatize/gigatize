@@ -86,8 +86,8 @@
     </div>
 
     <div style="background-image: url('/images/room.jpg'); background-size: cover;">
-        <h3 class="header col s12 yellow-text center" style="padding: 30px 0;"><strong>WHAT IS GIGATIZE?</strong></h3>
-        <div class="container" style="padding-bottom: 50px;">
+        <h1 class="header col s12 yellow-text center" style="padding: 50px 0 20px;"><strong>WHAT IS GIGATIZE?</strong></h1>
+        <div class="container" style="padding-bottom: 50px; font-size: 20px; line-height: 1.4;">
             Gigatize is an internal gig network design to inspire, empower, and engage employees to soar beyond the limits of "business as usual." We help organizations leverage their internal network to offer opportunities for empowerment, knowledge sharing, crowd-sourcing, and cross-training. We visualize this impact and showcase employee engagement through rewards and recognition gamified through the system.
         </div>
     </div>
