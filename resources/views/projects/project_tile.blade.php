@@ -28,7 +28,7 @@
                 {{$skill->name}}
             </a>
         @endforeach
-        @if($project->Skills()->count())
+        @if($project->Skills()->count() > 2)
             <a class="ui label more-skills" data-html="{{implode(" <br> ",$project->Skills()->skip(2)->take(PHP_INT_MAX)->pluck('name')->toArray())}}" data-position="bottom center" data-inverted="" style="margin-bottom: 5px;">
                 <i class="fas fa-ellipsis-h"></i>
             </a>
