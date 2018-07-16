@@ -196,7 +196,7 @@
                 <div class="testimonial_photo">
                     <img src="/images/photo_kareem.jpg">
                 </div>
-                <h4 class="center" style="color: #DDB40D;">Kareem Dandy<br/><small style="font-weight: 700;">Power 6</small></h4>
+                <h4 class="center" style="color: #DDB40D;">Kareem Dandy<br/><small style="font-weight: 700;">Power 6 Software</small></h4>
                 <p style="text-align: center; line-height: 1.6;">
                     Cybersecurity experts are hard to find and even harder to keep given the competitive market. I've been fortunate that several of the people who've completed gigs for my team have joined as full-time members and have proved more valuable than many of the external hires we fight to hire and lose after a few months.
                     <div style="font-size: 70px; font-family: serif; color: #DDB40D; line-height: 80px; text-align: center;">&rdquo;</div>
